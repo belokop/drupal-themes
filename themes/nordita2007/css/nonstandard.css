@@ -1,0 +1,507 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CSS/NONSTANDARD.CSS                                              */
+/*                                                                   */
+/* Non-standard extensions to CSS                                    */
+/* Hans Mühlen  / 2007-05-21 -- 2010-10-18                           */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* -----------------------------------------------------------------
+
+   NOTE! Always put the generic CSS3 rules last so the standards-
+   compliant instructions can override any out-of-date vendor-
+   specific code (eg. those starting with -moz or -webkit).
+
+   NOTE! Use of non-standard CSS (eg. properties starting with -moz
+   or -webkit) will compromise CSS validation.
+
+   Mozilla Extensions:
+     https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions
+
+/* -----------------------------------------------------------------
+/* ROUNDED BORDERS ('border-radius')
+/* -----------------------------------------------------------------
+
+1) ROUNDED BORDER CORNERS in CSS3
+   http://www.w3.org/TR/css3-background/#the-border-radius
+
+   (i) only rounded borders:
+
+   border-radius: <border-radius>{1,4}
+
+     special cases:
+
+   border-radius: <top-left> <top-right> <bottom-right> <bottom-left>
+     is equivalent to
+   border-top-left-radius:     <top-left>
+   border-top-right-radius:    <top-right>
+   border-bottom-right-radius: <bottom-right>
+   border-bottom-left-radius:  <bottom-left>
+
+   border-radius: <a>
+     is equivalent to
+   border-radius: <a> <a> <a> <a>
+
+   border-radius: <a> <b>
+     is equivalent to
+   border-radius: <a> <b> <a> <b>
+
+   border-radius: <a> <b> <c>
+     is equivalent to
+   border-radius: <a> <b> <c> <b>
+
+   (ii) elliptical borders:
+
+   border-radius: <horizontal border-radius>{1,4} [ / <vertical border-radius>{1,4}]?
+
+     special cases:
+
+   border-radius: <a> <b> <c> <d> / <e> <f> <g> <h>
+     is equivalent to
+   border-top-left-radius:     <a> <e>
+   border-top-right-radius:    <b> <f>
+   border-bottom-right-radius: <c> <g>
+   border-bottom-left-radius:  <d> <h>
+
+2) ROUNDED BORDER CORNERS in gecko-based browsers
+   https://developer.mozilla.org/en/CSS/-moz-border-radius
+   Note that the syntax of the long form properties is not compatible with CSS3!
+   Introduced in Gecko 1.0 (Firefox 1.0).
+   Support for elliptical borders introduced in Gecko 1.9.1 (Firefox 3.5).
+   Radius values are lengths (as in CSS3) or percentages (nonstandard).
+   '-moz-border-radius' does not apply to table elements when 'border-collapse' is 'collapse'.
+
+   (i) only rounded borders:
+
+   -moz-border-radius: <border-radius>{1,4}
+
+     special cases:
+
+   -moz-border-radius: <top-left> <top-right> <bottom-right> <bottom-left>
+     is equivalent to
+   -moz-border-radius-topleft:     <top-left>
+   -moz-border-radius-topright:    <top-right>
+   -moz-border-radius-bottomright: <bottom-right>
+   -moz-border-radius-bottomleft:  <bottom-left>
+
+   -moz-border-radius: <a>
+     is equivalent to
+   -moz-border-radius: <a> <a> <a> <a>
+
+   -moz-border-radius: <a> <b>
+     is equivalent to
+   -moz-border-radius: <a> <b> <a> <b>
+
+   -moz-border-radius: <a> <b> <c>
+     is equivalent to
+   -moz-border-radius: <a> <b> <c> <b>
+
+   (ii) elliptical borders:
+
+   -moz-border-radius: <horizontal border-radius>{1,4} [ / <vertical border-radius>{1,4}]?
+
+     special cases:
+
+   -moz-border-radius: <a> <b> <c> <d> / <e> <f> <g> <h>
+     is equivalent to
+   -moz-border-radius-topleft:     <a> <e>
+   -moz-border-radius-topright:    <b> <f>
+   -moz-border-radius-bottomright: <c> <g>
+   -moz-border-radius-bottomleft:  <d> <h>
+
+3) ROUNDED BORDER CORNERS in webkit-based browsers
+   Introduced in Webkit 522 (Safari 3.0)
+   Note that multiple lenghts for rounded radii is not supported.
+   Note that the slash notation for elliptical radii is not supported.
+
+   (i) only rounded borders:
+
+     all four corners have the same radius:
+
+   -webkit-border-radius: <border-radius>
+
+     for different radii use the long form properties:
+
+   -webkit-border-top-left-radius:     <border-radius>
+   -webkit-border-top-right-radius:    <border-radius>
+   -webkit-border-bottom-right-radius: <border-radius>
+   -webkit-border-bottom-left-radius:  <border-radius>
+
+   (ii) elliptical borders:
+
+     all four corners have the same horizontal and vertical radius:
+
+   -webkit-border-radius: <horizontal border-radius> <vertical border-radius>
+
+     for different radii use the long form properties:
+
+   -webkit-border-top-left-radius:     <horizontal border-radius> <vertical border-radius>
+   -webkit-border-top-right-radius:    <horizontal border-radius> <vertical border-radius>
+   -webkit-border-bottom-right-radius: <horizontal border-radius> <vertical border-radius>
+   -webkit-border-bottom-left-radius:  <horizontal border-radius> <vertical border-radius>
+
+4) ROUNDED BORDER CORNERS in opera-based browsers
+
+   NOP
+
+5) ROUNDED BORDER CORNERS in msie-based browsers
+
+   NOP
+
+
+/* -----------------------------------------------------------------
+/* TRANSPARENCY ('opacity')
+/* NB: all non-standard properties (except msie) have been obsoleted!
+/*     use standard CSS3 'opacity'
+/* -----------------------------------------------------------------
+
+1) TRANSPARENCY in CSS3
+   http://www.w3.org/TR/css3-color/#transparency
+
+   opacity: <0.0--1.0> | inherit
+
+2) TRANSPARENCY in gecko-based browsers
+   https://developer.mozilla.org/en/CSS/opacity
+   Introduced in Gecko 1.7 (Firefox 0.9) (with '-moz-opacity' as an alias for 'opacity')
+   '-moz-opacity' obsoleted from Gecko 1.9.1 (Firefox 3.5)
+
+   opacity: <0.0--1.0> | inherit
+   -moz-opacity: <0.0--1.0> | inherit
+
+3) TRANSPARENCY in webkit-based browsers
+   'opacity' introduced in webkit 125 (Safari 1.2)
+   '-khtml-opacity' obsoleted from Safari 1.2
+   '-webkit-opacity' obsoleted
+
+   opacity: <0.0--1.0> | inherit
+
+4) TRANSPARENCY in opera-based browsers
+   Introduced in Opera 9.0
+
+   opacity: <0.0--1.0> | inherit
+
+5) TRANSPARENCY in msie-based browsers
+   Introduced in Internet Explorer 4.0
+
+   filter: alpha(opacity=<0--100>)
+
+   Introduced in Internet Explorer 8.0 (both forms are synonymous)
+
+   filter: "alpha(opacity=<0--100>)"
+   -ms-filter: "alpha(opacity=<0--100>)"
+
+
+/* -----------------------------------------------------------------
+/* DROPSHADOWS ('box-shadow')
+/* -----------------------------------------------------------------
+
+1) DROPSHADOWS in CSS3
+   http://dev.w3.org/csswg/css3-background/#the-box-shadow
+   (Removed from the current proposals)
+
+2) DROPSHADOWS in gecko-based browsers
+   https://developer.mozilla.org/en/CSS/-moz-box-shadow
+   Introduced in Gecko 1.9.1 (Firefox 3.5)
+
+   -moz-box-shadow:  none | <shadow> [,<shadow>]*
+
+     where <shadow> is defined as:
+
+   inset? && [ <right-offset-x> <bottom-offset-y> <blur-radius>? <spread-radius>? && <color>? ]
+
+     (default color is the value of 'color')
+
+3) DROPSHADOWS in webkit-based browsers
+   Introduced in Webkit 522 (Safari 3.0) [? check]
+
+   -webkit-box-shadow:  none | <shadow> [,<shadow>]*
+
+     where <shadow> is defined as:
+
+   && [ <right-offset-x> <bottom-offset-y> <blur-radius>? && <color>? ]
+
+     (default color is transparent)
+
+4) DROPSHADOWS in opera-based browsers
+
+   NOP
+
+5) DROPSHADOWS in msie-based browsers
+
+   (i) Shadow Filter
+   http://msdn.microsoft.com/en-us/library/ms532985%28VS.85,loband%29.aspx
+   Introduced in Internet Explorer 5.5
+
+   style="filter:progid:DXImageTransform.Microsoft.Shadow(<sProperties> [,<sProperties>]*)"
+
+     where <sProperties> is defined as:
+
+   [ color=<color> | direction=<px> | enabled=[true|false] | strength=<px> ]
+
+   (ii) DropShadow Filter
+   http://msdn.microsoft.com/en-us/library/ms532985(VS.85).aspx
+   Introduced in Internet Explorer 5.5
+
+   style="filter:progid:DXImageTransform.Microsoft.DropShadow(<sProperties> [,<sProperties>]*)"
+
+     where <sProperties> is defined as:
+
+   [ color=<color> | direction=<px> | offX=<px> | offY=<px> | positive=[true|false] ]
+     /* positive=true  -> Drop shadow is created from the nontransparent pixels of the object. default */
+     /* positive=false -> Drop shadow is created from the transparent pixels of the object.            */
+
+/* ----------------------------------------------------------------- */
+
+
+
+
+
+/* -- GENERAL CLASS ------------------------------------------------ */
+
+.shadow
+{
+  -moz-box-shadow:    0px 3px 10px -2px #333;
+  -webkit-box-shadow: 0px 3px 10px #333;
+}
+
+.splash,
+.x-splash
+{
+  -moz-box-shadow:    0px 3px 10px -2px #333;
+  -webkit-box-shadow: 0px 3px 10px #333;
+}
+
+/* -- HTML ELEMENTS ------------------------------------------------ */
+
+@media screen
+{
+  abbr {cursor: help;}
+}
+
+/* -- BACKDROP ----------------------------------------------------- */
+
+/* if you want the backdrop to be top-aligned with page content */
+#backdrop-navigation /* layoutselect-side_left, layoutselect-side_right */
+{
+  -moz-border-radius: 12px 12px 0px 0px;
+  -webkit-border-top-left-radius:     12px;
+  -webkit-border-top-right-radius:    12px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius:  0px;
+  border-radius:      12px 12px 0px 0px;
+  opacity: 0.6; /* MAC: 0.4; WIN: 0.6; */
+}
+
+
+/* -- CONTAINER-BOXES ---------------------------------------------- */
+
+form input.button
+{
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-top-left-radius:     5px;
+  -webkit-border-top-right-radius:    5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius:  5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+/* -- WIDGETS ------------------------------------------------------ */
+
+.widget
+{
+  -moz-box-shadow:    0px 3px 10px -2px transparent;
+  -webkit-box-shadow: 0px 3px 10px transparent;
+}
+
+/*
+.widget:hover
+{
+  -moz-box-shadow:    0px 3px 10px -2px #333;
+  -webkit-box-shadow: 0px 3px 10px #333;
+}
+*/
+
+/*
+.widget
+{
+  -moz-border-radius: 8px 8px 8px 8px;
+}
+
+.widget h3
+{
+  -moz-border-radius: 4px 4px 4px 4px;
+}
+*/
+
+#presentation.widget
+{
+  -moz-border-radius:    8px 8px 8px 8px;
+  -webkit-border-top-left-radius:     8px;
+  -webkit-border-top-right-radius:    8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius:  8px;
+  border-radius: 8px 8px  8px 8px;
+}
+
+#displayprogram table, #displayprogram table th,
+#displaytip table, #displaytip table th,
+#movienight table, #movienight table th,
+#miniagenda table, #miniagenda table th,
+#time table, #time table th,
+#agenda table, #agenda table th,
+#apod table, #apod table th
+{
+  -moz-box-shadow:    0px 3px 10px -2px #333;
+  -webkit-box-shadow: 0px 3px 10px #333;
+}
+
+.widget_table table td
+{
+   opacity: 0.8;
+}
+#apod.widget_table table td,
+#displayprogram.widget_table table td
+{
+   opacity: 1.0;
+}
+
+/* -- TABS --------------------------------------------------------- */
+
+/* -- TABS -- */
+
+#block-tabs li
+{
+  -moz-border-radius: 0px 0px 8px 8px;
+  -webkit-border-top-left-radius:     0px;
+  -webkit-border-top-right-radius:    0px;
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius:  8px;
+  border-radius: 0px 8px 0px 8px;
+}
+
+#block-tabs.button .submenu li
+{
+  -moz-border-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-radius: 8px;
+}
+
+/* #block-tabs li /* alt 1 with inset rounding of edges and dropshadow (rather tacky)
+{
+  -moz-box-shadow:    0px 5px 10px -2px #333, inset 0px -2px 2px 0px #333;
+  -webkit-box-shadow: 0px 5px 10px #333;
+  border-width: 0px ! important;
+} */
+#block-tabs li /* alt 2 with only dropshadow */
+{
+  -moz-box-shadow:    0px 5px 10px -4px #333;
+  -webkit-box-shadow: 0px 3px 7px #333;
+}
+
+/* -- TABBOX -- */
+
+#block-tabbox
+{
+  -moz-box-shadow:    0px 5px 10px -4px #333;
+  -webkit-box-shadow: 0px 3px 7px #333;
+}
+
+#block-tabbox .menu li
+{
+  -moz-border-radius: 8px 8px 0px 0px;
+  -webkit-border-top-left-radius:     8px;
+  -webkit-border-top-right-radius:    8px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius:  0px;
+  border-radius: 8px 0px 8px 0px;
+  opacity: 1.0; /* 0.75; */
+}
+
+#block-tabbox .menu li.active .submenu li
+{
+  -moz-border-radius:    0px ! important;
+  -webkit-border-radius: 0px ! important;
+  border-radius:         0px ! important;
+  opacity: 1.0;
+}
+
+
+/* -- BANNER --------------------------------------------------------- */
+
+#block-banner,
+#block-info
+{
+  -moz-box-shadow:    0px 5px 10px -2px #333;
+  -webkit-box-shadow: 0px 5px 10px #333;
+}
+
+.widget h3,
+#presentation
+{
+  -moz-box-shadow:    0px 3px 10px -2px #333;
+  -webkit-box-shadow: 0px 3px 10px #333;
+}
+
+#block-dropshadow
+{
+  display: none ! important;
+  visibility: hidden ! important;
+}
+
+#logininfo form
+{
+  opacity: 0.5;
+}
+
+/* -- LOGIN FORM CLASSES ------------------------------------------ */
+
+table.login
+{
+  -moz-background-clip:    padding;       /* border | padding */
+  -webkit-background-clip: padding;       /* padding | border | content */
+  -khtml-background-clip:  padding;       /* padding | border | content */
+  background-clip:         padding-box;   /* padding-box | border-box */
+  -moz-background-origin:    padding;         /* border | padding | content */
+  -webkit-background-origin: padding;         /* padding | border | content */
+  -khtml-background-origin:  padding;         /* padding | border | content */
+  background-origin:         padding-box;     /* padding-box | border-box | content-box */
+  -moz-background-inline-policy: each-box; /* bounding-box | continuous | each-box */
+  -moz-border-radius:     15px;
+  -webkit-border-radius:  15px;
+  border-radius:          15px;
+}
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- BACKWARD COMPATIBILITY ONLY                                -- */
+/* ---------------------------------------------------------------- */
+
+#tabsTEST li /* backw. compat only */
+{
+  -moz-border-radius: 0px 0px 8px 8px;
+  -webkit-border-top-left-radius:     0px;
+  -webkit-border-top-right-radius:    0px;
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius:  8px;
+  border-radius: 0px 8px 0px 8px;
+}
+
+#tabsTEST #current /* backw. compat only */
+{
+  border-radius: 0px 8px;
+  opacity: 1.0;
+}
+
+#tabsTEST li /* backw. compat only */
+{
+  -moz-box-shadow:    0px 5px 10px -4px #333;
+  -webkit-box-shadow: 0px 3px 7px #333;
+}

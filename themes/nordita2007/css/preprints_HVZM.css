@@ -1,0 +1,57 @@
+#preprints table td { background: #f5f6f8; } /* HVZM -- .log1 { background: #eeeeee; } */
+.log1r { background: #eeeeee; color: #cc0000!important; }
+#preprints table tr.log2 td { background: #ddd; } /* HVZM -- .log2 { background: #aaaaaa; } */
+.log2r { background: #aaaaaa; color: #cc0000!important; }
+.reserved   { color: #cc0000; font-weight: bold; }
+.registered { color: #cc0000; font-style: italic; }
+.italic     { font-style: italic; }
+.unused     { background-color: #ccccff; }
+
+.align_right { text-align: right!important; }
+
+
+#preprints table /* HVZM -- .pp_list table */
+{
+  width: 100%; /* -- HVZM -- new */
+  margin:  0px 0px 2ex 0px;
+  padding: 0px;
+  border-spacing: 0px;
+  border-top:    1px solid #3b586e;
+  border-right:  1px solid #3b586e;
+  border-bottom: 1px solid #3b586e;
+  border-left:   1px solid #3b586e;
+}
+
+#preprints table th /* HVZM -- .pp_list table th */
+{
+   padding: 1px 1em 1px 2px; /* HVZM -- padding: 1px 8px 1px 8px; */
+   text-align: left;
+   background: #eeeff4;
+   border-bottom: 0px solid #3b586e;
+   border-bottom-width: 1px;
+}
+
+.select_users table 
+{
+  font-style: italic;	
+  font-size:  x-small;
+}
+
+/* -- HVZM additins -- */
+
+#preprints
+{
+   margin-top: 1em;
+}
+
+#preprints table td
+{
+   padding: 1px 1em 1px 2px;
+   text-align: left;
+}
+
+#preprints table td+td+td
+{
+   width:30%;
+}
+

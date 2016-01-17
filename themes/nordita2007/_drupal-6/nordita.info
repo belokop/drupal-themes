@@ -1,0 +1,10 @@
+name = Nordita 2007 
+slogan = Nordita
+description = Nordita. Read more  <a href="http://nordita.org/">on our website</a>.
+core = 6.x
+engine = phptemplate
+#regions[left] = Left sidebar
+#regions[right] = Right sidebar
+#regions[footer] = Footer
+#stylesheets[all][] = style.css
+version = 2007.01

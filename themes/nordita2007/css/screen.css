@@ -1,0 +1,2053 @@
+
+/*
+ * messages are: debug, error, warning, status 
+ */
+
+div.messages{
+    font-style:normal;
+    font-weight:normal;
+    font-size: small;
+    padding:5px;
+    border:solid thin;
+    border-width:1px;
+    text-align:left;
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    width:100%;
+    color:#000000;
+}
+
+div.warning{
+    background-color:#ffeeee;
+    border-color:#cc0000;
+}
+
+div.error{
+    background-color:tomato;
+    border-color:#cc0000;
+}
+
+div.debug{
+    border-color:#900090;
+}
+
+div.status{
+    background-color:#ffffff;
+    border-color:#c0c0c0;
+}
+
+/* ================================================================= */
+/*                                                                   */
+/* _CCS/SCREEN.CSS                                                   */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2010-10-18                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- IMPORTED STYLE SHEETS                                       -- */
+/* ----------------------------------------------------------------- */
+
+@import url(nonstandard.css);
+@import url(widget.css);
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- INFORMATIONAL: COLOURS FOR 'FROSTY' STYLE                   -- */
+/* -----------------------------------------------------------------
+
+  body text                 #002
+  body bgr                  #fdfdff + image
+
+  link link                 #05b
+  link visited              #038
+  link hover                #17f
+  link hover (wiki)         #094
+  link hover (application)  #c91
+
+  b                         #111
+
+  form buttons text         #111
+  form buttons bgr          #eeeff4
+  form buttons txt hover    #000
+  form buttons bgr hover    #e0e3f4
+
+  banner text               #013
+  banner bgr                #f0f3f4
+  banner bgr (wiki)         #dec
+  banner bgr (application)  #f9f5df
+  banner border             #3b586e
+
+  side menu fill            #f5f6f7
+  side menu fill (wiki)     #e5f5d5
+  side menu fill (applic.)  #ffffd3
+  side menu 'arrow' image   #358
+  side backdrop             #
+  side backdrop border      #
+  side bgr                  #
+  side border               #
+  side current text         #
+  side linked text          #
+  side hover                #
+
+  menu divider              #
+
+  widget head text          #
+  widget head bgr           #
+  widget head border        #
+  widget fill               #
+  widget border             #
+  widget th                 #eeeff4
+  widget td                 #f5f6f8
+  widget border             #3b586e
+
+  agenda th text            #
+  agenda th bgr             #
+  agenda td    text         #
+  agenda td    fill         #
+  agenda border             #
+
+  contentheading h2         #
+  address border top        #
+
+*/
+
+/* ----------------------------------------------------------------- */
+/* -- INFORMATIONAL: IMAGES FOR 'FROSTY' STYLE                    -- */
+/* -----------------------------------------------------------------
+
+  [background image under entire page]
+    html, body              img/backdrop_pentaflakes_1200_win.jpg
+
+  [dropshadow under banner box]
+    block-dropshadow        img/background-shadow.png
+
+  [background image in banner box]
+    block-banner            img/background-banner.png
+
+  [little arrows in front of each menu item: inactive items]
+    block-menu              img/arrow_left_358_7x10.png
+  [little arrows in front of each menu item: active items (breadcrumb)]
+    block-menu              img/arrow_down_358_7x10.png
+
+  [if you want a bullet before the widget headlines -- not activated]
+    widget                  img/pentaflake_14x14.png
+
+  [logo, in '_tpl/div_banner_logo.inc.php']
+                            img/logo_star_60x60.png
+
+*/
+
+/* ----------------------------------------------------------------- */
+/* -- INFORMATIONAL: UNICODE FOR CONTENT                          -- */
+/* -----------------------------------------------------------------
+
+   Anm: content does not work in IE 6+
+   Anm: unicode \2794 will not work in eg. Georgia och Trebuchet fonts
+
+     fylld punkt        "\2022"
+     storre-an          "\003E"
+     dubbel vertikal    "\2016"
+     not                "\00AC"
+     smal pil           "\279D"
+     fet pil            "\2794"
+     stor fylld triang  "\25BA"
+     liten fylld triang "\2023"
+     liten fylld ruta   "\25A0"
+     liten tom ruta     "\25A1"
+     medium fylld ruta  "\25FC"
+     medium tom ruta    "\25FB"
+     liten fylld romb   "\25C6"
+     liten tom romb     "\25C7"
+     fyra romber        "\2756"
+
+     blank              "\00A0"
+     smalt mellanrum    "\2009"
+     hÃ¥rfint mellanrum  "\200A"
+*/
+
+/* ----------------------------------------------------------------- */
+/* -- INFORMATIONAL: BOX STRUCTURE                                -- */
+/* -----------------------------------------------------------------
+
+-- POSITIONING: [width,height] {top,right,bottom,left} Stat,Fix,Rel,Abs,Hidd
+-- MARGIN: <top,right,bottom,left>
+-- PADDING: (top,right,bottom,left)
+
+----                                [W,H]      {t,r,b,l}          P margin     pad
+
+body                                [,]        {,,,}              - <0>        (0)
+  backdrop-head                     [100%,120] {0,a,a,0}          A
+  container-head                    [100%,120] {10,a,a,0}         F
+    block-skiptocontent             [0,0]      {a,a,a,a}          A
+    block-banner                    [a,70]     {10,a,a,a}         R <,20,,20>  (7)
+      div-banner-logo               [a,a]      {a,a,a,a}          R
+    block-info                      [a,?]      {?,a,a,a}          ? <,?,,?>    (?)
+    [block-dropshadow]              [a,12]     {0,a,a,a}          R <,20,,20>
+  container-navigation {left}       [190,100%] {120,a,a,20+15}    F
+  container-navigation {right}      [200,100%] {120,0,a,a}        F
+  .wide container-navigation        [100%,100%]{97,0,a,a}         F
+    search [widget]                 [a,a]      {a,a,a,a}          R <0,0,10,0> (5,10,2.5ex,0)
+    block-menu                      [175,a]    {20,a,a,1ex}       S
+    widget_wiki_edit                [a,a]      {a,a,a,a}          R <0,0,10,0> (5,10,2.5ex,10)
+// --- if INDEX PAGE:
+  container-index-boxes {left}      [200,a]    {120,a,a,20}       A
+  container-index-boxes {right}     [200,a]    {120,20,a,a}       A
+    [widgets and widget_tables]     [a,a]      {a,a,a,a}          R <0,0,10,0> (5,10,2.5ex,10)
+  container-index-body {nav left}   [550<50%,] {120,a,a,200+40}   A
+  container-index-body {nav right}  [550<50%,] {120,a,a,220+40}   A
+// --- if CONTENT PAGE:
+  container-body {left}             [680<70%,] {120,a,a,20}       A
+  container-body {right}            [680<70%,] {120,a,a,220+40}   A
+// --- if WIDE CONTENT PAGE:
+  .wide container-body              [100%,]    {120,0,a,0}        A
+// ---
+    block-main                      [a,a]      {a,a,a,a}          R
+      div-main-contentheading       [a,a]      {a,a,a,a}          R
+      div-main-content              [a,a]      {a,a,a,a}          R
+    block-colophon                  [a,a]      {a,a,a,a}          R
+      div-colophon-address          [a,a]      {a,a,a,a}          R
+      div-colophon-footprint        [a,a]      {a,a,a,a}          R
+  backdrop-navigation {left}        [220,100%] {120-10,a,a,20}    F
+  backdrop-navigation {right}       [220,100%] {120-10,20,a,a}    F
+  backdrop-scrollprotect            [100%,90]  {0,a,a,0}          F
+  appendix-pageextension            [10%,1]    {a,a,-0.1,a}       H <0>        (0)
+
+*/
+
+/* ---------------------------------------------------------------- */
+/* -- SCREEN VERSION                                             -- */
+/* ---------------------------------------------------------------- */
+
+/*
+@media screen
+{
+  720px - 960px
+  body { max-width: 1200px; }
+}
+*/
+
+/* ---------------------------------------------------------------- */
+/* -- PRINT VERSION                                              -- */
+/* ---------------------------------------------------------------- */
+
+/* The "@page" rule is not supported by any major browsers yet, except possibly opera.
+   The property "rule" was introduced in CSS2, dropped in CSS2.1 and reintroduced in CSS3
+   Examples:
+     size: 21.0cm 29.7cm;
+     size: portrait;
+
+@page
+{
+  margin: 0cm;
+  size: 21.0cm 29.7cm;
+}
+*/
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- REDEFINITION OF HTML ELEMENTS                               -- */
+/* ----------------------------------------------------------------- */
+
+/* From "http://www.xml.com/pub/a/2003/03/19/dive-into-xml.html"
+The <body> element is somewhat magical in HTML, but not in XML. The technical background is not worth delving into; the upshot is that if you define CSS styles on body, you should define them on html as well. For example, if you define a background color on body, it will apply to the entire page in HTML, but it may not in XML. You'll need to define the background on html as well. */
+
+/* html, */ /* for XHTML */
+body
+{
+  margin:  0em 0em 0em 0em;
+  padding: 0em 0em 0em 0em;
+}
+
+td,
+th
+{
+  text-align: left;
+  vertical-align: top;
+}
+
+h1 a img { vertical-align: middle; }
+
+abbr
+{
+  text-decoration: inherit;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+h2+p
+{
+  margin-top: 0.5em ! important;
+}
+
+dd
+{
+  margin-left: 3ex;
+}
+
+th p,
+td p
+{
+  margin-top: 0px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- BORDERS -- */
+
+form input,
+form input[type=file],
+form select,
+form textarea,
+form button
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #777;
+}
+
+form input[type=image]
+{
+  border-width: 0em ! important;
+}
+
+img
+{
+  border-width: 0px;
+}
+
+hr
+{
+  border-width: 0px;
+  border-top: 1px solid black;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- COLOURS AND BACKGROUNDS -- */
+
+/* html, */ /* needed for XML */
+body
+{
+/* theme */  color:            #002;
+/* theme */  background-color: #fdfdff;
+  background-repeat: no-repeat;
+  background-position: 60px 60px; /* default is 160px 60px */
+  background-attachment: fixed;
+/* theme */  background-image: url(img/backdrop_pentaflakes_1200_mac.jpg); /* 'win' stronger */
+/* theme */  /* background-image: none ! important; */
+}
+
+html.nobackground,/* needed for XML */
+body.nobackground
+{
+  background-image: none ! important;
+}
+
+body.screen_resolution,
+body.nobackground.screen_resolution
+{
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-attachment: fixed;
+  background-image: url(img/screen_resolution_1300x1000.png) ! important;
+}
+
+h1
+{
+/* theme */  color: #013;
+}
+
+a:link
+{
+/* theme */  color: #05b;
+}
+a:visited
+{
+/* theme */  color: #038;
+}
+
+a:link:hover,
+a:link:focus,
+a:visited:hover,
+a:visited:focus
+{
+/* theme */  color: #17f;
+}
+
+strong,
+b
+{
+/* theme */  color: #111;
+}
+
+form input[type=submit],
+form input[type=reset],
+form input[type=button]
+{
+  font-size: x-small;
+  font-weight: bold;
+/* theme */  color: #111;
+/* theme */  background-color: #eeeff4;
+}
+
+form input[type=submit]:hover,
+form input[type=submit]:focus,
+form input[type=reset]:hover,
+form input[type=reset]:focus,
+form input[type=button]:hover,
+form input[type=button]:focus
+{
+  font-weight: bold;
+/* theme */  color: #000;
+/* theme */  background-color: #e0e3f4;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- TYPOGRAPHY -- */
+
+body
+{
+  font-size: 81.25%;   /* redefine "em" unit for this page (inherited);
+                          1em=16px in most browsers, so 75%=12px and 81.25%=13px;
+                          don't use px values since they don't scale in old browsers */
+  line-height: 1.5;    /* redefine leading;
+                          120% for most browsers;
+                          use approx. 150% for increased legibility */
+  letter-spacing: 0em; /* redefine kerning;
+                          Note: em values are relative to current font size */
+}
+
+h1
+{
+  font-size: 2.8em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2
+{
+  font-size: 1.75em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-bottom: 0em;
+}
+
+h3
+{
+  font-size: 1.5em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-bottom: 0px;
+}
+
+h4
+{
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 0px;
+}
+
+h5
+{
+  font-size: 1em;
+  line-height: 1.25;
+  margin-bottom: 0px;
+}
+
+h6
+{
+  font-size: 1em;
+  line-height: 1.25;
+  margin-bottom: 0px;
+}
+
+/* -- FONT FAMILY: BODY TEXT-- */
+
+body,
+p,
+div,
+blockquote,
+form *,
+td, th,
+ol, ul, dl, li, dt, dd
+{
+  font-family:
+    "Candara",
+    "Corbel",
+    "Trebuchet MS",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+/* -- FONT FAMILY: ALWAYS MONOSPACE -- */
+
+/* If you use the largeish Verdana font, set: "font-size: 1.1em" here */
+
+tt,
+pre,
+code,
+kbd
+{
+  font-family:
+    "Courier",
+    "Courier New",
+    monospace;
+}
+
+/* -- FONT FAMILY: HEADLINES -- */
+
+h1, h2, h3, h4, h5, h6,
+#container-navigation ul *,
+.fake-contentheading /* program listings */
+{
+  font-family:
+    "Trebuchet MS",
+    "Calibri",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- DEFINITION OF GENERAL-PURPOSE CLASSES                       -- */
+/* ----------------------------------------------------------------- */
+
+/* -- VISIBILITY -- */
+
+.hidden
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+/* -- ERRORS -- */
+
+.red
+{
+  color: #700 ! important;
+}
+
+.green
+{
+  color: #070 ! important;
+}
+
+/* -- SITEMAP -- */
+
+.thesitemap li
+{
+  margin-left: -2ex;
+  list-style-type: square;
+  font-weight: normal;
+}
+
+.thesitemap>li
+{
+  margin-left: -4ex;
+  list-style-type: none;
+  font-weight: bold;
+  font-size: large;
+}
+
+/* -- TWO-COLUMN LAYOUT -- */
+
+.left  { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
+.left-column,
+.right-column
+{
+  width: 48%;
+}
+
+.left-column  { float: left; }
+.right-column { float: right; }
+
+/* problem med MSIE, som visar sådana <div> med full radhöjd                  */
+/* får ej vara "display:none" för annars avslutas inte tidigare boxar korrekt */
+.end-column
+{
+  display: block;
+  visibility: hidden;
+  clear: both;
+  width: 100%;
+  height: 0em;
+  margin:  0em;
+  padding: 0em;
+  border-width:  0em;
+  background-color: transparent !important;
+}
+
+/* -- SIMULATION OF LINE BREAK -- */
+
+.only_online
+{
+  visibility: visible;
+}
+
+.only_print
+{
+  display: inline;
+  position: absolute;
+  visibility: hidden;
+}
+
+/* -- SIMULATION OF AT-CHARACTER -- */
+
+/* .snabela:before { content: "\0040"; } */
+.snabela:before { content: "\00A0@"; }
+
+/* -- WIKI-IMAGE CAPTIONS -- */
+
+.imagecaption
+{
+  margin: 0px;
+  font-style: italic;
+  font-size: small;
+}
+
+/* -- VARIA -- */
+
+.fake-contentheading
+{
+  margin: 0em 0em 1em 0em ! important;
+  font-size: x-large;
+  font-weight: bold;
+/* theme */  color: #013;
+}
+
+.padcolumn
+{
+  padding-right: 20px;
+}
+
+.splash
+{
+/* theme */  background-image: url(img/backdrop_pentaflakes_ffb.png); /* #ffb; */
+}
+.x-splash
+{
+/* theme */  background-image: url(img/backdrop_pentaflakes_fbb.png); /* #fbb; */
+}
+
+/* -- WIKI -- */
+
+.loggedin
+{
+  border-width: 1px;
+  border-style: solid;
+/* theme */  border-color: #999;
+  margin-top: 0px ! important;
+  padding: 0.5em 0.5em 0.5em 0.75em;
+/* theme */  background-color: #f0f3f4 ! important;
+}
+
+.loggedin strong,
+.loggedin b
+{
+/* theme */  color: #224 ! important; /* #060 */
+}
+
+.specialeventwithlogo
+{
+  border-width: 1px;
+  border-style: solid;
+/* theme */  border-color: black;
+  padding: 1.0em 0em 1.5em 0.5em;
+  font-weight: normal ! important;
+  font-size: small ! important;
+  line-height: 1.2 ! important;
+}
+
+.specialeventwithlogo img
+{
+  float: left;
+  margin-top: -0.5em;
+  margin-right: 1em;
+}
+
+.specialeventwithlogo strong,
+.specialeventwithlogo b
+{
+  font-size: x-large;
+  font-weight: bold ! important;
+}
+
+/* -- BOXES -- */
+
+.box
+{
+  display: block;
+  margin:  1em 0em 1em 0em;
+  padding: 0em 1em 0em 1em ;
+}
+
+.box.larger dt strong
+{
+  font-size: larger ! important;
+}
+
+.grayborder
+{
+  border-width: medium;
+  border-style: solid;
+/* theme */  border-color: #ddd;
+/* theme */  color:            #000;
+/* theme */  background-color: #fafafa;
+}
+
+.blackborder
+{
+  border-width: thin;
+  border-style: solid;
+/* theme */  border-color: #000;
+/* theme */  color:            #000;
+/* theme */  background-color: #fff;
+}
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- POSITIONING                                                 -- */
+/* ----------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------- */
+/* -- GENERAL IDS AND CLASSES -------------------------------------- */
+
+/* Visible blocks */
+
+#backdrop-scrollprotect,
+#backdrop-navigation,
+#block-banner,
+#block-info,
+#block-colophon,
+/* #block-dropshadow, */
+#block-main,
+#block-menu,
+#block-tabs,
+#block-buttons,
+#block-tabbox,
+#container-body,
+#container-index-body,
+#container-index-boxes,
+#container-head,
+#container-navigation,
+#div-banner-logo,
+#div-colophon-address,
+#div-colophon-footprint,
+#div-main-content,
+#div-main-contentheading,
+#wikibar
+{
+  display: block;
+  position: relative;
+  visibility: visible; /* 'visible' important for Safari */
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+  width:  auto;
+  height: auto;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip:     inherit ! important; /* important for safari */
+}
+
+/* Invisible blocks */
+
+#block-dropshadow,
+#appendix-pageextension,
+#block-skiptocontent
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  width:  0px;
+  height: 0px;
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- APPENDIX BLOCKS ---------------------------------------------- */
+
+/* backdrop-scrollprotect only needed if #block-banner doesn't cover 100% width */
+#backdrop-scrollprotect
+{
+  position: fixed;
+  top:  0px;
+  left: 0px;
+  width:  100%;
+  height: 90px;
+}
+
+.nobanner #backdrop-scrollprotect
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  width:  0px;
+  height: 0px;
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+}
+
+#backdrop-navigation
+{
+  position: fixed;
+  top:    0px; /* if backdrop should continue under the banner */
+  top:  113px; /* = like #container-body; if backdrop should top-align with page content */
+  right: 20px;
+  width:  200px;
+  height: 100%;
+}
+
+.nobanner #backdrop-navigation
+{
+  top: 10px ! important;
+}
+
+#appendix-pageextension
+{
+  display: block;
+  position: absolute;
+  visibility: visible;
+  overflow: hidden;
+  clear: both;
+  bottom: -0.1px;
+  width: 10%;
+  height: 1px;
+  margin:  0em;
+  padding: 0em;
+  border-width:  0em;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- CONTAINERS --------------------------------------------------- */
+
+/* -- CONTAINER HEAD -- */
+
+#container-head
+{
+  position: fixed;
+  top:  10px; /* offset 10px from top of viewport */
+  left: 0px;
+  width:  100%;
+  height: auto; /* must not be bigger than ~100px not to cover tabs */
+}
+
+.nobanner #container-head
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  width:  0px;
+  height: 0px;
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+}
+
+/*
+#block-dropshadow
+{
+  position: relative;
+  top: 10px;
+  width:  auto;
+  height: 12px;
+  margin-left:  20px;
+  margin-right: 20px;
+}
+*/
+
+/* -- CONTAINER NAVIGATION -- */
+
+#container-navigation,
+#wikibar
+{
+  position: fixed; /* wtr container-head */
+  top:   120px;
+  right: 0px;
+  width:  205px;
+  height: 100%;
+}
+
+.nobanner #container-navigation,
+.nobanner #wikibar
+{
+  top: 20px;
+}
+
+#container-navigation #block-menu,
+#container-navigation #debug-menu
+{
+  position: static;
+  top:  50px; /* 20px + height of search box (typically 50px) */
+  left: 1ex;
+  width:  175px;
+  height: auto;
+}
+
+/* -- CONTAINER INDEX BOXES -- */
+
+/* Only in START PAGE */
+#container-index-boxes
+{
+  position: absolute; /* or fixed */
+  top:   120px; /* container-navigation:top + 20px */
+  left: 20px;
+  width: 200px;
+}
+
+/* -- CONTAINER BODY -- */
+
+/* Only in CONTENT PAGES */
+
+#container-body
+{
+  position: absolute;
+  top: 120px; /* 82px+13px: to offset fixed content-header */
+  left: 20px;
+  width:     680px;
+  max-width: 70%;
+}
+
+#container-body.wide, /* DEBUG */
+.wide #container-body
+{
+  position: absolute;
+  left: 0px;
+  width: 95%;
+  max-width: 100%;
+  margin-left:  20px;
+  margin-right: 20px;
+}
+
+/* top position */
+
+#container-body.wide, /* DEBUG */
+.wide #container-body /* before .wide.xxx */
+{
+  top: 170px;
+  /* 140px; for drop-down tabs: 82px+20px+20p: to offset fixed content-header */
+  /* 165px; for tabs-on-box */
+}
+
+.wide.nopagetitle #container-body /* before .wide.nomenu */
+{
+  top: 128px;
+}
+
+.nopagetitle #container-body
+{
+  top: 103px; /* 82px+13px: to offset fixed content-header */
+}
+
+.wide.nomenu #container-body
+{
+  top: 120px; /* 82px+13px: to offset fixed content-header */
+}
+
+.nobanner #container-body
+{
+  top: 10px;
+}
+
+/* Only in START PAGE */
+
+#container-index-body
+{
+  position: absolute;
+  top:  120px; /* 82px+20px: to offset fixed content-header */
+  left: 230px;
+  width:     550px;
+  max-width: 50%;
+}
+
+.nobanner #container-index-body
+{
+  top: 10px;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- STACKING ORDER                                              -- */
+/* ----------------------------------------------------------------- */
+
+#div-banner-logo,
+#div-colophon-address
+{ z-index: auto; } /* TODO sortera in */
+
+#block-menu .menu
+{ z-index: 140; } /* over #block-menu .menu .submenu */
+
+#block-menu .menu .submenu
+{ z-index: 130; }
+
+#block-menu *
+{ z-index: 120; }
+
+#block-info,
+#block-skiptocontent,
+#wikibar,
+#div-colophon-footprint
+{ z-index: 110; } /* over #block-banner */
+
+#block-skiptocontent,
+#block-banner
+{ z-index: 100 ! important; }
+
+#container-head  /* over all backdrops, over container-index-boxes */
+/*  { z-index: 70; }  */
+    { z-index: 0; } 
+
+#backdrop-scrollprotect
+{ z-index: 55; } /* over #container-index-boxes */
+
+#block-tabs,
+#container-index-boxes
+{ z-index: 50; } /* over #backdrop-navigation */
+
+#block-tabs .menu
+{ z-index: 42; }
+
+#block-tabs .submenu
+{ z-index: 41; }
+
+#container-navigation
+{ z-index: 50; }
+
+#backdrop-navigation
+{ z-index: 30; }
+
+#container-body,
+#container-index-body
+{ z-index: 25; }
+
+#block-main,
+#block-colophon,
+#div-main-contentheading,
+#div-main-content
+{ z-index: 20; }
+
+#appendix-pageextension
+{ z-index: 1; }
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- FURTHER PROPERTIES OF BLOCKS                                -- */
+/* ----------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------- */
+/* -- APPENDIX BLOCKS ---------------------------------------------- */
+
+/* -- BACKDROP-SCROLLPROTECT --------------------------------------- */
+
+/* background under banner; must not be transparent */
+#backdrop-scrollprotect
+{
+/* theme */  background-color: #fdfdff;
+}
+
+/* -- BACKDROP-NAVIGATION ------------------------------------------ */
+
+#backdrop-navigation
+{
+/* theme */  background-color: #f5f6f7;
+}
+
+
+/* -- APPENDIX-PAGEEXTENSION -------------------------------------- */
+
+
+/* ----------------------------------------------------------------- */
+/* -- BLOCKS IN CONTAINER-HEAD ------------------------------------- */
+
+/* -- BLOCK-SKIPTOCONTENT ------------------------------------------ */
+
+#block-skiptocontent
+{
+  display: block;
+  visibility: visible;
+  position: fixed;
+  overflow: hidden;
+  clear: both;
+  top:  0em;
+  left: 50%;
+  width: 20em;
+  height: 1.5em;
+  margin:  -1px 0em 0em -10em;
+  padding: 0em 0em 0em 0em;
+  color: inherit;
+  background-color: transparent;
+  text-align: center;
+}
+
+#block-skiptocontent p
+{
+  display: inline;
+  visibility: hidden;
+  top:  0em;
+  left: 0em;
+  margin:  -1px 0px 0em -1ex;
+  padding: 0em 5ex 1px 5ex;
+/* theme */  color: #000;
+/* theme */  background-color: #fff;
+  border-width: 0px 2px 2px 2px;
+  border-style: solid;
+/* theme */  border-color: #ccc;
+  font-size: x-small;
+  text-align: center;
+  vertical-align: top;
+  line-height: 1.3;
+}
+
+#block-skiptocontent a
+{
+/* theme */  color: #010101;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#block-skiptocontent p:before { content: "[ "; }
+#block-skiptocontent p:after  { content: " ]"; }
+
+/* turn on display of skip link */
+#block-skiptocontent:hover p,
+#block-skiptocontent:focus p
+{
+/*  visibility: visible ! important; */
+}
+
+/* -- BLOCK-BANNER ------------------------------------------------- */
+
+#block-banner
+{
+  position: relative; /* must have position set for z-index */
+  top: 0px;
+  width:  auto;
+  height:  70px;
+  margin-left:  20px;
+  margin-right: 20px;
+  padding: 7px;
+/* theme */  color: #013;
+/* theme */  background-color: #f0f3f4;
+  border-width: 1px;
+  border-bottom-width: 1px; /* mysko buggfix */
+  border-style: solid;
+/* theme */  border-color: #3b586e;
+}
+
+/* -- BANNER BACKGROUND IMAGE  ---- */
+
+#block-banner
+{
+/* theme */  background-image: url(img/background-banner.png);
+  background-repeat: no-repeat;
+}
+
+/* -- NONWRAPPABLE CONTENT OF #block-banner -- */
+
+#div-banner-logo
+{
+  white-space: nowrap ! important;
+  overflow: hidden; /* problems in Opera for two-line <h2> */
+}
+
+#div-banner-logo p  /* -- LOGO IMAGE ---------------------------- */
+{
+  display: inline ! important;
+  position: relative;
+  /* float: left; */
+  float: none ! important;
+  top: 5px;
+  /* margin: 5px 0em 0em 43px; */
+  margin-left: 43px;
+}
+
+#div-banner-logo h1 /* -- TEXT "NORDITA" ------------------------ */
+{
+  display: inline ! important;
+  position: relative;
+  /* float: left; */
+  float: none ! important;
+  bottom: 8px;
+  /* margin: 12px 0em 0px 20px; */ /* 20px 123px */
+  margin-left: 20px;
+  font-family: "Baskerville", "Times", "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 50px ! important; /* 6.5ex; */
+  line-height: 1.0 ! important;
+}
+
+#div-banner-logo a
+{
+  text-decoration: none;
+/* theme */  color: #013;
+  background-color: transparent;
+}
+
+#div-banner-logo h2 /* -- TEXT "Nordic institute..." ------------ */
+{
+  display: inline ! important;
+  position: relative;
+  /* float: left; */
+  float: none ! important;
+  bottom: 8px;
+  /* margin: 16px 0em 0px 4ex; */
+  margin-left: 20px;
+  font-family: "Times", "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 21px ! important; /* 2.7ex; */
+  line-height: 1.0 ! important;
+}
+
+#div-banner-logo h2 span
+{
+  position: absolute;
+  top: -1em;
+  left: 0px;
+}
+
+/* bugfix */
+#div-banner-logo h2 br
+{
+  position: absolute;
+  bottom: 1em;
+}
+
+/* -- LOGIN INFO BOXES  ---- */
+
+#logininfo
+{
+  display: block;
+  position: absolute;
+  overflow: visible ! important;
+  top: 0px;
+  right: 0px;
+  width: 50%;
+  height: 100%;
+  text-align: right;
+}
+
+#logininfo .playground
+{
+  display: block;
+  position: fixed;
+  top:   100px; /* 10 (#container-head.margin-top) + 86 (#container-head.height) */
+  right: 20px; /* 20 (#block-banner.margin-right) */
+  color: red;
+  background-color: #ff0;
+  border: 1px solid #999999;
+  margin-top: 0 !important;
+  padding: 0.0em 0.3em 0.3em 0.75em ! important;
+
+}
+
+#logininfo .loggedin
+{
+  display: block;
+  position: absolute;
+  top: auto;
+  bottom: 0px ! important;
+  right: 0px;
+  background-color: #F0F3F4 !important;
+  border: 1px solid #999999;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0.3em 0.3em 0.3em 0.75em;
+}
+
+#logininfo form
+{
+  display: inline;
+  opacity: 0.3;
+  margin-left: 5px;
+}
+
+/* -- BLOCK-DROPSHADOW --------------------------------------------- */
+
+/* OBSOLETE */
+#block-dropshadow
+{
+  background-image: url(img/background-shadow.png);
+  background-repeat: repeat-x;
+  content: "                                           ";
+}
+
+/* -- BLOCK-INFO --------------------------------------------------- */
+
+#block-info
+{
+  position: relative; /* must have position set for z-index */
+  width:  auto;
+  height: 1.5em;
+  margin-left:  20px;
+  margin-right: 20px;
+  padding: 1px 10px 3px 10px;
+/* theme */  color: #013;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+/* theme */  border-color: #666;
+}
+
+#container-head #block-info
+{
+  top: 0px;
+/* theme */  background-color: #ffd; /*  url(img/backdrop_pentaflakes_ffb.png); */
+}
+
+#container-navigation #block-info
+{
+  top: 2.5em;
+/* theme */  background-color: #ffd; /* #f0f3f4; /*  url(img/backdrop_pentaflakes_ffb.png); */
+}
+
+#block-info p
+{
+  margin: 0px;
+}
+
+/* -- LOGGEDIN INFO BOXES --------- */
+
+#block-info .loggedin_user
+{
+  font-style: italic;
+  float: right;
+  margin-left: 1em;
+}
+
+#block-info .logout
+{
+  font-weight: bold;
+  float: right;
+  margin-left: 1em;
+}
+
+#block-info .loggedin_mode
+{
+  color: red;
+  float: right;
+  margin-left: 1em;
+}
+
+/* BUG FIX -- remove when possible */
+#div-banner-logo div[align='right']
+{
+  position: absolute ! important;
+  top:   0px;
+  right: 0px;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- BLOCKS IN CONTAINER-NAVIGATION ------------------------------- */
+
+/* background-color should be white, if position=fixed */
+#container-navigation,
+#container-navigation *
+{
+/* theme */  color: #013;
+/* theme */  background-color: transparent;
+}
+
+#container-navigation #block-menu,
+#container-navigation #block-menu ul *
+{
+/* theme */  background-color: transparent;
+}
+
+/* -- For eg. debug links under the menu -- */
+
+#container-navigation #block-menu dt a:link    { color: #05b; }
+#container-navigation #block-menu dt a:visited { color: #038; }
+#container-navigation #block-menu dt a:link:hover,
+#container-navigation #block-menu dt a:link:focus,
+#container-navigation #block-menu dt a:visited:hover,
+#container-navigation #block-menu dt a:visited:focus
+{
+/* theme */  color: #17f;
+}
+
+/* -- BLOCK-MENU ------------------------------------------------- */
+
+/* strange bugfix to remove mysterious white vertical lines */
+#container-navigation #block-menu ul *     { padding-left: 0px; }
+#container-navigation #block-menu ul li li { padding-left: 3ex ! important; }
+
+/* -- BLOCK-MENU: SIDE MENU -------------------------------------- */
+
+/* -- TOP-LEVEL LINKS ------------- */
+
+#container-navigation #block-menu .menu,
+#container-navigation #block-menu .submenu,
+#container-navigation #block-menu ul.menu>li,
+#container-navigation #block-menu .menu .home
+{
+  font-size: small;
+  margin:  0em 0em 0em 0em;
+  padding: 0em 0em 0em 0em;
+}
+
+#container-navigation #block-menu .menu li
+{
+  font-size: x-small;
+  list-style-type: none;
+  margin:  0em 0em 0em 0em;
+  padding: 0em 0em 0em 2.5ex;
+  background-color: transparent;
+}
+
+/* should item text (and submenus) be shown for all items or only    */
+/* default is: show all items.                                       */
+
+/* -- SUB-LEVEL LINKS ------------- */
+
+#container-navigation #block-menu .submenu
+{
+  display:    block;
+  position:   absolute; /* must be absolute, or else they take space */
+  visibility: hidden;   /* initially hide sub-level links */
+  top:  0em;
+  left: 0px;
+  width: auto;
+}
+
+#container-navigation #block-menu .active>.submenu
+{
+  position:   relative; /* must be absolute, or else they take space */
+  visibility: visible;  /* show submenus only for current item */
+}
+
+/* --  ------------------------- */
+
+/* if you want lines between main menu items */
+#container-navigation #block-menu .menu:first-child
+{
+  border-top-width:    0px dotted #013;
+  border-top-style:    0px dotted #013;
+/* theme */  border-top-color:    0px dotted #013;
+}
+
+/* if you want lines between main menu items */
+#container-navigation #block-menu .menu>li
+{
+  border-bottom-width: 0px dotted #013;
+  border-bottom-style: 0px dotted #013;
+/* theme */  border-bottom-color: 0px dotted #013;
+}
+
+/* fix to make menu items on several lines align nicely with arrow */
+#container-navigation #block-menu .menu li li
+{
+  margin-left: 16px;
+  text-indent:  -14px;
+}
+
+/* fix to make menu items on several lines align nicely with arrow */
+#container-navigation #block-menu .menu li li li
+{
+  margin-left: 0px;
+  text-indent:  -14px;
+}
+
+/* style for all sub-level menu items EXCEPT the currently selected item */
+#container-navigation #block-menu .menu li li span,
+#container-navigation #block-menu .menu li li span *
+{
+  font-weight: normal;
+/* theme */  color: #013;
+}
+
+/* style for the currently selected menu item */
+#container-navigation #block-menu .menu li span.this
+{
+  font-weight: bold ! important;
+  text-decoration: none;
+/* theme */  color: #013;
+}
+
+/* style for the active menu items (breadcrumb) */
+#container-navigation #block-menu .menu li.active>span a,
+#container-navigation #block-menu .menu li.active>span
+{
+  font-style: italic;
+  font-weight: bold ! important;
+/* theme */  color: #028;
+}
+
+/* style for top-level menu items; padding: distance between items */
+#container-navigation #block-menu .menu>li
+{
+  font-weight: bold ! important;
+  padding: 0px 0px 5px 0px ! important;
+}
+
+/* link color on hover */
+#container-navigation #block-menu .menu li span a:hover,
+#container-navigation #block-menu .menu li span a:focus
+{
+/* theme */  color: #17f; /* #384d6a; */
+}
+
+/* little arrows in front of each menu item: inactive items */
+#container-navigation #block-menu .menu li:before
+{
+/* theme */  content: url(img/arrow_left_358_7x10.png);
+}
+
+/* little arrows in front of each menu item: active items (breadcrumb) */
+#container-navigation #block-menu .menu li.active:before
+{
+/* theme */  content: url(img/arrow_down_358_7x10.png);
+}
+
+/* text bullet in front of each menu item *
+#container-navigation #block-menu .menu li li
+{
+  text-indent: -11px;
+}
+
+* text bullet in front of each menu item *
+#container-navigation #block-menu .menu li li span:before
+{
+  color: #026;
+  content: "\2734\00a0";
+}
+*/
+
+
+/* -- BLOCK-MENU: TABS ------------------------------------------- */
+
+#container-navigation #block-tabs
+{
+  position: relative; /* must not be fixed; taken care of by container-navigation */
+  top: 0px;
+  left: 0px;
+  width:  auto ! important;
+  height:  auto;
+  margin-left:  20px;
+  margin-right: 20px;
+  background-color: transparent;
+}
+
+#container-navigation #block-tabs ul
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  list-style-image: none;
+  list-style-type: none;
+  list-style: none;
+  margin:  0px 0px 0px 5px;
+  padding: 0px 0px 0px 0px;
+}
+
+#container-navigation #block-tabs.button .submenu
+{
+  margin-left: 2em;
+}
+
+#container-navigation #block-tabs li
+{
+  float: left;
+  height: 1.6em;
+  margin:  0px 2px 0px 0px;
+  padding: 0.5em 1em 0.2em 1em;
+  list-style: none;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+/* theme */  border-color: #999;
+/* theme */  background-color: #fff7d0; /* #f0f3f4; /* same as block-banner */
+  font-size: small;
+}
+
+#container-navigation #block-tabs .menu li
+{
+  font-weight: bold;
+}
+
+#container-navigation #block-tabs .submenu li
+{
+  margin-top:  0em;
+  padding-top: 2.7em;
+  font-weight: normal ! important;
+  font-style: italic;
+/* theme */  background-color: #ffffdd; /* #ded; */
+}
+#container-navigation #block-tabs.button .submenu li
+{
+  margin-top:  2.7em;
+  padding-top:    0.2em;
+  padding-bottom: 0.1em;
+  border-top-width: 1px;
+}
+
+#container-navigation #block-tabs li.active
+{
+  font-weight: bold;
+/* theme */  border-color:     #333;
+/* theme */  background-color: #fff ! important;
+}
+
+#container-navigation #block-tabs a:link,
+#container-navigation #block-tabs a:visited
+{
+/* theme */  color: #013;
+}
+#container-navigation #block-tabs a:link:hover,
+#container-navigation #block-tabs a:link:focus,
+#container-navigation #block-tabs a:visited:hover,
+#container-navigation #block-tabs a:visited:focus
+{
+/* theme */  color: #631;
+}
+
+/* -- BLOCK-MENU: TABBOX ----------------------------------------- */
+
+#container-navigation #block-tabbox
+{
+  position: relative; /* must not be fixed; taken care of by container-navigation */
+  top:  0px;
+  left: 0px;
+  width:  auto ! important;
+  height:  2.2em;
+  margin:  2.9em 20px 0px 20px; /* margin-top sets vertical position of block-tabbox */
+  padding: 0px;
+/* theme */  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+/* theme */  border-color: #666;
+}
+
+#container-navigation #block-tabbox .menu
+{
+  position: relative;
+  top: -1.8em;
+  left: 0px;
+  list-style-image: none;
+  list-style-type: none;
+  list-style: none;
+  padding: 0px 0px 0px 0px;
+  margin:  0px 0px 0px 5px;
+}
+
+#container-navigation #block-tabbox .submenu
+{
+  position: absolute;
+  top:  0em;
+  left: 2em;
+  list-style-image: none;
+  list-style-type: none;
+  list-style: none;
+  padding: 0px ! important;
+  margin: 0px ! important;
+}
+
+#container-navigation #block-tabbox .menu li
+{
+  float: left;
+  height: 1.6em;
+  margin:  -2px 2px 0px 0px;
+  padding: 0.2em 1em 0em 1em ! important;
+  list-style: none;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+/* theme */  border-color: #aaa;
+/* theme */  background-color: #fff7d0; /* #f0f3f4; /* same as block-banner */
+  font-weight: bold;
+  font-style: normal ! important;
+  font-size: small;
+}
+
+#container-navigation #block-tabbox .submenu li
+{
+  float: left;
+  margin:  0em 0em 0em 0em;
+  padding: 0.4em 1.5em 0em 0em;
+/* theme */  background-color: transparent;
+  font-weight: normal ! important;
+  font-style: italic;
+  font-size: small;
+}
+
+#container-navigation #block-tabbox .menu li.active
+{
+/* theme */  border-color:     #333;
+/* theme */  background-color: #fff;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+/* theme */  border-bottom-color: transparent; /* must not be exactly #fff */
+}
+#container-navigation #block-tabbox .menu li.inactive
+{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+/* theme */  border-bottom-color: #666;
+}
+
+#container-navigation #block-tabbox .submenu li.active {}
+
+#container-navigation #block-tabbox a:link,
+#container-navigation #block-tabbox a:visited
+{
+/* theme */  color: #013;
+}
+#container-navigation #block-tabbox a:link:hover,
+#container-navigation #block-tabbox a:link:focus,
+#container-navigation #block-tabbox a:visited:hover,
+#container-navigation #block-tabbox a:visited:focus
+{
+/* theme */  color: #631;
+}
+
+/* -- DEBUG-MENU --------------------------------------------------- */
+
+#container-navigation #debug-menu
+{
+  border-top-width: 1px;
+  border-top-style: solid;
+/* theme */  border-top-color: #666;
+}
+
+#container-navigation #debug-menu dt,
+#container-navigation #debug-menu dd
+{
+  font-size: x-small;
+}
+
+#container-navigation #debug-menu a,
+#container-navigation #debug-menu a *
+{
+/* theme */  color: #05b;
+}
+
+
+/* ----------------------------------------------------------------- */
+/* -- BLOCKS IN CONTAINER INDEX BOXES ------------------------------ */
+
+/* see WIDGET.CSS */
+
+/* ----------------------------------------------------------------- */
+/* -- BLOCKS IN CONTAINER-BODY ------------------------------------- */
+
+#container-body,
+#container-index-body
+{
+}
+
+#container-index-body h4
+{
+  /* font-size: small; */
+  margin-bottom: -0.3em; /* NOP? */
+}
+
+/* -- BLOCK-MAIN --------------------------------------------------- */
+
+ /* strange bugfix; needed for ff/win to counter mysterious float behaviour */
+#block-main
+{
+  border-width: 1px! important;
+  border-style: solid ! important;
+  border-color: transparent ! important;
+}
+
+#div-main-content h2
+{
+/* theme */  color: #013;
+}
+
+/* -- BLOCK-COLOPHON ----------------------------------------------- */
+
+#block-colophon
+{
+  font-size: x-small;
+  margin: 30px 0em 2ex 0em;
+  border-width: 0.5px 0px 0px 0px;
+  border-style: solid;
+/* theme */  border-color: #013;
+}
+
+#block-colophon *
+{
+  font-size: x-small;
+}
+
+#block-colophon address
+{
+  margin: 0em 0em -2ex 0em; /* no blank line between address and cookie policy link */
+  padding-top: 10px;
+}
+
+#div-colophon-address
+{
+  position: absolute;
+  width: 100%;
+  top:  0px;
+  left: 0px;
+  margin: 0px 0em 2ex 0em;
+}
+
+#div-colophon-footprint
+{
+  position: absolute;
+  width: 100px ! important; /* otherwise address cannot be selected with mouse */
+  top: 10px;
+  right: 0px;
+  text-align: right;
+}
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- LOGIN FORM CLASSES                                         -- */
+/* ---------------------------------------------------------------- */
+
+input.login
+{
+  border-style: none;
+}
+
+table.login
+{
+  padding: 10px;
+  /* spacing: 10px; *//* not standard css */
+/* theme */  background-color:      #ccc;
+  background-image:      none;
+  background-repeat:     repeat;
+  background-attachment: scroll;
+  background-position:   0% 50%;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* -- BUBBLE TOOLTIPS CLASSES                                    -- */
+/* ---------------------------------------------------------------- */
+
+/* Contents of "BubbleTooltips.css"
+/*CSS for Bubble Tooltips by Alessandro Fulciniti
+- http://pro.html.it - http://web-graphics.com */
+
+/*
+.tooltip
+{
+  width: 200px;
+  color: #000;
+  font: lighter 11px/1.3 Arial,sans-serif;
+  text-decoration: none;
+  text-align: center;
+}
+
+.tooltip span.top
+{
+  padding: 30px 8px 0px;
+  background-image:    url(img/bubbleTooltips.gif);
+  background-repeat:   no-repeat;
+  background-position: top;
+}
+
+.tooltip b.bottom
+{
+  padding: 3px 8px 15px;
+  color: #548912;
+  background-image:    url(img/bubbleTooltips.gif);
+  background-repeat:   no-repeat;
+  background-position: bottom;
+}
+*/
+
+/* ---------------------------------------------------------------- */
+
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- BACKWARD COMPATIBILITY ONLY                                -- */
+
+#tabsTEST /* backw. compat only */
+#container-wide-body, /* backw. compat only */
+#container-tabs /* backw. compat only */
+{
+  display: block;
+  position: relative;
+  visibility: visible; /* 'visible' important for Safari */
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+  width:  auto;
+  height: auto;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip:     inherit ! important; /* important for safari */
+}
+
+#container-wide-body /* backw. compat only */
+{
+  position: absolute;
+  left: 0px;
+  width: 95%;
+  max-width: 100%;
+  margin-left:  20px;
+  margin-right: 20px;
+}
+
+#container-wide-body /* backw. compat only */
+{
+  top: 170px;
+  /* 140px; for drop-down tabs: 82px+20px+20p: to offset fixed content-header */
+  /* 165px; for tabs-on-box */
+}
+
+/* probably OBSOLETE */
+#container-wide-body.twotablevels, /* backw. compat only */
+#container-body.wide.twotablevels, /* DEBUG */
+.wide #container-body.twotablevels
+{
+  top: 170px; /* +25: to offset two rows of tabs */
+}
+
+#container-wide-body .widget /* backw. compat only */
+{
+  max-width: 300px;
+}
+
+#container-wide-body h4 /* backw. compat only */
+{
+  font-size: medium;
+  margin-bottom: -0.5ex;
+}
+
+#tabsTEST ul /* backw. compat only */
+{ z-index: 92; } /* 110 if want tabs over banner dropshadow, 90 if under */
+#tabsTEST ul+ul /* backw. compat only */
+{ z-index: 91; } /* 110 if want tabs over banner dropshadow, 90 if under */
+#block-dropshadow /* backw. compat only */
+{ z-index: 80; }
+#container-wide-body /* backw. compat only */
+/* { z-index: 25; } */
+   { z-index: -1; } 
+
+#tabsTEST /* backw. compat only */
+{
+  position: relative;
+  top: 0px;
+  margin-left:  20px;
+  margin-right: 20px;
+}
+
+#tabsTEST ul /* backw. compat only */
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  list-style-image: none;
+  list-style-type: none;
+  list-style: none;
+  margin:  -2px 0px 0px 5px;
+  padding: 0px 0px 0px 0px;
+}
+
+#tabsTEST li /* backw. compat only */
+{
+  float: left;
+  margin:  0px 2px 0px 0px;
+  padding: 0.5em 1em 0.2em 1em;
+  list-style: none;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #aaa;
+  background-color: #f0f3f4; /* same as block-banner */
+}
+
+#tabsTEST ul+ul li /* backw. compat only */
+{
+  padding-top: 2.3em;
+  background-color: #ded;
+}
+
+#tabsTEST li * /* backw. compat only */
+{
+  font-size: 95% ! important;
+}
+
+#tabsTEST a /* backw. compat only */
+{
+  font-weight: bold;
+}
+#tabsTEST ul+ul a /* backw. compat only */
+{
+  font-weight: normal ! important;
+}
+
+#tabsTEST #current /* backw. compat only */
+{
+  background-color: #fff ! important;
+}
+
+#tabsTEST #current a /* backw. compat only */
+{
+  color: #010101 ! important;
+  background-image: none ! important;
+}
+
+/* -- LOGGEDIN INFO BOXES --------- */
+
+#block-banner .loggedinTEST
+{
+  display: inline ! important;
+  position: absolute;
+  top:   5px; /* like padding in #div-banner-logo */
+  right: 27px;
+  float: none ! important;
+}
+
+#block-banner #div-banner-logo .loggedinTEST
+{
+  top:   0px;
+  right: 20px;
+}
+
+/* BUG FIX -- remove when possible */
+#div-banner-logo div[align='right']
+{
+  position: absolute ! important;
+  top:   0px;
+  right: 0px;
+}
+
+

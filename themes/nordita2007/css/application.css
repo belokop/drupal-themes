@@ -1,0 +1,72 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CSS/APPLICATION.CSS                                              */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2010-05-22                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* ---------------------------------------------------------------- */
+/* -- APPLICATION SCREEN CLASSES                                 -- */
+/*    Set in nav_paths as
+/*      $pagepath[]["bodyid"] = ["display"|"application"|"photos"|"minimalpage"]
+/*    Stored as $headerClass->config_bodyid
+/*    Then entered as <body id=''>
+/* ---------------------------------------------------------------- */
+
+html #application,
+body#application
+{
+  background-image: url(img/backdrop_pentaflakes_1200_yellow_mac.png);
+  /* background-image: none ! important; */
+}
+
+#application a:link:hover,
+#application a:link:active,
+#application a:link:focus,
+#application a:visited:hover,
+#application a:visited:active,
+#application a:visited:focus
+{
+  color: #c91;
+}
+
+#application .loggedin
+{
+  background-color: #f9f5df ! important;
+}
+
+#application #container-navigation
+{
+  position: fixed; /* wtr container-head */
+  top:   94px;
+  left:  0px;
+  right: auto;
+  width:  100%;
+  height: auto;
+}
+
+#application #backdrop-navigation
+{
+  background-color: #ffffd3;
+}
+
+#application #block-banner
+{
+  background-color: #f9f5df;
+  background-image: url(img/background-banner-yellow.png);
+}
+
+#application #container-navigation .menu li span a:hover
+{
+  color: #c91;
+}
+
+
+

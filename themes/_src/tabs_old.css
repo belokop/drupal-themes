@@ -1,0 +1,225 @@
+/* HVZM -----------
+
+CLASSES:
+  .tab
+  .tab.activeTab
+  .tab.nonactiveTab
+  .tabArea
+
+ID:
+  #tabs
+  #current
+  #left-white
+  #left-white-support
+
+media
+  /ABS/classes/img/bkg_blue.gif
+  /ABS/classes/img/bkg_snow.jpg
+  /ABS/classes/img/tabs_bg.gif
+  /ABS/classes/img/tabs_left.gif
+  /ABS/classes/img/tabs_left-on-line.gif
+  /ABS/classes/img/tabs_right.gif
+  /ABS/classes/img/tabs_right-on-line.gif
+  /ABS/classes/img/tabs_left-white.gif
+
+---------------- */
+
+/*
+ * settings for tabs_a.php
+ */
+
+a.tab, a.tab:visited {
+ text-decoration: none;
+ -moz-border-radius: .75em .75em 0em 0em;
+ border: 1px solid;
+ border-radius-topleft: .75em;
+ border-radius-topright: .75em;
+ border-right-width: 1px;
+ border-left-width: 1px;
+ border-top-width: 1px;
+ border-bottom-width: 0px;
+ color: white;
+ padding: 3px 1em 2px 1em;
+ position: relative;
+ z-index: 100;
+}
+
+a.tab.nonactiveTab, a.tab.nonactiveTab:hover, a.tab.nonactiveTab:visited {
+ background-image: url('../../classes/img/bkg_blue.gif');
+ border-color: white;
+ text-decoration: none;
+ -moz-border-radius: .75em .75em 0em 0em;
+ border: 1px solid;
+ border-radius-topleft: .75em;
+ border-radius-topright: .75em;
+ border-right-width: 1px;
+ border-left-width: 1px;
+ border-top-width: 1px;
+ border-bottom-width: 0px;
+ color: white;
+}
+
+a.tab.activeTab, a.tab.activeTab:hover, a.tab.activeTab:visited {
+ border-color: #002D6A;
+ background-image: url('../../classes/img/bkg_snow.jpg');
+ color: #002D6A;
+}
+
+a.tab:hover {
+ text-decoration: none;
+ -moz-border-radius: .75em .75em 0em 0em;
+ border: 1px solid;
+ border-radius-topleft: .75em;
+ border-radius-topright: .75em;
+ border-right-width: 1px;
+ border-left-width: 1px;
+ border-top-width: 1px;
+ border-bottom-width: 0px;
+ color: red;
+}
+
+div.tabArea {
+ text-align: center;
+ border: 0px solid  #002D6A;
+ border-bottom-width: 1px;
+}
+
+
+/*
+ * settings for tabs_div.php
+ * (crafted from Telestream, Inc. 2008)
+ */
+@charset "utf-8";
+
+#tabs {
+ background:url(../../classes/img/tabs_bg.gif) repeat-x scroll center bottom;
+ float:right; /*float:left;*/
+ font-size:85%;
+ line-height:.6em !important;
+ width:100%;
+ border-bottom:1px solid rgb(175,175,175);
+ position:relative;
+ top:-23px; /* positions the entire tab and background line up or down */
+ z-index:10;
+}
+#tabs ul {
+  list-style-image:none;
+  list-style-type:none;
+  list-style:none;
+ margin:0pt;
+ padding:0px 6px 0px 6px;
+ position:relative;
+ top:8px; /* positions the whole line of tabs up or down */
+}
+#tabs li {
+ background:transparent url(../../classes/img/tabs_left.gif) no-repeat scroll left top;
+ float:left;
+ margin:0pt;
+ padding:0 3px 0 9px; /* for adjusting spacing between all tabs - use combo of left here and left in header a to equal right side*/
+ position:relative;
+ top:-3px; /*controls depth of gray tabs */
+ line-height:.6em !important;
+ list-style:none;
+ z-index:0;
+}
+#tabs a {
+ background:transparent url(../../classes/img/tabs_right.gif) no-repeat scroll right top;
+ color:rgb(255,255,255);
+ display:block;
+/* font-weight:bold; */
+ padding:13px 12px 6px 4px; /* to adjust padding on words in gray tabs */
+ text-decoration:none;
+ outline: none;
+/* border:1px blue dotted;  */
+}
+#tabs a:hover {
+ color:rgb(60,80,80);
+}
+#current a:hover {
+ color:rgb(123,123,123);
+}
+#tabs #current { /* all about the current(selected) tab */
+ background:transparent url(../../classes/img/tabs_left-on-line.gif) no-repeat scroll left top;
+ padding-left:8px;
+ position:relative;
+ top:-7px;   /*controls the position of the white tab */
+/* border:1px solid green; */  /* YB */
+}
+
+#current a {
+ background:transparent url(../../classes/img/tabs_right-on-line.gif) no-repeat scroll right top;
+ color:rgb(123,123,123);
+ padding:16px 13px 3px 7px; /* to adjust padding on words in gray tabs */
+ height:12px;
+}
+li#left-white { /*for moving the tabs over from the left */
+ background:url(../../classes/img/tabs_left-white.gif);
+ width:0px;
+}
+li#left-white-support { /*for moving the tabs over from the left on the support section*/
+ background:url(../../classes/img/tabs_left-white.gif);
+ width:60px;
+}
+
+/*
+ * SU tabs
+ */
+#tabsSU {
+/*	position: absolute; */
+	position: relative; 
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 99;
+}
+#tabsSU ul {
+	margin: 0;
+	padding: 0 3px 0 5px;
+	float: left;
+	list-style: none;
+}
+#tabsSU li {
+	float: left;
+	margin: 0 1px 0 0; padding: 0;
+	list-style: none;
+}
+#tabsSU li a {
+	display: block;
+	background: url(../fysikum/css/img/tab-leftSU.gif) no-repeat 0 0;
+	padding: 0 0 0 6px;
+	color: #2A68A1;
+	text-decoration: none;
+}
+#tabsSU li a span {
+	display: block;
+	background: url(../fysikum/css/img/tab-rightSU.gif) no-repeat 100% 0;
+	padding: 7px 10px 6px 4px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #2A68A1;
+	font-size: 96%;
+}
+#tabsSU li a:hover, 
+#tabsSU li a:focus {
+	color: #047;
+}
+#tabsSU li a:hover, 
+#tabsSU li a:focus {
+	background-position: 0 -100px;
+}
+#tabsSU li a:hover span, body #tabsSU li a:focus span {
+	background-position: 100% -100px;
+}
+.focused #tabsSU li a {
+	background-position: 0 -200px;
+}
+.focused #tabsSU li a span {
+	background-position: 100% -200px;
+}
+#tabsSU li.active-tab a {
+	background-position: 0 -100px;
+}
+#tabsSU li.active-tab a span {
+	background-position: 100% -100px;
+	color: #047;
+}

@@ -1,0 +1,329 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CSS/DISPLAY.CSS                                                  */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2010-05-22                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* ---------------------------------------------------------------- */
+/* -- DISPLAY SCREEN CLASSES                                     -- */
+/*    Set in nav_paths as
+/*     $pagepath[]["bodyid"] = ["display"|"application"|"photos"|"minimalpage"]
+/*    Stored as $headerClass->config_bodyid
+/*    Then entered as <body id=''>
+/* ---------------------------------------------------------------- */
+
+html #display,
+body#display
+{
+  background-image: url(img/backdrop_pentaflakes_1200_mac.jpg); /* 'win' stronger */
+  /* background-image: none ! important; */
+}
+
+#display #appendix-pageextension,
+#display #backdrop-navigation,
+#display #backdrop-scrollprotect,
+#display #backdrop-menu,
+#display #block-skiptocontent,
+#display #container-navigation,
+#display #container-boxes,
+#display #block-colophon,
+#display #div-main-contentheading,
+#display #time th,
+#display #widget_banner_login
+{
+  display: none ! important;
+  visibility: hidden  ! important;
+  position: absolute;
+}
+
+/* left and right columns */
+
+#display #time
+{
+  float: right;
+  margin-left: 0em ! important;
+  margin-right: 0px ! important;
+}
+
+#display #apod
+{
+  float: right;
+  margin-left: 0em ! important;
+  margin-right: 0em ! important;
+}
+
+#display .end-column
+{
+  display: block;
+  visibility: hidden;
+  clear: both;
+  width: 100%;
+  height: 0em;
+  margin:  0em;
+  padding: 0em;
+  border-width:  0em;
+  background-color: transparent !important;
+}
+
+/* widths */
+
+#display #container-body-index,
+#display #container-body
+{
+  left: 20px;
+  width: 97% ! important;
+  max-width: none ! important;
+}
+
+#display #div-main-content
+{
+  width: 100% ! important;
+}
+
+#display #div-main-contentheading *
+{
+  width: 0px;
+  height: 0px;
+}
+
+#display .wide_col
+{
+  width: 620px;
+  margin-left: 0em;
+  margin-right: 10px ! important;
+}
+
+#display .medium_col
+{
+  width: 400px;
+  margin-left: 0px ! important;
+  margin-right: 0em ! important;
+  padding-right: 0px;
+}
+
+#display .narrow_col
+{
+  width: 200px;
+  margin-left: 0em;
+  margin-right: 10px ! important;
+  padding-right: 10px ! important;
+}
+
+#display #time,
+#display #displayprogram,
+#display #apod,
+#display #displaytip,
+#display #movienight
+{
+  width: 100% ! important;
+}
+
+
+#display #displayprogram th,
+#display .narrow_col #displayprogram td p:first-child,
+#display #time *,
+#display #apod *
+{
+  text-align: center;
+}
+
+#display .medium_col #displayprogram td p:first-child
+{
+  float: left;
+}
+
+#display .medium_col #displayprogram td p+p
+{
+  float: none;
+}
+
+#display #apod img
+{
+  margin-top:    10px;
+  margin-bottom: -5px;
+}
+
+#display #agenda td
+{
+  line-height: 1.2;
+  padding-bottom: 0.5em;
+}
+
+#display #agenda th
+{
+  line-height: 1.0;
+  padding-bottom: 0.2em;
+}
+
+#display #miniagenda
+{
+  line-height: 1.2;
+}
+
+#display #miniagenda dd
+{
+  padding-top: 7px;
+}
+
+#display #todaysvisitors ul
+{
+  margin-top:    0em;
+  margin-bottom: 0em;
+}
+
+#display #div-main-content h2
+{
+  margin: 0px 0px 0.5em 0px;
+}
+
+#display #displaytip ul
+{
+  margin-left: -1em;
+}
+
+/* font family and sizes */
+
+#display .medium_col *,
+#display .narrow_col *
+{
+  font-family: "Trebuchet MS","Trebuchet","Geneva","Arial","Helvetica",sans-serif;
+}
+
+#display #miniagenda .agenda-room,
+#display #miniagenda .agenda-speaker,
+#display #miniagenda .agenda-affiliation,
+#display #todaysvisitors td,
+#display #todaysvisitors td *,
+#display .smaller *
+{
+  font-size: medium ! important;
+}
+
+#display #apod td *,
+#display #displayprogram td,
+#display #displayprogram td *,
+#display #displaytip td,
+#display #displaytip td *,
+#display #movienight td,
+#display #movienight td *,
+
+#display #agenda .agenda-eventtype,
+#display #agenda .agenda-period,
+#display #agenda .agenda-category,
+#display #agenda .agenda-time,
+#display #agenda .agenda-room,
+#display #agenda .agenda-speaker,
+#display #agenda .agenda-affiliation,
+
+#display #miniagenda td,
+#display #miniagenda td *,
+#display #miniagenda .agenda-eventtype,
+#display #miniagenda .agenda-period,
+#display #miniagenda .agenda-category,
+#display #miniagenda .agenda-time
+{
+  font-size: large ! important;
+}
+
+#display #displayprogram th,
+#display #apod th,
+#display #time td *,
+#display #displaytip th,
+#display #movienight th,
+#display #agenda .agenda-title,
+#display #agenda .agenda-date,
+#display #miniagenda th,
+#display #miniagenda .agenda-title,
+#display #todaysvisitors th,
+#display #div-main-content h2
+{
+  font-size: x-large ! important;
+}
+
+#display #agenda th,
+#display #time strong
+{
+  font-size: xx-large ! important;
+  font-weight: bold;
+}
+
+/* images */
+
+#display #displaytip img,
+#display #movienight img
+{
+  max-height: 150px ! important;
+}
+
+/* borders */
+
+#display .widget_table tr th
+{
+  border-top: 1px solid #3b586e;
+}
+#display .widget_table tr:first-child th
+{
+  border-top-width: 0px;
+}
+
+#display .widget_table table tr.preamble td
+{
+  border-bottom: 1px solid black;
+}
+
+/* 'sixpack' block of images */
+
+#display #image p
+{
+  padding-bottom: 20px;
+}
+
+#display table#image
+{
+  margin-top: 11px ! important;
+}
+
+#display #image td
+{
+  border-width: 0px ! important;
+  margin: 0px ! important;
+}
+
+#display #image td img
+{
+  padding: 0px 20px 34px 0px ! important;
+}
+
+#display #image,
+#display #image img
+{
+  width: 400px;
+}
+
+/* DEBUG
+#display #container-body{border: 1px solid black;}
+#display #block_main{border: 10px solid green ! important;}
+#display #div-main-content{border: 1px solid red;}
+*/
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- BACKWARD COMPATIBILITY ONLY                                -- */
+
+#display #container-tabs /* backw. compat only */
+{
+  display: none ! important;
+  visibility: hidden  ! important;
+  position: absolute;
+}
+
+

@@ -1,0 +1,1066 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CSS/WIDGET.CSS                                                   */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2010-06-10                            */
+/*                                                                   */
+/* ================================================================= */
+
+#maildb_doorlabel *,
+.widget_table th
+{
+  font-family:
+    "Trebuchet MS",
+    "Calibri",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+.wiki_edit,
+.widget,
+.widget p
+{
+  display: block;
+  position: relative;
+  visibility: visible; /* 'visible' important for Safari */
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+  width:  auto;
+  height: auto;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip:     inherit ! important; /* important for safari */
+}
+
+.wiki_edit
+{ z-index: 150; } /* over #block-menu */
+
+.widget,
+.widget p
+{ z-index: 100 ! important; }
+
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- WIDGET                                                     -- */
+/* ---------------------------------------------------------------- */
+
+.widget
+{
+  width:  auto;
+  height: auto;
+  margin: 0px 0px 10px 0px;
+  padding: 5px 10px 2.5ex 10px;
+}
+
+#container-body       .widget,
+#container-index-body .widget
+{
+  max-width: 300px;
+}
+
+#container-index-boxes .widget
+{
+  max-width: 200px;
+}
+
+/* if you want to have the search form over the menu instead of over the widgets *//*
+#search
+{
+  position: fixed;
+  top:   120px; *//* container-navigation:top + 20px *//*
+  right: 55px;
+} */
+
+/* - - - - - - - - - - - - - - - -  */
+/* if you want a box around the entire widget *//*
+.widget
+{
+  border: 1px solid #3b586e ! important;
+  background-color: #feffff;
+}
+.widget h3
+{
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #3b586e;
+  background-color: #eeeff4;
+  text-align: center;
+} */
+/* - - - - - - - - - - - - - - - -  */
+
+/* - - - - - - - - - - - - - - - -  */
+/* if you want a bullet before the widget headlines *//*
+.widget h3:before
+{
+  content: url(img/pentaflake_14x14.png) "\00a0";
+  color: #3b586e;
+} */
+/* - - - - - - - - - - - - - - - -  */
+
+/* - - - - - - - - - - - - - - - -  */
+/* if you want a border around just the widget headlines */
+.widget h3
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #3b586e;
+  background-color: white; /* #eeeff4; */
+  text-align: center;
+}
+/* - - - - - - - - - - - - - - - -  */
+
+.widget h3
+{
+  font-size: medium;
+  width: 100%;
+  margin: -5px -10px -5px -10px;
+  padding: 5px 10px 5px 10px;
+}
+
+.widget h4 /* internal headline */
+{
+  /* font-size: small; */
+  margin-bottom: -0.3em; /* NOP? */
+}
+
+.widget p,
+.widget li,
+.widget dt,
+.widget dd,
+.widget td,
+.widget td *,
+.widget input,
+.widget th
+{
+  font-size: small; /* x-small; */
+  line-height: 1.2; /* default is set to 1.5 */
+}
+
+.widget ul,
+.widget ol,
+.widget dl,
+.widget p
+{
+  margin-bottom: -2ex;
+}
+.widget ul+p
+{
+  margin-top: 4ex;
+}
+.widget p+h4
+{
+  margin-top: 3ex;
+}
+.widget ul+h4
+{
+  margin-top: 3ex;
+}
+
+.widget dl+dl
+{
+  margin-top: 3ex ! important;
+}
+
+.widget p+p
+{
+  text-indent: 4ex;
+}
+
+.widget .free
+{
+  margin-top: 3ex ! important;
+  margin-bottom: -1ex ! important;
+}
+
+.widget .free,
+.widget .free+p
+{
+  text-indent: 0em;
+}
+
+.widget dd
+{
+  margin-left: 3ex ! important;
+}
+
+.widget li
+{
+  margin-left: -5ex;
+}
+
+img.floatleft,
+.widget img.floatleft
+{
+  float: left ! important;
+  margin: 1ex 2ex 0.5ex 0em;
+  border-width: 0px;
+}
+
+.widget img.floatright
+{
+  float: right ! important;
+  margin: 1ex 0em 0.5ex 2ex;
+  border-width: 0px;
+}
+
+.widget .seealso
+{
+  text-indent: 0px;
+  text-align: right;
+  white-space: nowrap;
+  margin: 15px -5px -10px 0px ! important;
+  padding: 0px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- WIDGET-TABLE                                               -- */
+/* ---------------------------------------------------------------- */
+
+.widget_table
+{
+  margin-bottom: 0px;
+}
+
+.widget_table table
+{
+  width: 100%;
+  margin:  0px 0px 2ex 0px;
+  padding: 0px;
+  border-spacing: 0px 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #3b586e;
+}
+
+.widget_table table th
+{
+  padding: 1px 8px 1px 8px;
+  text-align: left;
+  color: #013;
+  background-color: #eeeff4;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #3b586e;
+}
+
+.widget_table table td
+{
+  padding: 1px 8px 1px 8px;
+  text-align: left;
+  color: #333;
+  background-color: #f5f6f8;
+  border-width: 0px;
+  border-style: solid;
+  border-color: #3b586e;
+}
+
+.widget_table table td>td
+{
+  border-bottom-width: 1px;
+/* border-bottom-width: 0px ! important; */
+}
+
+.widget_table table p,
+.widget_table table dl
+{
+  margin: 0px;
+}
+
+.widget_table p,
+.widget_table li,
+.widget_table dt,
+.widget_table dd,
+.widget_table td,
+.widget_table td *,
+.widget_table input
+{
+  font-size: x-small;
+}
+
+.widget_table>p,
+.widget_table th
+{
+  font-size: small;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- LOCALINFO WIDGET                                           -- */
+/* ---------------------------------------------------------------- */
+
+#localinfo.widget
+{
+  border-width: 1px ! important;
+  border-style: solid;
+  border-color: #3b586e ! important;
+  background-color: #fee;
+}
+
+#localinfo.widget h3
+{
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #3b586e;
+  background-color: #fdd;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PROGRAM WIDGETS                                            -- */
+/* ---------------------------------------------------------------- */
+
+h2.program
+{
+  font-size: xx-large ! important;
+  border-style: solid;
+  border-width: 1px 0px 1px 0px;
+  border-color: #666;
+}
+.program .img
+{
+  position: absolute;
+  margin: 1.5em 10px 0px 0px;
+  float: left;
+}
+.program.widget img
+{
+  position: static;
+  margin: 1.5em 10px 0px 0px;
+  float: left;
+}
+.program .txt
+{
+  margin-left: 130px;
+  min-height: 120px;
+}
+.program .txt p
+{
+  margin-bottom: -0.5em;
+}
+.program.widget .txt
+{
+  margin-left: 0px;
+}
+
+#upcomingprogram.widget p,
+#upcomingworkshops.widget p
+{
+  text-indent: 0px;
+  margin-bottom: -0.5em;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- LOGGEDIN WIDGETS                                           -- */
+/* ---------------------------------------------------------------- */
+
+#widget_banner_login
+{
+  position: absolute; /* must have position set for z-index */
+  width:  auto;
+  top:   3px; /* 80px */
+  right: 3px; /* -10px */
+  height: auto;
+}
+
+#widget_loggedinas
+{
+  position: absolute; /* must have position set for z-index */
+  width:  auto;
+  top:   60px;
+  right: 0px;
+  height:  auto;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PARTICIPANT-TABLE WIDGET                                   -- */
+/* ---------------------------------------------------------------- */
+
+#participant_table table
+{
+  width: 100%;
+  margin:  0px 0px 2ex 0px;
+  padding: 0px;
+  border-spacing: 0px 0px;
+  border-width: 0px;
+}
+
+#participant_table th,
+#participant_table td
+{
+  width: 260px;
+  padding: 0px ! important;
+  background-color: transparent ! important;
+}
+
+#participant_table table p
+{
+  margin-bottom: 10px;
+}
+
+#participant_table table img
+{
+  border-width: 0px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- IMAGE WIDGET                                               -- */
+/* ---------------------------------------------------------------- */
+
+#image_widget
+{
+  width: 100%;
+  height: 600px;
+  border-width: 0px;
+  background-color: transparent ! important;
+  background-repeat: no-repeat;
+  margin:  0px;
+  padding: 0px ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- NEW STAFF WIDGET                                           -- */
+/* ---------------------------------------------------------------- */
+
+#newstaff p img
+{
+  margin-top: 1ex;
+  margin-bottom: -1ex;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- RECENT PREPRINTS WIDGET                                    -- */
+/* ---------------------------------------------------------------- */
+
+#recentpreprints em
+{
+  font-size: x-small; /* xx-small */
+}
+
+#recentpreprints p
+{
+  text-indent: 0em ! important;
+  margin-bottom: -0.5em ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PRESENTATION WIDGET                                        -- */
+/* ---------------------------------------------------------------- */
+
+#presentation.widget
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #3b586e;
+  background-color: #f5f6f8;
+  margin-bottom: 20px;
+}
+
+#presentation.widget>p:first-child,
+#presentation.widget ul+p
+{
+  margin-top: 0em;
+}
+
+#presentation.widget ul
+{
+  margin-bottom: 0.5ex;
+}
+
+#presentation.widget p
+{
+  text-indent: 0em ! important;
+}
+
+#presentation.widget p img
+{
+  margin: 2px auto 3px 0em ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- LOGIN WIDGET                                               -- */
+/* ---------------------------------------------------------------- */
+
+#login form input
+{
+  width: 15ex;
+}
+
+#login form *
+{
+  margin-top: 0px;
+}
+
+#login th span,
+#login th span a
+{
+  font-size: x-small;
+  font-weight: normal;
+}
+
+#login td
+{
+  border-width: 0px ! important;
+}
+
+#login th
+{
+  border-bottom-width: 0px ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- WIKI EDIT WIDGET                                           -- */
+/* ---------------------------------------------------------------- */
+
+.wiki_edit
+{
+  margin: 0px ! important;
+}
+
+#container-navigation .wiki_edit
+{
+  position: fixed;
+  right:  30px;
+  bottom: 10px;
+  width: 170px; /* safari doesn't like 200px */
+}
+
+#block-main .wiki_edit
+{
+  position: static ! important;
+  margin-left:  30px ! important;
+  margin-right: 30px ! important;
+}
+
+.wiki_edit p
+{
+  width: 100%;
+  height: auto;
+  margin: 0px ! important;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center ! important;
+  border-width: 1px ! important;
+  border-style: solid;
+  border-color: #3b586e ! important;
+  background-color: #f9eff4 ! important;
+}
+
+.wiki_edit a
+{
+  color: #05b ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- MAILDB SEARCH WIDGET                                       -- */
+/* ---------------------------------------------------------------- */
+
+/* Single user */
+
+#maildb_single.widget_table
+{
+  margin-top: 1.5em;
+}
+
+#maildb_single th,
+#maildb_single th *
+{
+  font-size: large;
+  font-weight: bold;
+}
+
+#maildb_single td dl,
+#maildb_single td img
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#maildb_single td dt
+{
+  margin-left: 0em;
+  font-size: x-small;
+  font-style: italic;
+}
+
+#maildb_single td dd
+{
+  margin-left: 2ex;
+}
+
+#maildb_single td dd,
+#maildb_single td dd *
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_single td dd a
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_single .trl-at-s,
+#maildb_single .trl-dot-s,
+#maildb_single .nop
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_single .trl-at-h,
+#maildb_single .trl-dot-h
+{
+  font-size: small;
+  font-weight: normal;
+}
+
+#maildb_single .footnote p
+{
+  font-size: x-small;
+  font-style: italic;
+}
+
+/* multiple user list (is a .widget_table) */
+
+#maildb_multiple td
+{
+  font-size: x-small;
+  font-style: normal;
+  vertical-align: top ! important;
+  padding-top: 1em;
+}
+
+#maildb_multiple td.name
+{
+  padding-top: 0.75em;
+}
+
+#maildb_multiple td img
+{
+  margin-top: -0.75em;
+}
+
+#maildb_multiple td.name,
+#maildb_multiple td.name *,
+#maildb_multiple td p,
+#maildb_multiple td p *
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_multiple td em
+{
+  font-size: x-small ! important;
+  font-weight: normal ! important;
+}
+
+/* multiple user chart */
+
+#maildb_chart td
+{
+  font-size: x-small;
+  font-style: normal;
+  vertical-align: top ! important;
+}
+
+#maildb_chart .fullname
+{
+  font-size: small ! important;
+  font-weight: bold;
+}
+
+#maildb_chart td p
+{
+  font-size: x-small ! important;
+  padding-bottom: 0.2em ! important;
+}
+
+#maildb_chart.widget_table table
+{
+  border-width: 0px ! important;
+}
+
+#maildb_chart.widget_table table *
+{
+  background-color: transparent;
+}
+
+/* doorlabel - - - - - - - - - - - - - - - */
+
+#maildb_doorlabel.labelclass1
+{
+  padding-top: 2mm;
+}
+#maildb_doorlabel.labelclass2,
+#maildb_doorlabel.labelclass3,
+#maildb_doorlabel.labelclass4
+{
+  padding-top: 2mm;
+}
+
+#maildb_doorlabel.labelclass1 table img
+{
+  width:  30mm ! important;
+  height: 40mm ! important;
+}
+
+#maildb_doorlabel.labelclass2 table img,
+#maildb_doorlabel.labelclass3 table img
+{
+  width:  27mm ! important;
+  height: 36mm ! important;
+}
+
+#maildb_doorlabel.labelclass4 table img
+{
+  width:  22.5mm ! important;
+  height: 30mm ! important;
+}
+
+#maildb_doorlabel.labelclass1 strong
+{
+  font-size: x-large ! important;
+}
+#maildb_doorlabel.labelclass1 em
+{
+  font-size: large ! important;
+}
+
+#maildb_doorlabel.labelclass2 strong
+{
+  font-size: large ! important;
+}
+#maildb_doorlabel.labelclass2 em
+{
+  font-size: medium ! important;
+}
+
+#maildb_doorlabel.labelclass3 strong,
+#maildb_doorlabel.labelclass4 strong
+{
+  font-size: medium ! important;
+  line-height: 20% ! important;
+}
+#maildb_doorlabel.labelclass3 em,
+#maildb_doorlabel.labelclass4 em
+{
+  font-size: small ! important;
+  line-height: 20% ! important;
+}
+
+#maildb_doorlabel.label
+{
+  position: relative;
+  width: 120mm ! important;
+  height: 60mm ! important;
+}
+
+#maildb_doorlabel.label div
+{
+  position: absolute;
+  z-index: 1 ! important;
+  top:  0px ! important;
+  left: 0px;
+  width: 120mm ! important;
+  height: 60mm ! important;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  overflow:hidden;
+}
+
+#maildb_doorlabel table
+{
+  position: relative;
+  z-index: 100 ! important;
+  border-width: 0px;
+  margin-left:  auto ! important;
+  margin-right: auto ! important;
+}
+
+#maildb_doorlabel.label p *
+{
+  font-size: medium ! important;
+}
+
+#maildb_doorlabel.labelclass1 td+td
+{
+  vertical-align: middle;
+  padding-left: 1em;
+}
+#maildb_doorlabel.labelclass2 td+td
+{
+  vertical-align: top;
+  padding-left: 4em;
+}
+#maildb_doorlabel.labelclass3 td+td
+{
+  vertical-align: top;
+  padding-left: 2em;
+}
+#maildb_doorlabel.labelclass4 td+td
+{
+  vertical-align: top;
+}
+
+#maildb_doorlabel.labelclass3 td
+{
+  padding-left: 1em ! important;
+  width: 33% ! important;
+}
+#maildb_doorlabel.labelclass4 td
+{
+  padding-left: 1em ! important;
+  width: 25% ! important;
+}
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- WIKITOGGLE WIDGET                                          -- */
+/* ---------------------------------------------------------------- */
+
+#wikitoggle td,
+#wikitoggle th
+{
+  font-size: x-small;
+  background-color: #f9eff4 ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- SEARCH WIDGET                                              -- */
+/* ---------------------------------------------------------------- */
+
+#search
+{
+  margin-top:  0px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+#search form *
+{
+  margin-top: 0px;
+}
+
+#search form input.textfield
+{
+  width: 15ex;
+  background-color: white;
+}
+
+#form_people_search
+{
+  margin-bottom: 30px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- APOD WIDGET                                                -- */
+/* ---------------------------------------------------------------- */
+
+#apod *
+{
+  text-align: center ! important;
+}
+
+#apod td img
+{
+  visibility: visible;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+#apod.widget_table table td
+{
+  border-bottom-width: 0px ! important;
+  background-color: #f5f6f8;
+}
+
+#apod.widget_table table tr>th
+{
+  border-top-color: transparent ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- AGENDA WIDGET                                              -- */
+/* ---------------------------------------------------------------- */
+
+/*
+#agenda td>td
+{
+  border-bottom-width: 0px ! important;
+}
+
+#agenda tr:first-child td
+{
+  border-width: 1px ! important;
+}
+
+#agenda tr>th
+{
+  border-top: 1px solid black ! important;
+}
+*/
+
+#agenda.widget_table table th
+{
+  width: 100%;
+  border-width: 1px 0px 1px 0px ! important;
+  border-style: solid;
+  border-color: #3b586e;
+}
+
+#agenda.widget_table tr:first-child th
+{
+  border-top-width: 0px;
+}
+
+#agenda.widget_table table td
+{
+  vertical-align: top;
+  background-color: white; /* #f5f6f8; */
+  line-height: 1.2;
+}
+#agenda.widget_table table tr.preamble td
+{
+  background-color: #ffe;
+  /* background-image: url(img/backdrop_pentaflakes_fbb.png);*/ /* #ffb; */
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+#agenda.widget_table dl+dl
+{
+  padding-top: 2ex;
+}
+#agenda.widget_table dt
+{
+  margin-bottom: 0.5ex;
+}
+#agenda.widget_table dd
+{
+  margin-left: 3ex;
+}
+
+#agenda td *
+{
+  font-size: small;
+}
+
+.widget_table .agenda-category
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+.widget_table .agenda-date,
+#miniagenda .agenda-date
+{
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.widget_table .agenda-time,
+#miniagenda .agenda-time,
+.widget_table .agenda-eventtype
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+.widget_table .agenda-room,
+#miniagenda .agenda-room
+{
+  font-weight: normal;
+  font-style: normal;
+}
+
+.widget_table .agenda-title,
+#miniagenda .agenda-title
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+.widget_table .agenda-speaker,
+#miniagenda .agenda-speaker,
+.widget_table .agenda-period
+{
+  font-weight: normal;
+  font-style: italic;
+}
+
+.widget_table .agenda-affiliation,
+#miniagenda .agenda-affiliation
+{
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* -- DISPLAY-PROGRAM WIDGET                                     -- */
+/* ---------------------------------------------------------------- */
+
+#displayprogram *
+{
+  text-align: center ! important;
+}
+
+#displayprogram img
+{
+  margin-top: 10px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- ARRIVING VISITORS WIDGETS                                  -- */
+/* ---------------------------------------------------------------- */
+
+#arrivingvisitors h4,
+#arrivingvisitors ul
+{
+  margin-left: 30px;
+}
+
+#todaysvisitors ul
+{
+  margin-left: -20px;
+}
+
+#arrivingvisitors h4,
+#todaysvisitors h4
+{
+  margin-bottom: -10px;
+}
+
+#todaysvisitors h4
+{
+  margin-top: 2px;
+}
+
+#arrivingvisitors .name,
+#todaysvisitors .name
+{
+  font-weight: bold;
+  font-style: italic;
+}
+
+#arrivingvisitors li
+{
+  font-size: small;
+}
+
+
+

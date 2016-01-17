@@ -1,0 +1,82 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CSS/WIKI.CSS                                                     */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2010-05-22                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* ---------------------------------------------------------------- */
+/* -- WIKI SCREEN CLASSES                                        -- */
+/*    For http://wiki.nordita.org
+/* ---------------------------------------------------------------- */
+
+/* #wiki specific */
+html #wiki,
+body#wiki
+{
+  /* background-image: url(img/backdrop_pentaflakes_1200_green.jpg) ! important; */
+  background-image: none ! important;
+}
+
+#wiki a:link:hover,
+#wiki a:visited:hover,
+#wiki a:link:focus,
+#wiki a:visited:focus
+{
+  color: #094;
+}
+
+#wiki .pagetitle
+{
+  color: #444;
+}
+#wiki .pagetitle em
+{
+  color: #999;
+}
+
+#wiki .loggedin
+{
+  background-color: #dec ! important;
+}
+
+/* #wiki specific */
+#wiki .editsection
+{
+  font-size: xx-small ! important;
+}
+
+#wiki #backdrop-navigation
+{
+  background-color: #e5f5d5;
+}
+
+#wiki #block-banner
+{
+  background-color: #dec;
+  background-image: url(img/background-banner-green.png);
+}
+
+#wiki #container-navigation #block-menu dt a:link:hover,
+#wiki #container-navigation #block-menu dt a:visited:hover,
+#wiki #container-navigation #block-menu dt a:link:focus,
+#wiki #container-navigation #block-menu dt a:visited:focus
+{
+  color: #094;
+}
+
+#wiki #block-menu .menu li span a:hover,
+#wiki #block-menu .menu li span a:focus
+{
+  color: #094;
+}
+
+
+

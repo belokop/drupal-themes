@@ -1,0 +1,89 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CSS/HVZM_CALENDAR.CSS                                            */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2010-05-16                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* ---------------------------------------------------------------- */
+/* --- OBSOLETE ---
+/* ---------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------- */
+/* -- CALENDAR SCREEN CLASSES                                    -- */
+/*    Set in nav_paths as
+/*     $pagepath[]["bodyid"] = ["display"|"application"|"photos"|"minimalpage"]
+/*    Stored as $headerClass->config_bodyid
+/*    Then entered as <body id=''>
+/* ---------------------------------------------------------------- */
+
+
+.hvzm_calendar
+{
+  border-width: 0px;
+}
+
+.hvzm_calendar *
+{
+  font-size: x-small;
+}
+
+.hvzm_calendar th *
+{
+  font-size: medium ! important;
+}
+
+.hvzm_calendar td
+{
+  background-color: #ccc;
+}
+
+.hvzm_calendar td.hvzm_weekend
+{
+  background-color: #e00;
+}
+
+.hvzm_calendar td.hvzm_travel
+{
+  background-color: #ae2;
+  text-align: center;
+}
+
+.hvzm_calendar th,
+.hvzm_calendar tr > td:first-child
+{
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.hvzm_calendar tr > th:first-child
+{
+  text-align: right;
+  padding-right: 1em;
+}
+
+.hvzm_calendar tr.hvzm_date td
+{
+  background-color: #fff;
+}
+
+.hvzm_calendar tr.hvzm_date td.hvzm_weekend,
+.hvzm_calendar tr.hvzm_date td.hvzm_weekend a
+{
+  color: #e00;
+  background-color: inherit;
+}
+
+.hvzm_calendar tr.hvzm_date td.hvzm_weekend a /* perhaps not necessary */
+{
+  font-weight: bold;
+}
+
+

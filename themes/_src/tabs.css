@@ -1,0 +1,91 @@
+
+.tabs, .primary { 
+    background:url(images/tabs_bg.gif) repeat-x scroll center bottom;
+    float:right; /*float:left;*/
+    font-size:85%;
+    border-width: 0px;
+    line-height:.6em !important;
+    width:100%;
+    border-bottom:1px solid rgb(175,175,175);
+    position:relative;
+    top:-23px; /* positions the entire tab and background line up or down */
+    z-index:10;
+}
+
+.tabs ul, 
+ul.primary li,
+ul.secondary li{
+    list-style-image:none;
+    list-style-type:none;
+    list-style:none;
+    margin:0pt;
+    padding:0px 6px 0px 6px;
+    position:relative;
+    top:4px; /* positions the whole line of tabs up or down */
+    border-width: 0px;
+}
+
+.tabs    ul  li.active a, 
+ul.primary   li.active a,
+ul.secondary li.active a{
+    background:transparent url(images/tabs_right-on-line.gif) no-repeat scroll right top;
+    color:rgb(123,123,123);
+    padding:16px 13px 3px 7px; /* to adjust padding on words in gray tabs */
+    height:12px;
+    border-width: 0px;
+}
+
+ul.secondary a{
+    font-style:italic;
+}
+
+.tabs li, ul.primary li {
+    background:transparent url(images/tabs_left.gif) no-repeat scroll left top;
+    float:left;
+    margin:0pt;
+    padding:0 3px 0 9px; /* for adjusting spacing between all tabs - use combo of left here and left in header a to equal right side*/
+    position:relative;
+    top:4px; /*controls depth of gray tabs */
+    line-height:.6em !important;
+    list-style:none;
+    z-index:0;
+}
+
+.tabs a, 
+ul.primary   li a, 
+ul.secondary li a{ 
+    background:transparent url(images/tabs_right.gif) no-repeat scroll right top;
+    border-width: 0px;
+    color:rgb(255,255,255);
+    display:block;
+    padding:13px 12px 6px 4px; /* to adjust padding on words in gray tabs */
+    text-decoration:none;
+    outline: none;
+/* border:1px blue dotted;  */
+}
+
+ul.primary   li a { font-weight: bold; }
+ul.secondary li a { font-weight:normal; }
+
+.tabs a:hover {
+    color:rgb(60,80,80);
+}
+.active a:hover {
+    color:rgb(123,123,123);
+}
+.tabs .active, ul.primary .active { /* all about the active(selected) tab */
+    background:transparent url(images/tabs_left-on-line.gif) no-repeat scroll left top;
+    padding-left:8px;
+    top:0px;   /*controls the position of the white tab */
+/* position:relative; */
+/* border:1px solid green; */  /* YB */
+}
+
+li.left-white { /*for moving the tabs over from the left */
+    background:url(images/tabs_left-white.gif);
+    width:0px;
+}
+li.left-white-support { /*for moving the tabs over from the left on the support section*/
+    background:url(images/tabs_left-white.gif);
+    width:60px;
+}
