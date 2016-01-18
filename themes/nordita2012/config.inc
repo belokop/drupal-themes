@@ -2,8 +2,8 @@
 /* 
  * Nordita template
  */
-$releaseDate = '2015-04-16';
-define('THEME_VERSION','2012-01.7');
+$releaseDate = '2012-01-16';
+define('THEME_VERSION','2.1');
 
 // Nordita theme works better with myPear module
 if (class_exists('myPear',False)){

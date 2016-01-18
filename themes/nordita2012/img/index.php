@@ -1,1 +1,1 @@
-../../../../modules/trunk/myPear/images/index.php
+../../../index.php
