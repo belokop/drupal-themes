@@ -1,4 +1,4 @@
-core = "7.x"
+core = 7.x
 name = Nordita
 description = Nordita
 project = "nordita"
@@ -14,4 +14,4 @@ stylesheets[all][]      = css/custom.css
 
 settings[nordita_mission] = ''
 
-version = 2012-01.7
+version = 7.x-2.1
