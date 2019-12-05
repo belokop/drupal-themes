@@ -1,0 +1,137 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CCS/SCREEN.CSS                                                   */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2011-07-03                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+/* ================================================================= */
+/* -- REGION DEBUG                                                -- */
+/* ================================================================= */
+
+/* ----------------------------------------------------------------- */
+/* -- NORDITA2011
+/* ----------------------------------------------------------------- */
+
+#container-viewport
+  { border: 1px solid black; }
+
+  #region-bartop,
+  #region-barright,
+  #region-barbottom,
+  #region-barleft
+    { border: 1px solid blue; }
+
+#container-fixed
+  { border: 1px solid fuchsia; }
+
+  #region-topmargin,
+  #region-banner,
+  #region-headlineleft,
+  #region-headlineright,
+  #region-top,
+  #region-columnleft
+    { border: 1px solid red; }
+
+#container-scrolled
+  { border: 1px solid teal; }
+
+  #region-headlinecenter,
+  #region-content,
+  #region-contentmedwide, /* legacy */
+  #region-contentwide, /* legacy */
+  #region-contenthighwide, /* legacy */
+  #region-columnright
+    { border: 1px solid green; }
+
+  #region-content .col-content-center,
+  #region-content .col-content-left,
+  #region-content .col-content-right
+    { border: 1px solid yellow; }
+
+    #block-backdropnavigation,
+    #block-bannerimage,
+    #block-breadcrumb,
+    #block-colophon,
+    #block-colophonaddress,
+    #block-colophonfootprint,
+    #block-contentheading,
+    #block-debugmenu,
+    #block-dropdown,
+    #block-dynside,
+    #block-feed,
+    #block-fixedimage,
+    #block-fixedsprite,
+    #block-fulltree,
+    #block-indexcolumns,
+    #block-leftimage,
+    #block-logininfo,
+    #block-logo,
+    #block-minimenu,
+    #block-sidebar,
+    #block-sidebarboxes,
+    #block-skiptocontent,
+    #block-subsiteheadline,
+    #block-subtree,
+    #block-tabalt,
+    #block-tabbox,
+    #block-tabs,
+    #block-topmenu,
+    #block-twotop
+      { border: 0px solid maroon; }
+
+/* ----------------------------------------------------------------- */
+/* -- NORDITA2007
+/* ----------------------------------------------------------------- */
+
+#container-head
+  { border: 1px solid black; }
+
+  #region-headtop,
+  #region-headbanner,
+  #region-info,
+  #region-tabs,
+  #region-buttons,
+  #region-tabbox
+    { border: 1px solid blue; }
+
+#container-navigation
+  { border: 1px solid fuchsia; }
+
+  #region-menu
+    { border: 1px solid red; }
+
+#container-body
+  { border: 1px solid teal; }
+
+  #region-main,
+  #region-colophon,
+  #region-utility,
+  #region-dropshadow
+    { border: 1px solid green; }
+
+  #region-main>*
+    { border: 1px solid yellow; }
+
+    #block-backdropnavigation,
+    #block-bannerlogo,
+    #block-colophonaddress,
+    #block-colophonfootprint,
+    #block-debugmenu,
+    #block-fulltree,
+    #block-logininfo,
+    #block-maincontent,
+    #block-maincontentheading,
+    #block-skiptocontent
+      { border: 0px solid maroon; }
+
+/* ================================================================= */
+

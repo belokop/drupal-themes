@@ -1,0 +1,36 @@
+.coll fieldset.collapsed {
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    height: 1em;
+    margin-bottom: 0;
+}
+.coll fieldset.collapsed * {
+    display: none;
+}
+.coll fieldset.collapsed legend {
+    display: block;
+}
+.coll fieldset.collapsible legend a {
+    background: url("./img/menu-expanded.png") no-repeat scroll 5px 75% transparent;
+    padding-left: 15px;
+}
+.coll fieldset.collapsed legend a {
+    background-image: url("./img/menu-collapsed.png");
+    background-position: 5px 50%;
+}
+* .coll fieldset.collapsed legend,
+* .coll fieldset.collapsed legend *,
+* .coll fieldset.collapsed table * {
+    display: inline;
+}
+.coll fieldset.collapsible {
+    position: relative;
+}
+.coll fieldset.collapsible legend a {
+    display: block;
+}
+.coll fieldset.collapsible .fieldset-wrapper {
+    overflow: auto;
+}
+

@@ -1,0 +1,68 @@
+/* ================================================================= */
+/*                                                                   */
+/* NOCSS_PRINT.CSS                                                   */
+/*                                                                   */
+/* Hans Mühlen / 2009-10-31 -- 2009-10-31                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+
+#appendix-pageextension,
+#region-headtop,
+.column-end,
+#div-banner-logo p+br,
+#div-banner-logo h1+br,
+#div-banner-logo h2+br,
+#region-headtop p,
+#appendix-pageextension,
+#agenda td img
+.display #appendix-pageextension,
+.display #backdrop-navigation,
+.display #backdrop-scrollprotect,
+.display #backdrop-sidemenu,
+.display #region-headtop,
+.display #container-navigation, /* legacy */
+.display #container-boxes, /* legacy */
+.display #region-colophon,
+.display #container-tabs, /* legacy */
+.display #div-main-contentheading,
+.display #time th,
+.display #div-banner-login,
+.display .column-end
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  width:  0px;
+  height: 0px;
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+}
+
+.hidden
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.only_print
+{
+  visibility: visible;
+}
+
+.only_online
+{
+  display: inline;
+  position: absolute;
+  visibility: hidden;
+}

@@ -1,0 +1,17 @@
+
+.medwide #region-content{
+/*
+  min-width: 780px;   make medwide smaller then the original 780px 
+  min-width: 666px !important;
+*/
+}
+
+#block-bannerimage-drp, #block-leftimage-drp {
+    height: 80px; 
+    background-image: url("./img/_splash/sprite-splash-sh.png");
+}
+
+#region-headlinecenter{ 
+    background-image:url("./img/backdrop_pentaflakes_1200_win.jpg");	
+}
+

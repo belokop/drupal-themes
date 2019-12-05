@@ -1,0 +1,16 @@
+core = "6.x"
+name = SH
+description = SH
+project = "sh"
+engine = phptemplate
+
+stylesheets[all][]      = css/screen2011.css
+stylesheets[all][]      = css/widget2011.css
+stylesheets[all][]      = css/screen2011_drupal.css
+stylesheets[print][]    = css/print2011.css
+stylesheets[handheld][] = css/handheld2011.css
+stylesheets[all][]      = css/custom.css
+
+settings[sh_mission] = ''
+
+version = 2012-01.7

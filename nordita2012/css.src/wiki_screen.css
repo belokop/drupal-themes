@@ -1,0 +1,942 @@
+/* ================================================================= */
+/*                                                                   */
+/* _CCS/WIKI_SCREEN.CSS                                              */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2011-12-11                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- REDEFINITION OF HTML ELEMENTS                               -- */
+/* ----------------------------------------------------------------- */
+
+/* force a scrollbar no matter the height of the content */
+html {
+  overflow-y: scroll;
+}
+
+body
+{
+  margin:  20px 0em 0em 0em;
+  padding: 0em 0em 0em 0em;
+  color:            #020;
+  background-repeat: no-repeat;
+  background-position: 60px 60px;
+  background-attachment: fixed;
+  background-color: #fdfffd;
+  background-image: none ! important;
+}
+
+
+h1
+{
+  color: #013;
+}
+
+h1 a img
+{
+  vertical-align: middle;
+}
+
+abbr
+{
+  text-decoration: inherit;
+  cursor: help;
+}
+
+a
+{
+  text-decoration: none;
+}
+a:link,
+a:link *
+{
+  color: #05b;
+}
+a:visited,
+a:visited *
+{
+  color: #038;
+}
+a:link:hover,
+a:link:focus,
+a:link:hover *,
+a:link:focus *,
+a:visited:hover,
+a:visited:focus,
+a:visited:hover *,
+a:visited:focus *
+{
+  color: #17f;
+}
+
+h2+p
+{
+  margin-top: 0.5em ! important;
+}
+
+dd
+{
+  margin-left: 3ex;
+}
+
+td,
+th
+{
+  text-align: left;
+  vertical-align: top;
+}
+th p,
+td p
+{
+  margin-top: 0px;
+}
+
+img
+{
+  border-width: 0px;
+}
+
+hr
+{
+  border-width: 0px;
+  border-top: 1px solid black;
+}
+
+form input,
+form input[type=file],
+form select,
+form textarea,
+form button
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #777;
+}
+
+form input.button
+{
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+form input[type=image]
+{
+  border-width: 0em ! important;
+}
+
+form input[type=submit],
+form input[type=reset],
+form input[type=button]
+{
+  font-size: x-small;
+  font-weight: bold;
+  color: #111;
+  background-color: #eeeff4;
+}
+
+form input[type=submit]:hover,
+form input[type=submit]:focus,
+form input[type=reset]:hover,
+form input[type=reset]:focus,
+form input[type=button]:hover,
+form input[type=button]:focus
+{
+  font-weight: bold;
+  color: #000;
+  background-color: #e0e3f4;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- TYPOGRAPHY -- */
+
+body
+{
+  font-size: 81.25%;
+  line-height: 1.5;
+  letter-spacing: 0em;
+}
+
+h1
+{
+  font-size: 2.8em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2
+{
+  font-size: 1.75em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-bottom: 0em;
+}
+
+h3
+{
+  font-size: 160%;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-bottom: 0px;
+}
+
+h4
+{
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 0px;
+}
+
+h5
+{
+  font-size: 1em;
+  line-height: 1.25;
+  margin-bottom: 0px;
+}
+
+h6
+{
+  font-size: 1em;
+  line-height: 1.25;
+  margin-bottom: 0px;
+}
+
+body,
+p,
+div,
+blockquote,
+form *,
+td, th,
+ol, ul, dl, li, dt, dd
+{
+  font-family:
+    "Candara",
+    "Corbel",
+    "Trebuchet MS",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+tt,
+pre,
+code,
+kbd
+{
+  font-family:
+    "Courier",
+    "Courier New",
+    monospace;
+}
+
+h1, h2, h3, h4, h5, h6,
+#container-navigation ul *
+{
+  font-family:
+    "Trebuchet MS",
+    "Calibri",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- DEFINITION OF GENERAL-PURPOSE CLASSES                       -- */
+/* ----------------------------------------------------------------- */
+
+/* -- VISIBILITY -- */
+
+.hidden
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+/* -- STYLE AND WEIGHT -- */
+
+.italic
+{
+  font-style: italic ! important;
+}
+.bold
+{
+  font-weight: bold ! important;
+}
+
+/* -- ERRORS -- */
+
+.red
+{
+  color: #700 ! important;
+}
+
+.green
+{
+  color: #070 ! important;
+}
+
+/* -- SIMULATION OF LINE BREAK -- */
+
+.only_online
+{
+  visibility: visible;
+}
+
+.only_print
+{
+  display: inline;
+  position: absolute;
+  visibility: hidden;
+}
+
+/* -- SIMULATION OF AT-CHARACTER -- */
+
+/* .snabela:before { content: "\0040"; } */
+.snabela:before { content: "\00A0@"; }
+
+/* -- WIKI-IMAGE CAPTIONS -- */
+
+.imagecaption
+{
+  margin: 0px;
+  font-style: italic;
+  font-size: small;
+}
+
+/* -- VARIA -- */
+
+.padcolumn
+{
+  padding-right: 20px;
+}
+
+.debug
+{
+  color: red;
+  background-color: yellow;
+}
+
+.shadow
+{
+-moz-box-shadow:    0px 3px 10px -2px #333;
+-webkit-box-shadow: 0px 3px 10px -2px #333;
+  box-shadow:       0px 3px 10px -2px #333;
+}
+
+/* -- BOXES -- */
+
+.box
+{
+  display: block;
+  margin:  1em 0em 1em 0em;
+  padding: 0em 1em 0em 1em ;
+}
+
+.box.larger dt strong
+{
+  font-size: larger ! important;
+}
+
+.grayborder
+{
+  border-width: medium;
+  border-style: solid;
+border-color: #ddd;
+color:            #000;
+background-color: #fafafa;
+}
+
+.blackborder
+{
+  border-width: thin;
+  border-style: solid;
+border-color: #000;
+color:            #000;
+background-color: #fff;
+}
+
+.roundborder
+{
+  border-width: thin;
+  border-style: solid;
+border-color: #ddd;
+color:            #000;
+background-color: #fff;
+  -moz-border-radius:    8px 8px 8px 8px;
+  -webkit-border-top-left-radius:     8px;
+  -webkit-border-top-right-radius:    8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius:  8px;
+  border-radius: 8px 8px  8px 8px;
+}
+
+/* -- LOGGEDIN WIDGETS -- */
+
+#widget_banner_login
+{
+  position: absolute; /* must have position set for z-index */
+  width:  auto;
+  top:   3px; /* 80px */
+  right: 3px; /* -10px */
+  height: auto;
+}
+
+#widget_loggedinas
+{
+  position: absolute; /* must have position set for z-index */
+  width:  auto;
+  top:   60px;
+  right: 0px;
+  height:  auto;
+}
+
+/* -- LOGIN WIDGET -- */
+
+#login form input
+{
+  width: 15ex;
+}
+
+#login form *
+{
+  margin-top: 0px;
+}
+
+#login th span,
+#login th span a
+{
+  font-size: x-small;
+  font-weight: normal;
+}
+
+#login td
+{
+  border-width: 0px ! important;
+}
+
+#login th
+{
+  border-bottom-width: 0px ! important;
+}
+
+/* -- WIKI SPECIFIC -- */
+
+.pagetitle
+{
+  color: #444;
+}
+.pagetitle em
+{
+  font-size: 0.4em;
+  color: #999;
+}
+
+/* -- */
+
+.loggedin
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #999;
+  margin-top: 0px ! important;
+  padding: 0.5em 0.5em 0.5em 0.75em;
+  background-color: #dec ! important;
+}
+.loggedin strong,
+.loggedin b
+{
+  color: #224 ! important;
+}
+
+/* -- */
+
+.wiki_edit
+{
+  margin: 0px ! important;
+}
+
+#container-navigation .wiki_edit
+{
+  position: fixed;
+  right:  30px;
+  bottom: 10px;
+  width: 170px; /* safari doesn't like 200px */
+}
+
+#block-main .wiki_edit
+{
+  position: static ! important;
+  margin-left:  30px ! important;
+  margin-right: 30px ! important;
+}
+
+.wiki_edit p
+{
+  width: 100%;
+  height: auto;
+  margin: 0px ! important;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center ! important;
+  border-width: 1px ! important;
+  border-style: solid;
+  border-color: #3b586e ! important;
+  background-color: #f9eff4 ! important;
+}
+
+.wiki_edit a
+{
+  color: #05b ! important;
+}
+
+/* -- */
+
+#wiki .editsection
+{
+  font-size: xx-small ! important;
+}
+
+#wiki #editpage-copywarn *
+{
+  font-size:xx-small ! important;
+}
+
+/* -- */
+
+#wikitoggle td,
+#wikitoggle th
+{
+  font-size: x-small;
+  background-color: #f9eff4 ! important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- POSITIONING OF LAYOUT ELEMENTS                              -- */
+/* ----------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------- */
+/* -- GIVE LAYOUT ELEMENTS DEFAULT POSITIONING DATA ---------------- */
+
+#backdrop-navigation,
+#block-banner,
+#block-main,
+#container-body,
+#container-head,
+#container-navigation,
+.block-menu,
+#div-banner-logo,
+#div-main-contentheading,
+#div-main-content,
+#index-content,
+.index-left-column,
+.index-middle-column,
+.index-right-column,
+.column-left,
+.column-right,
+.column-end
+{
+  display: block;
+  position: relative;
+  visibility: visible; /* 'visible' important for Safari */
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+  width:  auto;
+  height: auto;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip:     inherit ! important; /* important for safari */
+}
+
+
+#backdrop-scrollprotect,
+#appendix-pageextension,
+#block-skiptocontent,
+#block-colophon,
+#div-colophon-address,
+#div-colophon-footprint
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  width:  0px;
+  height: 0px;
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- STACKING ORDER ----------------------------------------------- */
+
+#div-banner-logo,
+#div-colophon-address
+{ z-index: auto; } /* TODO sortera in */
+
+#block-skiptocontent
+{ z-index: 999999; } /* over #block-banner */
+
+#div-colophon-footprint
+{ z-index: 110; } /* over #block-banner */
+
+#block-banner
+{ z-index: 100 ! important; }
+
+#container-head
+{ z-index: 70; } /* over all backdrops */
+
+#backdrop-scrollprotect
+{ z-index: 55; }
+
+#container-navigation
+{ z-index: 50; }
+
+#backdrop-navigation
+{ z-index: 30; }
+
+#container-body
+{ z-index: 25; }
+
+#block-main,
+#block-colophon,
+#div-main-contentheading,
+#div-main-content
+{ z-index: 20; }
+
+#appendix-pageextension
+{ z-index: 1; }
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- LAYOUT CONTAINERS                                           -- */
+
+/* -- CONTAINER HEAD ----------------------------------------------- */
+
+#container-head
+{
+  position: fixed;
+  top:  10px; /* offset 10px from top of viewport */
+  left: 0px;
+  width:  100%;
+  height: auto; /* must not be bigger than ~100px not to cover tabs */
+xborder:1px solid red;
+}
+
+/* -- CONTAINER NAVIGATION ----------------------------------------- */
+
+#container-navigation
+{
+  position: fixed; /* wtr container-head */
+  top:   125px;
+  right: 35px;
+  width:  170px;
+  height: 100%;
+  color: #013;
+  background-color: transparent;
+xborder:1px solid red;
+}
+
+/* -- CONTAINER BODY ----------------------------------------------- */
+
+#container-body
+{
+  position: absolute;
+  top: 120px; /* 82px+13px: to offset fixed content-header */
+  left: 20px;
+  width:     650px; /* not too long lines for readability */
+  max-width: 70%;
+xborder:1px solid red;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- LAYOUT BLOCKS                                               -- */
+
+/* -- BLOCK-BANNER ------------------------------------------------- */
+
+#block-banner
+{
+  position: relative; /* must have position set for z-index */
+  top: 0px;
+  width:  auto;
+  height:  70px;
+  margin-left:  20px;
+  margin-right: 20px;
+  padding: 7px;
+  color: #013;
+  background-color: #dec;
+  border-width: 1px;
+  border-bottom-width: 1px; /* mysko buggfix */
+  border-style: solid;
+  border-color: #3b586e;
+  background-image: url("./img/_backgrounds/banner_green.png");
+  background-repeat: no-repeat;
+}
+
+/* -- BLOCK-MAIN --------------------------------------------------- */
+
+/* strange bugfix; needed for ff/win to counter mysterious float behaviour */
+#block-main
+{
+  border-width: 1px! important;
+  border-style: solid ! important;
+  border-color: transparent ! important;
+}
+
+/* -- BLOCK-MENU ------------------------------------------------- */
+
+#block-menu
+{
+  position: relative;
+}
+
+.menu li
+{
+  margin-left: -1em;
+  list-style-image: url("./img/arrow_right.png");
+}
+
+/* -- BLOCK-COLOPHON ----------------------------------------------- */
+
+#block-colophon
+{
+  margin: 30px 0em 2ex 0em;
+  border-width: 0.5px 0px 0px 0px;
+  border-style: solid;
+  border-color: #013;
+}
+
+/* -- BACKDROP-NAVIGATION ------------------------------------------ */
+
+#backdrop-navigation
+{
+  position: fixed;
+  top:    0px; /* if backdrop should continue under the banner */
+  top:  113px; /* = like #container-body; if backdrop should top-align with page content */
+  right: 20px;
+  width:  200px;
+  height: 100%;
+  background-color: #e5f5d5;
+-moz-border-radius:    12px 12px 0px 0px;
+-webkit-border-radius: 12px 12px 0px 0px;
+  border-radius:       12px 12px 0px 0px;
+  opacity: 0.6; /* MAC: 0.4; WIN: 0.6; */
+}
+
+/* -- BACKDROP-SCROLLPROTECT --------------------------------------- */
+
+/* backdrop-scrollprotect only needed if #block-banner doesn't cover 100% width */
+#backdrop-scrollprotect
+{
+  display: block;
+  position: fixed;
+  visibility: visible; /* 'visible' important for Safari */
+  top:    0px;
+  bottom: auto;
+  left:   0px;
+  right:  auto;
+  width:  100%;
+  height: 90px;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip: inherit ! important; /* important for safari */
+background-color: #fdfdff; /* background under banner; must not be transparent */
+}
+
+/* -- APPENDIX-PAGEEXTENSION -------------------------------------- */
+
+#appendix-pageextension
+{
+  display: block;
+  position: absolute;
+  visibility: visible;
+  overflow: hidden;
+  clear: both;
+  top:    auto;
+  bottom: -0.1px;
+  left:   auto;
+  right:  auto;
+  width: 10%;
+  height: 1px;
+  margin:  0em;
+  padding: 0em;
+  border-width: 0em;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+/* -- PROPERTIES OF NON-LAYOUT ELEMENTS                           -- */
+/* ----------------------------------------------------------------- */
+
+/* -- DIV-BANNER-LOGO ---------------------------------------------- */
+/* -- Nonwrappable content of #block-banner                       -- */
+
+#div-banner-logo
+{
+  white-space: nowrap ! important;
+  overflow: hidden; /* problems in Opera for two-line <h2> */
+}
+
+#div-banner-logo p  /* -- LOGO IMAGE -- */
+{
+  display: inline ! important;
+  position: relative;
+  float: none ! important;
+  top: 5px;
+  margin-left: 43px;
+}
+
+#div-banner-logo h1 /* -- TEXT "NORDITA" -- */
+{
+  display: inline ! important;
+  position: relative;
+  float: none ! important;
+  bottom: 8px;
+  margin-left: 20px;
+  font-family: "Baskerville", "Times", "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 50px ! important; /* 6.5ex; */
+  line-height: 1.0 ! important;
+}
+
+#div-banner-logo a
+{
+  text-decoration: none;
+color: #013;
+  background-color: transparent;
+}
+
+#div-banner-logo h2 /* -- TEXT "Nordic institute..." -- */
+{
+  display: inline ! important;
+  position: relative;
+  float: none ! important;
+  bottom: 8px;
+  margin-left: 20px;
+  font-family: "Times", "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 21px ! important;
+  line-height: 1.0 ! important;
+}
+
+#div-banner-logo h2 span
+{
+  position: absolute;
+  top: -1em;
+  left: 0px;
+}
+
+/* bugfix */
+#div-banner-logo h2 br
+{
+  position: absolute;
+  bottom: 1em;
+}
+
+/* -- DIV-MAIN-CONTENT --------------------------------------------- */
+
+#div-main-content h2
+{
+color: #013;
+}
+
+/* -- DIV-COLOPHON-ADDRESS ----------------------------------------- */
+
+#div-colophon-address
+{
+  position: relative;
+  width: 100%;
+  top:  0px;
+  left: 0px;
+  margin: 0px 0em 2ex 0em;
+}
+
+#div-colophon-address *
+{
+  font-size: x-small;
+}
+
+#div-colophon-address address
+{
+  margin: 0em 0em -2ex 0em; /* no blank line between address and cookie policy link */
+  padding-top: 10px;
+}
+
+/* -- DIV-COLOPHON-FOOTPRINT --------------------------------------- */
+
+#div-colophon-footprint
+{
+  position: absolute;
+  width: 100px ! important; /* otherwise address cannot be selected with mouse */
+  top: 10px;
+  right: 0px;
+  text-align: right;
+}
+
+#div-colophon-footprint *
+{
+  font-size: x-small;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* -- BACKWARD COMPATIBILITY ONLY                                -- */
+
+
+/* BUG FIX -- remove when possible */
+#div-banner-logo div[align='right']
+{
+  position: absolute ! important;
+  top:   0px;
+  right: 0px;
+}
+

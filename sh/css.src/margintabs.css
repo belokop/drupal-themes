@@ -1,0 +1,253 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/MARGINTABS.CSS                                               */
+/*                                                                   */
+/* Hans Mühlen / 2007-XX-XX -- 2011-08-20                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+@media print
+{
+   #block-margintabs {
+     display: none ! important;
+     visibility: hidden ! important;
+   }
+}
+
+/* ----------------------------------------------------------------- */
+/* -- BOX STRUCTURE                                               -- */
+/* -----------------------------------------------------------------
+
+  block-margintabs
+	  toggle-<xxx>select
+
+*/
+
+/* ----------------------------------------------------------------- */
+/* -- IMPORTED STYLE SHEETS ---------------------------------------- */
+/* ----------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------------- */
+/* -- POSITIONING                                                 -- */
+/* ----------------------------------------------------------------- */
+
+#block-margintabs,
+#block-margintoggle
+{
+  display: block;
+  position: relative;
+  visibility: visible;
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+  width:  auto;
+  height: auto;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip:     auto;
+}
+
+.margintab
+{
+  display: block;
+  visibility: visible;
+  position: fixed;
+  overflow: hidden;
+  clear: both;
+  top:    auto;
+  right:  auto;
+  bottom: auto;
+  left:   auto;
+  margin:  0ex;
+  padding: 0ex;
+}
+
+#region-headbanner .margintab,
+#region-barright .margintab
+{
+  right:  0;
+  min-width: 1.8ex;
+  margin:  0ex -1px 0ex 0ex;
+  padding: 1ex 1ex 1ex 1ex;
+  border-top:    2px;
+  border-right:  0;
+  border-bottom: 2px;
+  border-left:   2px;
+  border-style: solid;
+  border-color: #ccc;
+  text-align: right;
+  vertical-align: top;
+}
+
+#region-barbottom .margintab
+{
+  bottom:  0;
+  min-height: 1.8ex;
+  margin:  0ex 0ex -1px 0ex;
+  padding: 0.5ex 1ex 0.5ex 1ex;
+  border-top:    2px;
+  border-right:  2px;
+  border-bottom: 0;
+  border-left:   2px;
+  border-style: solid;
+  border-color: #ccc;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- STACKING ORDER                                              -- */
+/* ----------------------------------------------------------------- */
+
+#block-margintabs
+{ z-index: 200 ! important; }
+
+/* ---------------------------------------------------------------- */
+/* -- TABS FOR STYLE SHEET SELECTION                             -- */
+/* ---------------------------------------------------------------- */
+
+/* one letter = 3ex */
+
+#region-barbottom a
+{ color: #333; }
+
+/* right margin */
+
+#toggle-frontselect      { bottom: 32ex; }
+#toggle-researchselect   { bottom: 25ex; }
+#toggle-menuselect       { bottom: 16ex; }
+#toggle-themeselect      { bottom: 7ex;  }
+
+#toggle-frontselect     { background-color: #8b9; }
+#toggle-researchselect  { background-color: #b98; }
+#toggle-menuselect      { background-color: #897; }
+#toggle-themeselect     { background-color: #886; }
+
+#toggle-frontselect a,
+#toggle-researchselect a,
+#toggle-menuselect a,
+#toggle-themeselect a
+{ color: #f7f7ff; }
+
+/* bottom margin */
+
+#toggle-nostartpageboxes { right: 74.7em; }
+#toggle-minimenu         { right: 77.6em; }
+#toggle-leftimage        { right: 63.5em; }
+#toggle-bannerimage      { right: 52.4em; }
+#toggle-miniicons        { right: 39.6em; }
+#toggle-screenresolution { right: 25.6em; }
+#toggle-regionborders    { right: 17.6em; }
+#toggle-debugmenu        { right: 8.5em;  }
+
+#region-barbottom #toggle-minimenu,
+#region-barbottom #toggle-leftimage,
+#region-barbottom #toggle-bannerimage,
+#region-barbottom #toggle-miniicons
+{ background-color: #b98; }
+
+#region-barbottom #toggle-nostartpageboxes,
+#region-barbottom #toggle-screenresolution,
+#region-barbottom #toggle-regionborders,
+#region-barbottom #toggle-debugmenu
+{ background-color: #f6f5cf; }
+
+#toggle-minimenu a,
+#toggle-leftimage a,
+#toggle-bannerimage a,
+#toggle-miniicons a
+{ color: #f7f7ff; }
+
+#toggle-nostartpageboxes a,
+#toggle-screenresolution a,
+#toggle-regionborders a,
+#toggle-debugmenu a
+{ color: #333; }
+
+/* ----------------------------------------------------------------- */
+/* -- ROUNDED CORNERS                                             -- */
+/* ----------------------------------------------------------------- */
+
+#region-headbanner .margintab,
+#region-barright .margintab
+{
+  border-radius: 10px 0 0 10px;
+}
+#region-barbottom .margintab
+{
+  border-radius: 10px 10px 0 0;
+}
+
+.menu .menu
+{
+  opacity: 0.9;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- DEFINITION OF OTHER BOX PROPERTIES                          -- */
+/* ----------------------------------------------------------------- */
+
+.margintab
+{
+  font-size: x-small;
+}
+
+.margintab,
+.margintab a,
+.style-item
+{
+  font-family: "Courier","Courier New",monospace; /* "Verdana","Geneva","Arial",sans-serif; */
+  font-size: 11px; /* 10px; */
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.margintab dl,
+.margintab dt,
+.margintab dd,
+.margintab ul
+{
+  width: auto;
+  margin:  0;
+  padding: 0;
+}
+
+.margintab ul
+{
+  list-style-type: none;
+}
+
+.margintab a
+{
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.margintab em
+{
+  font-style: italic;
+  font-weight: bold;
+}
+
+.style-rubrik
+{
+  display: none;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.style-item:before { content: ""; }
+.style-item:after  { content: ""; }
+
+
+

@@ -1,0 +1,1 @@
+../_src/detect_front_page.inc

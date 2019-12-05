@@ -1,0 +1,108 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/PLAIN.CSS                                                    */
+/*                                                                   */
+/* Hans Mühlen / 2011-02-08 -- 2011-02-08                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+body
+{
+  margin:  0em 0em 0em 0em;
+  padding: 0em 0em 0em 0em;
+  font-size: 81.25%;
+  line-height: 1.5;
+  letter-spacing: 0em;
+}
+
+h1
+{
+  font-size: 2.0em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2
+{
+  font-size: 1.75em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-bottom: 0em;
+}
+
+h3
+{
+  font-size: 1.5em;
+  line-height: 1.0;
+  letter-spacing: 0.05em;
+  margin-bottom: 0px;
+}
+
+td,
+th
+{
+  text-align: left;
+  vertical-align: top;
+}
+
+body,
+p,
+div,
+blockquote,
+form *,
+td, th,
+ol, ul, dl, li, dt, dd
+{
+  font-family:
+    "Candara",
+    "Corbel",
+    "Trebuchet MS",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  font-family:
+    "Trebuchet MS",
+    "Calibri",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+.hidden
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.only_online
+{
+  visibility: visible;
+}
+
+.only_print
+{
+  display: inline;
+  position: absolute;
+  visibility: hidden;
+}
+
+
+

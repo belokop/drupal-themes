@@ -1,0 +1,1 @@
+../detect_front_page.inc

@@ -1,0 +1,126 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/2011/CALENDAR.CSS                                             */
+/*                                                                   */
+/* Hans Mühlen / 2012-09-20 -- 2012-09-21                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+/* ---------------------------------------------------------------- */
+/* --                                                            -- */
+/* ---------------------------------------------------------------- */
+
+.calgrid,
+.calgrid th,
+.calgrid td
+{
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  font-size: x-small;
+  padding: 0px;
+}
+.calgrid .blank,
+.calgrid .endofmonth
+{
+  background-color: white;
+}
+.calgrid
+{
+  border-spacing: 0px;
+}
+.calgrid .weekend
+{
+  color: red;
+  font-weight: bold;
+}
+.calbox .title
+{
+  font-weight: bold;
+}
+.calbox
+{
+  margin-top: 1em;
+}
+.calbox div
+{
+  position: relative;
+  left: 0px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  margin-bottom: -20px;
+}
+.calbox p
+{
+  position: relative;
+  margin: 0px 0px -0.3em 30px;
+}
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- Vertical grid                                              -- */
+/* ---------------------------------------------------------------- */
+
+.gridyear
+{
+  float: left;
+  margin-right: 20px;
+}
+.calgrid.vertical  .endofmonth
+{
+  border-bottom: 3px solid black;
+}
+.calgrid.vertical
+{
+  border-width: 3px 2px 3px 3px;
+}
+.calgrid.vertical  th
+{
+  border-width: 0px 1px 2px 0px;
+}
+.calgrid.vertical  td
+{
+  width: 20px;
+  border-width: 0px 1px 0px 0px;
+}
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- Horizontal grid                                            -- */
+/* ---------------------------------------------------------------- */
+
+.calgrid.horizontal
+{
+  width: 100%;
+}
+.calgrid.horizontal .endofmonth
+{
+  border-left: 3px solid black;
+}
+.calgrid.horizontal
+{
+  border-width: 3px 3px 2px 3px;
+}
+.calgrid.horizontal th
+{
+  width: 30px;
+  border-width: 0px 3px 1px 0px;
+}
+.calgrid.horizontal td
+{
+  border-width: 0px 0px 1px 0px;
+}
+

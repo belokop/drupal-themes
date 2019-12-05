@@ -1,0 +1,2957 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/WIDGET.CSS                                                    */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2013-01-14                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- WIDGET
+/* ---------------------------------------------------------------- */
+
+.widget,
+.widget p
+{
+  display: block;
+  position: relative;
+  visibility: visible;
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+  width:  auto;
+  height: auto;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip: inherit ! important;
+}
+
+.widget
+{
+  width:  auto;
+  max-width: 300px;
+  height: auto;
+  margin: 0 0 10px 0;
+  padding: 5px 10px 2.5ex 10px;
+  z-index: 100 ! important;
+-moz-box-shadow:    0 3px 10px -2px transparent;
+-webkit-box-shadow: 0 3px 10px -2px transparent;
+  box-shadow:       0 3px 10px -2px transparent;
+}
+
+.widget h3
+{
+  width: 100%;
+  margin: -5px -10px -5px -10px;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #3b586e;
+  background-color: white;
+-moz-box-shadow:    0 3px 10px -2px #333;
+-webkit-box-shadow: 0 3px 10px -2px #333;
+  box-shadow:       0 3px 10px -2px #333;
+  font-size: medium;
+  text-transform: uppercase;
+}
+
+.widget h4
+{
+  margin-bottom: -0.3em;
+} /* internal headline */
+
+.widget p
+{
+  z-index: 100 ! important;
+}
+
+.widget p,
+.widget li,
+.widget dt,
+.widget dd,
+.widget td,
+.widget td *,
+.widget input,
+.widget th
+{
+  font-size: small;
+  line-height: 1.2;
+}
+
+.widget ul,
+.widget ol,
+.widget dl,
+.widget p
+{
+  margin-bottom: -2ex;
+}
+.widget ul+p
+{
+  margin-top: 4ex;
+}
+.widget p+h4
+{
+  margin-top: 3ex;
+}
+.widget ul+h4
+{
+  margin-top: 3ex;
+}
+
+.widget dl+dl
+{
+  margin-top: 3ex ! important;
+}
+
+.widget p+p
+{
+  text-indent: 4ex;
+}
+
+.widget .free
+{
+  margin-top: 3ex ! important;
+  margin-bottom: -1ex ! important;
+}
+
+.widget .free,
+.widget .free+p
+{
+  text-indent: 0;
+}
+
+.widget dd
+{
+  margin-left: 3ex ! important;
+}
+
+.widget li
+{
+  margin-left: -1.5em;
+}
+
+img.floatleft,
+.widget img.floatleft
+{
+  float: left ! important;
+  margin: 1ex 2ex 0.5ex 0;
+  border-width: 0;
+}
+
+img.floatright,
+.widget img.floatright
+{
+  float: right ! important;
+  margin: 1ex 0 0.5ex 2ex;
+  border-width: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- WIDGET-TABLE
+/* ---------------------------------------------------------------- */
+
+/* in PHP code, called by:
+     event::outputAgendaTable(...)
+     widget::Wapod($class="widget_table") in widget::WentranceAuxColumns()
+     event::outputCurrentEventEntrance() in widget::Wentrance()
+     event::outputColloquiumWidget() in widget::Wentrance()
+     widget::WarrivingVisitors() in widget::Wentrance() and several 'this_week' pages
+     widget::WoutputWikiPage($intable=true)
+     widget::WdisplayTip() in widget::Wentrance()
+     widget::WdisplayTime() in widget::Wentrance()
+     widget::WparticipantPhotos()
+     widget::WprogramsIntroListTest() in widget::WstartboxEvents()
+*/
+
+.widget_table
+{
+  margin-bottom: 0;
+}
+
+.widget_table table
+{
+  width: 100%;
+  margin:  0 0 2ex 0;
+  padding: 0;
+  border-spacing: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #3b586e;
+}
+
+.widget_table table th
+{
+  padding: 1px 8px 1px 8px;
+  text-align: left;
+  color: #013;
+  background-color: #eeeff4;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #3b586e;
+  line-height: 1.0;
+  font-family:
+    "Trebuchet MS",
+    "Calibri",
+    "Verdana",
+    "Geneva",
+    "Arial",
+    "Helvetica",
+    sans-serif;
+}
+
+.widget_table table td
+{
+  padding: 1px 8px 1px 8px;
+  text-align: left;
+  color: #333;
+  background-color: #f5f6f8;
+  border-width: 0;
+  border-style: solid;
+  border-color: #3b586e;
+  opacity: 0.8;
+}
+
+.widget_table table td>td
+{
+  border-bottom-width: 1px;
+}
+
+.widget_table table p,
+.widget_table table dl
+{
+  margin: 0;
+}
+
+.widget_table p,
+.widget_table li,
+.widget_table dt,
+.widget_table dd,
+.widget_table td,
+.widget_table td *,
+.widget_table input
+{
+  font-size: x-small;
+}
+
+.widget_table>p,
+.widget_table th
+{
+  font-size: small;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- WIKI-TABLE
+/* ---------------------------------------------------------------- */
+
+/* seems not to be used in PHP code */
+/* used in wiki texts for eg. committee listings:
+   People_Director,
+   People_Advisory_Committee,
+   People_Program_Committee */
+
+.infocards table
+{
+  width: 100%;
+  margin:  0 0 1em 0;
+  padding: 0;
+  border-spacing: 0;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: #3b586e;
+}
+
+.infocards h2
+{
+  padding: 1.2em 0 0.5em 0 ! important;
+  clear: both;
+}
+
+.infocards h3
+{
+  padding: 0.2em 0 0.5em 0 ! important;
+}
+.infocards table+h3
+{
+  margin-top: 0em ! important;
+}
+
+.infocards th
+{
+  padding: 1px 8px 1px 8px;
+  text-align: left;
+  color: #013;
+  background-color: #eeeff4;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: #3b586e;
+  line-height: 1.0;
+}
+
+.infocards td
+{
+  padding: 1px 8px 1px 8px;
+  text-align: left;
+  color: #333;
+  background-color: #f5f6f8;
+  border-width: 0;
+  border-style: solid;
+  border-color: #3b586e;
+  opacity: 0.8;
+}
+
+.infocards td>td
+{
+  border-bottom-width: 1px;
+}
+
+.infocards p,
+.infocards dl
+{
+  margin: 0;
+}
+
+.infocards p,
+.infocards li,
+.infocards dt,
+.infocards dd,
+.infocards td,
+.infocards td em,
+.infocards td strong,
+.infocards input
+{
+  font-size: 1.0em !  important;
+}
+
+.infocards table>p,
+.infocards th
+{
+  font-size: 1.4em ! important;
+}
+
+.infocards .suppleant
+{
+  font-weight: normal;
+  font-style: italic;
+  font-size: smaller;
+}
+.infocards .suppleant:before
+{
+  content: "\00A0\00A0";
+}
+
+/* ---------------------------------------------------------------- */
+/* -- SEEALSO CLASS
+/* ---------------------------------------------------------------- */
+
+.seealso
+{
+  position: relative;
+  right: 0;
+  left: auto;
+  width: inherit;
+  margin-top: 0.5em ! important;
+  text-indent: 0;
+  text-align: right;
+  font-weight: normal;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.seealso.dots { margin-right: 1.0em; }
+.dots:after   { content: "..."; font-weight: normal; font-style: normal; color: #999; }
+
+/* ---------------------------------------------------------------- */
+/* -- CURRENT EVENT WIDGET
+/* ---------------------------------------------------------------- */
+
+#currentevent>p
+{
+  margin-bottom: -1em;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- UPCOMING EVENTS WIDGET
+/* ---------------------------------------------------------------- */
+
+#upcomingprogram>p,
+#upcomingworkshops>p
+{
+  text-indent: 0;
+  margin-bottom: -0.5em;
+}
+
+.acc-item>#upcomingprogram>p,
+.acc-item>#upcomingworkshops>p
+{
+  text-indent: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 0 ! important;
+}
+.acc-item>#upcomingprogram>p+p,
+.acc-item>#upcomingworkshops>p+p
+{
+  border-top: 2px dotted #ccc;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PARTICIPANT TABLE WIDGET
+/* ---------------------------------------------------------------- */
+
+h2+#participant_table
+{
+  margin-top: 2em;
+}
+
+#participant_table table
+{
+  width: 100%;
+  margin:  0 0 1em 0;
+  padding: 0;
+  border-spacing: 0;
+  border-width: 0;
+}
+
+#participant_table th,
+#participant_table td
+{
+  width: 260px;
+  padding: 0 ! important;
+  background-color: transparent ! important;
+}
+
+#participant_table p.name
+{
+  margin-bottom: 10px;
+  font-size: 1em ;
+  font-weight: bold;
+  color: black;
+}
+
+#participant_table table img
+{
+  border-width: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- NEW STAFF WIDGET
+/* ---------------------------------------------------------------- */
+
+.acc-item>#newstaff>ul>li
+{
+  margin-left: -1.5em ! important;
+}
+
+#newstaff p img
+{
+  margin-top: 1ex;
+  margin-bottom: -1ex;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- RECENT PREPRINTS WIDGET
+/* ---------------------------------------------------------------- */
+
+.samplebox #recentpreprints
+{
+  line-height: 1.2em ! important;
+}
+
+#recentpreprints>p
+{
+  text-indent: 0 ! important;
+  margin-bottom: -0.5em ! important;
+}
+.samplebox #recentpreprints p
+{
+  margin-bottom: -0.7em ! important;
+}
+.samplebox #recentpreprints p+.seealso
+{
+  margin-top: 1.5em ! important;
+}
+
+.acc-item #recentpreprints p
+{
+  text-indent: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 0 ! important;
+}
+.acc-item #recentpreprints p+p
+{
+  border-top: 2px dotted #ccc ! important;
+}
+
+.samplebox #recentpreprints .field
+{
+  font-style: italic;
+  text-indent: 0 ! important;
+}
+
+.samplebox #recentpreprints .title
+{
+  font-size: 1.0em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#recentpreprints .journal
+{
+  display: block;
+  font-style: italic;
+  font-size: x-small;
+  line-height: 1.0;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+.samplebox .journal
+{
+  font-size: 0.84em ! important;
+  font-style: italic;
+}
+
+#recentpreprints.modest p
+{
+  margin-left: 5px;
+  margin-right: 5px;
+  line-height: 1.3em;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PREPRINTS LINK
+/* ---------------------------------------------------------------- */
+
+/* essentially obsolete; see layout.php, block-columnleft
+#preprintslink a
+{
+  color: black;
+} */
+
+/* ---------------------------------------------------------------- */
+/* -- PREPRINT SAMPLE WIDGET
+/* ---------------------------------------------------------------- */
+
+/* in widget::WfromPreprintArchive()
+#preprintsample
+{
+}
+*/
+
+/* ---------------------------------------------------------------- */
+/* -- LOGIN WIDGET
+/* ---------------------------------------------------------------- */
+
+#login form input
+{
+  width: 15ex;
+}
+
+#login form *
+{
+  margin-top: 0;
+}
+
+#login th span,
+#login th span a
+{
+  font-size: x-small;
+  font-weight: normal;
+}
+
+#login td
+{
+  border-width: 0 ! important;
+}
+
+#login th
+{
+  border-bottom-width: 0 ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- MAILDB_SINGLE WIDGET                                       -- */
+/* ---------------------------------------------------------------- */
+
+#maildb_single.widget_table
+{
+  margin-top: 1.5em;
+}
+
+#maildb_single th,
+#maildb_single th *
+{
+  font-size: large;
+  font-weight: bold;
+}
+
+#maildb_single td dl,
+#maildb_single td img
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#maildb_single td dt
+{
+  margin-left: 0;
+  font-size: x-small;
+  font-style: italic;
+}
+
+#maildb_single td dd
+{
+  margin-left: 2ex;
+}
+
+#maildb_single td dd,
+#maildb_single td dd *
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_single td dd a
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_single .trl-s,
+#maildb_single .nop
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_single .trl-h
+{
+  font-size: small;
+  font-weight: normal;
+}
+
+#maildb_single .footnote p
+{
+  font-size: x-small;
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- MAILDB_MULTIPLE WIDGET                                     -- */
+/* ---------------------------------------------------------------- */
+
+#maildb_multiple h2+table
+{
+  margin-top: 01em;
+}
+
+#maildb_multiple th
+{
+  font-size: 1em;
+  line-height: 1.0;
+  vertical-align: top ! important;
+  padding: 2px 0.5em 2px 0;
+  color: #555;
+  background-color: white ! important;
+}
+
+#maildb_multiple td
+/*,#maildb_multiple td strong*/
+{
+  font-size: 1em;
+  font-style: normal;
+  line-height: 1.1;
+  vertical-align: top ! important;
+  padding: 0.5em 5em 0.5em 0;
+  border-top: 1px solid #ccc;
+}
+
+#maildb_multiple th:first-child,
+#maildb_multiple td:first-child
+{
+  width: 63px ! important;
+  margin:  0;
+  padding: 0;
+}
+#maildb_multiple td:first-child
+{
+  background-color: #ccc;
+}
+#maildb_multiple th:first-child+th,
+#maildb_multiple td:first-child+td
+{
+  padding-left: 10px ! important;
+}
+
+#maildb_multiple td.name
+{
+  padding-top: 0.75em;
+}
+
+#maildb_multiple td .nop
+{
+  font-size: 1em;
+}
+
+#maildb_multiple td img
+{
+  margin: 10px 10px 5px 5px ! important;
+}
+
+#maildb_multiple td.name,
+#maildb_multiple td.name *,
+#maildb_multiple td p,
+#maildb_multiple td p *
+{
+  font-size: small;
+  font-weight: bold;
+}
+
+#maildb_multiple td em
+{
+  font-size: x-small ! important;
+  font-weight: normal ! important;
+}
+
+#maildb_multiple td span.qry
+{
+  font-size: inherit ! important;
+  background-color: #ff0;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PROGRAM WIDGETS                                            -- */
+/* ---------------------------------------------------------------- */
+
+h2.program
+{
+  font-size: xx-large ! important;
+  border-style: solid;
+  border-width: 1px 0 1px 0;
+  border-color: #666;
+}
+
+h2.program+div.program
+{
+  margin-top: 1em;
+}
+
+div.program>h4
+{
+  margin-bottom: 0.5em;
+}
+
+div.program>h4:first-child
+{
+  margin-top: 1em ! important;
+}
+
+.program.compact h4
+{
+  margin-bottom: -1em;
+}
+
+.program .img
+{
+  position: absolute;
+  margin: 0.5em 10px 0 0;
+  float: left;
+}
+.program.compact .img
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+.program.widget img
+{
+  position: static;
+  margin: 1.5em 10px 0 0;
+  float: left;
+}
+
+.program .txt
+{
+  margin-left: 130px;
+  min-height: 120px;
+}
+.program.compact .txt
+{
+  margin-left: 1em;
+  min-height: 0;
+}
+.program .txt p
+{
+  margin-bottom: -0.5em;
+}
+.program.compact .txt p
+{
+  margin-bottom: -1em;
+}
+.program.widget .txt
+{
+  margin-left: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- EVENT LIST WIDGET                                          -- */
+/* ---------------------------------------------------------------- */
+
+.eventlist
+{
+  display: block;
+  position: relative;
+}
+
+.eventlist .widebox
+{
+  margin-bottom: 3em;
+}
+
+.eventlist h2
+{
+  text-transform: none ! important;
+}
+
+.eventlist h3
+{
+  margin: 1em 0 1em 0;
+  padding: 3px 0 3px 0 ! important;
+  font-size: 1.6em;
+  text-align: center;
+  background-color: #eee;
+  border-style: solid;
+  border-width: 1px 0 1px 0;
+  border-color: #666;
+-moz-box-shadow:    0 10px 10px -10px #333;
+-webkit-box-shadow: 0 10px 10px -10px #333;
+  box-shadow:       0 10px 10px -10px #333;
+} /*
+  box-shadow: same as .shadow
+  */
+
+/* ---------------------------------------------------------------- */
+/* -- EVENT BOX WIDGET                                           -- */
+/* ---------------------------------------------------------------- */
+
+.event-box
+{
+  display: block;
+  margin:  1em 0 1em 0;
+  padding: 0;
+  line-height: 1.2em ! important;
+}
+
+.event-box.widebox
+{
+  margin: 1em 3em 3em 3em;
+}
+
+.event-box.widebox+.event-box.widebox
+{
+  margin: -1.5em 3em 3em 3em ! important;
+}
+
+.event-box .col
+{
+  margin-left: 130px;
+}
+.event-box.compact .col
+{
+  margin-left: 1em;
+  min-height: 0;
+}
+.event-box .col p
+{
+  margin-bottom: -0.5em;
+}
+.event-box.compact .col p
+{
+  margin-bottom: -1em;
+}
+
+.event-box h4,
+.event-box+.event-box
+{
+  clear: both;
+  margin: 1.5em 0 0.3em 0 ! important;
+}
+
+.event-box .innertitle
+{
+  font-weight: bold;
+  font-size: 1.1em ! important;
+  line-height: 1.1em ! important;
+}
+
+.event-box .eventtype
+{
+  margin-bottom: -1.0em ! important;
+  font-style: italic;
+}
+
+.event-box .videos+.videos
+{
+  margin-top: 0 ! important;
+}
+.event-box .videos
+{
+  margin-bottom: 0 ! important;
+}
+.event-box .videos:before
+{
+  content: "\00BB\00A0";
+}
+
+.event-box .dates
+{
+  font-weight: bold;
+}
+
+.event-box .videoblurb
+{
+  width: 60%;
+  font-style: italic;
+}
+
+.event-box .description
+{
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+.event-box .img
+{
+  position: absolute;
+  min-height: 103px;
+  margin: 0.5em 10px 0 0;
+  float: left;
+}
+.event-box.compact .img,
+.event-box.compact .blurb
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.event-box .photos
+{
+  font-style: italic;
+}
+
+.event-box .subbox
+{
+  min-height: 90px;
+  margin: 25px 0 0 10px;
+  padding: 10px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #999;
+  color:        #000;
+  background-color: #fff;
+-moz-box-shadow:    0 10px 10px -10px #333;
+-webkit-box-shadow: 0 10px 10px -10px #333;
+  box-shadow:       0 10px 10px -10px #333;
+-moz-border-radius:    8px 8px 8px 8px;
+-webkit-border-radius: 8px 8px 8px 8px;
+  border-radius:       8px 8px 8px 8px;
+} /*
+  box-shadow: same as .shadow
+  */
+.event-box .subbox a
+{
+  font-weight: bold;
+}
+.event-box .subbox .img
+{
+  display: block;
+  position: relative;
+  float: left;
+  top:    -25px;
+  left:   -20px;
+  margin-bottom: -15px;
+  background-color: #fff;
+}
+.event-box .subbox .img img
+{
+  border-bottom: 1px solid #999;
+-moz-box-shadow:    0 10px 10px -10px #333;
+-webkit-box-shadow: 0 10px 10px -10px #333;
+  box-shadow:       0 10px 10px -10px #333;
+} /*
+  box-shadow: same as .shadow
+  */
+.event-box .subbox .col
+{
+  margin-left: 115px;
+}
+.event-box .subbox .blurb
+{
+  clear: both;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- EVENT CLIP CLASS                                           -- */
+/* ---------------------------------------------------------------- */
+
+.event-clip
+{
+  min-height: 100px;
+  margin-left: 10px;
+  margin-top: 20px ! important;
+}
+
+.event-clip .title
+{
+  margin: 0 0 -0.5em 0;
+  font-size: 1.2em ! important;
+  line-height: 1.1 ! important;
+  font-weight: bold;
+}
+.event-clip .duration,
+.event-clip .count
+{
+  margin-bottom: -1em;
+}
+
+.event-clip .title,
+.event-clip .duration,
+.event-clip .count
+{
+  margin-left: 140px;
+}
+
+.event-clip .image
+{
+  position: absolute;
+  width: 120px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- EVENT COMPACT CLASS                                        -- */
+/* ---------------------------------------------------------------- */
+
+.event-compact p
+{
+  margin-bottom: -1.0em ! important;
+  margin-left: 1em;
+}
+
+.event-compact .eventurl
+{
+  margin-bottom: 0 ! important;
+}
+
+.event-compact .eventtype
+{
+  display: inline;
+  font-style: italic;
+}
+
+.event-compact .dates
+{
+  display: inline;
+  font-weight: bold;
+}
+
+.event-compact .coordinators
+{
+  display: block;
+  margin-top: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PROGRAM BOX WIDGET                                         -- */
+/* ---------------------------------------------------------------- */
+
+.program-box
+{
+  display: block;
+  margin:  1em 0 1em 0;
+  padding: 0 1em 0 1em;
+  background-color: #fff;
+}
+
+.program-box>h4
+{
+  margin-bottom: 0.5em;
+}
+
+.program-box>h4:first-child
+{
+  margin-top: 1em ! important;
+}
+
+.program-box.compact h4
+{
+  margin-bottom: -1em;
+}
+
+.program-box .img
+{
+  position: absolute;
+  margin: 0.5em 10px 0 0;
+  float: left;
+}
+.program-box.compact .img
+{
+  display: none;
+  position: absolute;
+  visibility: hidden;
+}
+.program-box.widget img
+{
+  position: static;
+  margin: 1.5em 10px 0 0;
+  float: left;
+}
+
+.program-box .txt
+{
+  margin-left: 130px;
+  min-height: 120px;
+}
+.program-box.compact .txt
+{
+  margin-left: 1em;
+  min-height: 0;
+}
+.program-box .txt p
+{
+  margin-bottom: -0.5em;
+}
+.program-box.compact .txt p
+{
+  margin-bottom: -1em;
+}
+.program-box.widget .txt
+{
+  margin-left: 0;
+}
+
+.program-box .txt
+{
+  border-width: thin;
+  border-style: solid;
+  border-color: #999;
+  color:        #000;
+-moz-box-shadow:    0 10px 10px -10px #333;
+-webkit-box-shadow: 0 10px 10px -10px #333;
+  box-shadow:       0 10px 10px -10px #333;
+  background-color: #fff;
+-moz-border-radius:    8px 8px 8px 8px;
+-webkit-border-radius: 8px 8px 8px 8px;
+  border-radius:       8px 8px 8px 8px;
+} /*
+  box-shadow: same as .shadow
+  */
+
+/* ---------------------------------------------------------------- */
+/* -- PROGRAM CHECKLIST (in wiki page Organizers_checklist       -- */
+/* ---------------------------------------------------------------- */
+
+.programchecklist
+{
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+.programchecklist h2+table
+{
+  margin-bottom: 4em;
+}
+.programchecklist thead h2
+{
+  margin: 5px 0 10px 0;
+  padding: 2em 0 0 0;
+}
+.programchecklist tbody h2,
+.programchecklist .alert
+{
+  margin: 0 0 0 0;
+  padding: 0.5em ! important;
+  color: red ! important;
+  background-color: #eee;
+  border: 1px solid red;
+}
+.programchecklist .alert
+{
+  margin-top: 0.5em;
+}
+.programchecklist th
+{
+  padding-left: 5px;
+  background-color: #aaa;
+}
+.programchecklist tbody td
+{
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+}
+.programchecklist tbody td+td
+{
+  width: 33%;
+}
+.programchecklist tbody td:first-child
+{
+  border-bottom-width: 0;
+  width: 20px ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PEOPLE BOX WIDGET                                          -- */
+/* ---------------------------------------------------------------- */
+
+.people-box
+{
+  padding: 0.5em 0.5em 0.5em 0;
+  color: #333;
+  line-height: 1.1 ! important;
+  vertical-align: top ! important;
+}
+
+.people-box.standalone
+{
+  margin: 2.0em 0 2.0em 0;
+}
+.people-box.standalone p
+{
+  margin: 0 0 0.5em 0;
+}
+
+.people-box .fullname
+{
+  font-size: 1.2em ! important;
+  font-weight: bold;
+}
+.people-box .title
+{
+  font-weight: bold;
+}
+
+.people-box .text
+{
+  line-height: 1.3 ! important;
+}
+
+.people-box .img
+{
+  display: block;
+  position: relative;
+  float: left;
+}
+.people-box.medium .img
+{
+  top:    -15px;
+  left:   -10px;
+}
+.people-box.large .img
+{
+  top:    -25px;
+  left:   -20px;
+}
+
+.people-box.small .img+div
+{
+  left: 52px;
+  margin-left: 52px;
+} /* image 48x48 */
+.people-box.medium .img+div
+{
+  left: 88px;
+  margin-left: 88px;
+} /* image 88x113 */
+.people-box.large .img+div
+{
+  left: 190px;
+  margin-left: 190px;
+} /* image 188x250 */
+
+.people-box h2
+{
+  margin: 0.5em 0 1.0em 0 ! important;
+  font-weight: bold ! important;
+}
+
+.people-box p,
+.people-box dl,
+.people-box ul
+{
+  margin: 0 0 0.5em 0;
+}
+
+.people-box
+{
+  background-color: #fff;
+}
+.people-box.nop
+{
+  background-color: transparent;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PEOPLE SINGLE WIDGET                                       -- */
+/* ---------------------------------------------------------------- */
+
+#people-user
+{
+  margin-left: 20px;
+  margin-bottom: 4em;
+}
+
+#people-user td
+{
+  width: 150px;
+  padding-right: 25px;
+}
+
+#people-user dl
+{
+  line-height: 1.3em;
+  font-size: 1.0em ! important;
+}
+
+#people-user dt
+{
+  margin-top: 4px;
+  font-style: italic;
+}
+#people-user dd
+{
+  margin-left: 1.0em;
+}
+
+#people-user .leaveofabsence
+{
+  margin-top: -0.5em ! important;
+  margin-bottom: 1.0em;
+  font-style: italic;
+}
+
+#people-user .email
+{
+  font-weight: bold;
+  font-style: italic;
+}
+#people-user .homepage
+{
+  font-weight: bold;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PEOPLE SINGLE WIDGET, CV                                   -- */
+/* ---------------------------------------------------------------- */
+
+.cvitem
+{
+  padding-left: 40px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PEOPLE LIST WIDGET                                         -- */
+/* ---------------------------------------------------------------- */
+
+#people-list
+{
+  margin-bottom: 4em;
+}
+
+#people-list h2
+{
+  margin-top: 2em;
+  padding-top: 1em;
+  width: 780px ! important;
+  border-top: 1px solid black;
+}
+#people-list h3
+{
+  width: 50% ! important;
+  margin-bottom: 1em ! important;
+  padding: 3px 10px 3px 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  font-size: 1.4em;
+  font-weight: normal;
+}
+
+#people-list td span.qry
+{
+  background-color: #ff0;
+}
+
+#people-list .fullname
+{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#people-list .title
+{
+  font-weight: bold;
+}
+#people-list .group
+{
+  font-style: italic;
+}
+#people-list .email
+{
+  font-weight: bold;
+  font-style: italic;
+}
+#people-list .homepage
+{
+  font-weight: bold;
+}
+
+#people-list h2+.cv
+{
+  margin-top: 1em;
+}
+#people-list .cv p
+{
+  margin: 0;
+}
+#people-list .cv p+p
+{
+  text-indent: 2em;
+}
+#people-list .cv .fullname
+{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#people-list .cv .title
+{
+  font-size: 1.2em;
+  font-weight: normal;
+}
+#people-list .cv .title:before
+{
+  content: "\2003\2014\2003";
+}
+#people-list .cv .img
+{
+  float: right;
+  margin: 0 0 1.5em 1.5em;
+}
+
+#people-list h2+table.list
+{
+  margin-top: 1.5em ! important;
+}
+#people-list h3+table.list
+{
+  margin-top: 1em;
+}
+#people-list table.chart+h2
+{
+  margin-top: 2em;
+}
+#people-list div.chart+h2
+{
+  margin-top: 2em;
+}
+#people-list table.list+h3
+{
+  margin-top: 0;
+}
+#people-list table.chart+h3
+{
+  margin-top: 0.5em;
+}
+#people-list div.chart+h3
+{
+  margin-top: 0.5em;
+}
+#people-list h3+div.chart
+{
+  margin-top: 20px;
+}
+
+#people-list table.list
+{
+  width:   780px;
+  margin-bottom: 1em;
+  border-spacing: 0;
+}
+#people-list table.chart
+{
+  width:   810px;
+  margin:  0 0 -1em -10px;
+  border-collapse: separate;
+  border-spacing: 20px 20px;
+}
+#people-list div.chart.news
+{
+  margin:  0 0 1em 10px;
+}
+#people-list div.chart
+{
+  width:   780px;
+  margin:  0 0 -1em 10px;
+  border-collapse: separate;
+  border-spacing: 20px 20px;
+}
+#people-list table.box
+{
+  max-width:   350px;
+  border-spacing: 0;
+}
+
+#people-list table.list th,
+#people-list table.box th
+{
+  line-height: 1.0;
+}
+#people-list table.list td,
+#people-list table.box td
+{
+  padding: 0.5em 5px 0.5em 0;
+  text-align: left;
+  vertical-align: top ! important;
+  opacity: 0.8;
+  border-bottom: 1px dotted #999;
+  line-height: 1.2;
+}
+#people-list table.chart td
+{
+  width: 260px ! important;
+  height: 170px;
+  min-height: 170px;
+} /*
+  min-height: NOP?
+  */
+#people-list div.chart.news .people-box
+{
+  width: 350px ! important;
+  margin-right: 25px;
+}
+#people-list div.chart .people-box
+{
+  float: left;
+  width: 235px ! important;
+  min-height: 170px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+} /*
+  height: auto
+  */
+
+#people-list table.list td:first-child,
+#people-list table.box td:first-child
+{
+  width: 63px ! important;
+  margin:  0;
+  padding: 0;
+}
+#people-list table.list td:first-child+td,
+#people-list table.box td:first-child+td
+{
+  padding-left: 10px ! important;
+}
+#people-list table.list tr:first-child>td,
+#people-list table.box tr:first-child>td
+{
+  border-top: 1px dotted #999;
+}
+
+#people-list table.list td.name,
+#people-list table.box td.name
+{
+  padding-top: 0.75em;
+}
+
+#people-list table.list td.img,
+#people-list table.box td.img
+{
+  width:  53px;
+  height: 53px;
+  margin: 5px 15px 5px 5px ! important;
+  border-width: 0 ! important;
+}
+
+#people-list table.list td img,
+#people-list table.box td img
+{
+  background-color: #eee;
+}
+
+#people-list .img.leaveofabsence
+{
+  background-color: white;
+}
+#people-list .img.leaveofabsence img
+{
+  opacity: 0.3;
+}
+
+#people-list table.list p,
+#people-list table.list dl,
+#people-list table.box p,
+#people-list table.box dl
+{
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- MAILDB_CHART WIDGET                                        -- */
+/* ---------------------------------------------------------------- */
+
+#maildb_chart td
+{
+  font-size: x-small;
+  font-style: normal;
+  vertical-align: top ! important;
+  line-height: 1.1;
+}
+
+#maildb_chart .fullname
+{
+  font-size: small ! important;
+  font-weight: bold;
+}
+
+#maildb_chart td p
+{
+  font-size: x-small ! important;
+  padding-bottom: 0.2em ! important;
+}
+
+#maildb_chart.widget_table table
+{
+  width: auto;
+  border-width: 0 ! important;
+}
+
+#maildb_chart.widget_table table *
+{
+  background-color: transparent;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- WIKITOGGLE WIDGET                                          -- */
+/* ---------------------------------------------------------------- */
+
+#wikitoggle td,
+#wikitoggle th
+{
+  font-size: x-small;
+  background-color: #f9eff4 ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- NATIONALITY STATISTICS                                     -- */
+/* ---------------------------------------------------------------- */
+
+.nationalities,
+.nationalities.summary+.nationalities
+{
+  page-break-before: always;
+}
+.nationalities-form+.nationalities,
+.nationalities.nordic
+{
+  page-break-before: avoid;
+}
+.nationalities h2
+{
+  text-transform: none ! important;
+  margin-top: 1em ! important;
+  margin-bottom: 0.5em
+}
+/*  .nationalities h2 { margin-top:3em ! important; } */
+.nationalities h4
+{
+  margin-bottom: 1em;
+}
+.nationalities table
+{
+  width: auto;
+  border-width: 3px 0px;
+  border-style: solid;
+  border-color: #666;
+  border-spacing: 0px;
+}
+.nationalities th
+{
+  padding-left:1em;
+  background-color: #f9f9f9;
+  line-height: 1.1 ! important;
+}
+.nationalities td
+{
+  padding-left: 1em;
+  background-color: #f9f9f9;
+}
+.nationalities tr:first-child th
+{
+  width: 7em;
+  padding-bottom: 0.2em;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #666;
+}
+.nationalities tr th:first-child,
+.nationalities tr td:first-child
+{
+  white-space: nowrap;
+  padding: 0 1em 0 0;
+}
+.nationalities tr:first-child th:first-child
+{
+  border-width: 0;
+}
+.nationalities .nordic
+{
+  color: red;
+}
+.nationalities .baltic
+{
+  color: orange;
+}
+.nationalities .total
+{
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: #666;
+}
+.nationalities .total td
+{
+  padding-left: 1em;
+  font-style: italic;
+  background-color: #eee;
+}
+.nationalities .total th
+{
+  padding-left: 1em;
+  font-style: italic;
+}
+.nationalities .europe
+{
+  padding-left: 1em;
+  font-style: italic;
+}
+.nationalities .any
+{
+  background-color: #dfd;
+}
+.nationalities+.columnchart
+{
+  display: block;
+  margin-top: 1em;
+}
+.nationalities .fakebutton,
+.nationalities-form .fakebutton
+{
+  font-weight: bold;
+  font-size: small;
+}
+
+.nationalities-form .program    { color: #296; }
+.nationalities-form .workshop   { color: #922; }
+.nationalities-form .conference { color: #639; }
+.nationalities-form .meeting    { color: #139; }
+.nationalities-form .school     { color: #b93; }
+
+.nationalities-form table
+{
+  width: 100%;
+}
+.nationalities-form td
+{
+  width: 45%;
+}
+.nationalities-form .progs td dd
+{
+  font-size: 0.8em ! important;
+  margin-left: 3em;
+  text-indent: -2.5em;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* -- SEARCH WIDGET                                              -- */
+/* ---------------------------------------------------------------- */
+
+.simplesearch
+{
+  margin-top:  0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.simplesearch form *
+{
+  margin-top: 0;
+}
+
+.simplesearch input[type=submit]
+{
+  height: 22px ! important;
+}
+
+.simplesearch input[type=text]
+{
+  border: 1px solid #999;
+  background-color: #eee;
+-moz-box-shadow:    0 4px 5px -2px #666, inset 0 10px 10px -10px #999;
+-webkit-box-shadow: 0 4px 5px -2px #666, inset 0 10px 10px -10px #999;
+  box-shadow:       0 4px 5px -2px #666, inset 0 10px 10px -10px #999;
+}
+
+.simplesearch input[type=submit]
+{
+  border: 1px solid #999;
+-moz-border-radius:    3px 3px 3px 3px;
+-webkit-border-radius: 3px 3px 3px 3px;
+  border-radius:       3px 3px 3px 3px;
+-moz-box-shadow:    inset 0 0 5px 0 #999;
+-webkit-box-shadow: inset 0 0 5px 0 #999;
+  box-shadow:       inset 0 0 5px 0 #999;
+}
+
+.simplesearch input[type=checkbox]
+{
+-moz-box-shadow:    0 4px 5px -2px #666;
+-webkit-box-shadow: 0 4px 5px -2px #666;
+  box-shadow:       0 4px 5px -2px #666;
+}
+
+#form_people_search
+{
+  margin-bottom: 30px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PEOPLE SEARCH FORM                                         -- */
+/* ---------------------------------------------------------------- */
+
+#peoplesearchform input[type=text]
+{
+  border: 1px solid #999;
+  background-color: #eee;
+-moz-box-shadow:    0 4px 5px -2px #666, inset 0 10px 10px -10px #999;
+-webkit-box-shadow: 0 4px 5px -2px #666, inset 0 10px 10px -10px #999;
+  box-shadow:       0 4px 5px -2px #666, inset 0 10px 10px -10px #999;
+}
+
+#peoplesearchform input[type=submit]
+{
+  margin-top: 8px;
+  border: 1px solid #999;
+-moz-border-radius:    3px 3px 3px 3px;
+-webkit-border-radius: 3px 3px 3px 3px;
+  border-radius:       3px 3px 3px 3px;
+-moz-box-shadow:    inset 0 0 5px 0 #999;
+-webkit-box-shadow: inset 0 0 5px 0 #999;
+  box-shadow:       inset 0 0 5px 0 #999;
+}
+
+#peoplesearchform+#maildb_multiple,
+#peoplesearchform+#people-list
+{
+  margin-top: 2em;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* -- APOD WIDGET                                                -- */
+/* ---------------------------------------------------------------- */
+
+#region-columnleft #apod img,
+#region-columnright #apod img
+{
+  margin: -0.3em 0 -0.5em 0;
+-moz-box-shadow:    0 3px 10px -2px #333;
+-webkit-box-shadow: 0 3px 10px -2px #333;
+  box-shadow:       0 3px 10px -2px #333;
+}
+
+.col-content-right1third #apod img
+{
+  margin: 0.7em 0 0 0;
+-moz-box-shadow:    0 3px 10px -2px #333;
+-webkit-box-shadow: 0 3px 10px -2px #333;
+  box-shadow:       0 3px 10px -2px #333;
+}
+.col-content-right1third #apod a>strong
+{
+  margin-left: 90px;
+  font-weight: normal;
+  font-style:  italic;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- AGENDA WIDGET                                              -- */
+/* ---------------------------------------------------------------- */
+
+.acc-item #agenda table
+{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em ! important;
+  padding-top: 0 ! important;
+  border-bottom: 2px dotted #ccc;
+}
+.acc-item #agenda table th
+{
+  margin-top: 1.5em;
+  padding-top: 0.5em;
+  border-top: 2px dotted #ccc;
+}
+
+.acc-item #agenda dl
+{
+  margin-top:     0 ! important;
+  margin-bottom:  -0.5em ! important;
+  padding-bottom: 1em ! important;
+}
+
+.acc-item #agenda_all
+{
+  margin-right: 5px;
+  margin-bottom: -1em ! important;
+}
+.acc-item #agenda_all p
+{
+  margin-top: 0 ! important;
+}
+
+#agenda.widget_table table,
+#agenda.widget_table table th
+{
+-moz-box-shadow:    0 3px 10px -2px #333;
+-webkit-box-shadow: 0 3px 10px -2px #333;
+  box-shadow:       0 3px 10px -2px #333;
+}
+
+#agenda sup
+{
+  font-size: x-small ! important;
+  font-weight: normal;
+  color: black;
+} /* backw. compat only */
+
+.programtalk
+{
+  font-size: x-large;
+  font-weight: normal;
+  color: black;
+}
+.programtalk span
+{
+  display: inline-block;
+  width: 4em;
+  text-align: center;
+  font-size: xx-small;
+  line-height: 1.0;
+  border: 1px solid #666;
+}
+
+#agenda.widget_table table
+{
+  margin-top: -0.5em;
+}
+#agenda.widget_table p.preamble
+{
+  margin-top: -1em;
+}
+
+#agenda.widget_table table th
+{
+  width: 100%;
+  border-width: 1px 0 1px 0 ! important;
+  border-style: solid;
+  border-color: #3b586e;
+}
+
+#agenda.widget_table tr:first-child th
+{
+  border-top-width: 0 ! important;
+}
+
+#agenda.widget_table table td
+{
+  vertical-align: top;
+  background-color: white;
+  line-height: 1.2;
+}
+#agenda.widget_table table tr.preamble td
+{
+  background-color: #ffe;
+  border-width:  1px;
+  border-style: solid;
+  border-color: black;
+}
+
+#agenda.widget_table dl+dl
+{
+  padding-top: 2ex;
+}
+#agenda.widget_table dt
+{
+  margin-bottom: 0.5ex;
+}
+#agenda.widget_table dd
+{
+  margin-left: 3ex;
+}
+
+#agenda td *
+{
+  font-size: small;
+}
+
+.widget_table .agenda-category
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+.widget_table .agenda-date
+{
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.widget_table .agenda-time
+.widget_table .agenda-eventtype
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+.widget_table .agenda-room
+{
+  font-weight: normal;
+  font-style: normal;
+}
+
+.widget_table .agenda-title
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+.widget_table .agenda-speaker
+.widget_table .agenda-period
+{
+  font-weight: normal;
+  font-style: italic;
+}
+
+.widget_table .agenda-affiliation
+{
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- MMAGENDA WIDGET                                            -- */
+/* ---------------------------------------------------------------- */
+
+#mmagenda
+{
+  display: block;
+  position: relative;
+  width:   200px ! important;
+  margin:  0 40px 0 0;
+  padding: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+#mmagenda h3
+{
+  display: block;
+  margin-bottom: 1em ! important;
+  font-weight: bold;
+  font-size:   1.2em ! important;
+}
+
+#mmagenda dl
+{
+  display: block;
+  width:   180px ! important;
+  margin:  0 0 0.5em 0;
+  padding: 5px 10px 5px 10px;
+  border: 2px dotted #ccc;
+  line-height: 1.1;
+}
+#mmagenda dt
+{
+  margin-bottom: 3px;
+}
+#mmagenda dd
+{
+  margin-left: 0;
+  margin-bottom: 3px;
+}
+
+#mmagenda .seealso
+{
+  display: block;
+  position: relative;
+  float: right;
+  width: 130px;
+  text-indent: 0;
+  text-align: right;
+  white-space: normal;
+  margin: 5px 0 0 0 ! important;
+  padding: 0;
+}
+
+#mmagenda .agenda-date
+{
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+  font-style:  italic;
+  font-size:   1.1em ! important;
+}
+#mmagenda .agenda-category,
+#mmagenda .agenda-eventtype,
+#mmagenda .agenda-title
+{
+  font-weight: bold;
+  font-style:  normal;
+}
+#mmagenda .agenda-room
+{
+  font-weight: normal;
+  font-style:  normal;
+}
+#mmagenda .agenda-period,
+#mmagenda .agenda-affiliation
+{
+  font-weight: normal;
+  font-style:  italic;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- SELECT MENU WIDGET                                         -- */
+/* ---------------------------------------------------------------- */
+
+#selectmenu
+{
+  display: block;
+  position: static;
+  width:   auto;
+  margin:  10px 0 30px 0;
+  padding: 5px 10px 5px 0;
+}
+
+#selectmenu div
+{
+  display: inline;
+  position: relative;
+  width:   auto;
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+  line-height: 3.0em;
+  white-space: nowrap;
+}
+
+#selectmenu div span
+{
+  font-weight: bold;
+}
+
+#selectmenu div.input
+{
+  display: inline;
+  border: 1px solid #999;
+-moz-border-radius:    8px 8px 8px 8px;
+-webkit-border-radius: 8px 8px 8px 8px;
+  border-radius:       8px 8px 8px 8px;
+  background-color: #eee; /* #e5e8f5; */
+}
+
+/* ---------------------------------------------------------------- */
+/* -- ARRIVING VISITORS WIDGETS                                  -- */
+/* ---------------------------------------------------------------- */
+
+#arrivingvisitors h4,
+#arrivingvisitors ul
+{
+  margin-left: 30px;
+}
+
+#todaysvisitors ul
+{
+  margin-left: -20px;
+}
+
+#arrivingvisitors h4,
+#todaysvisitors h4
+{
+  margin-bottom: -10px;
+}
+
+#todaysvisitors h4
+{
+  margin-top: 2px;
+}
+
+#arrivingvisitors .name,
+#todaysvisitors p:first-child
+{
+  font-weight: bold;
+  font-style: italic;
+}
+
+#arrivingvisitors li
+{
+  font-size: small;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PHOTOS FROM NORDITA WIDGET                                 -- */
+/* ---------------------------------------------------------------- */
+
+#photosfromsh td
+{
+  width: 80px;
+  line-height: 1.0em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+#photosfromsh td a
+{
+  font-weight: bold;
+}
+
+#photosfromsh td img
+{
+  width:  75px;
+  height: 75px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- RESEARCH PROFILE WIDGET                                    -- */
+/* ---------------------------------------------------------------- */
+
+.samplebox #researchprofile
+{
+  line-height: 1.2em ! important;
+}
+
+.mmenu #researchprofile
+{
+  padding: 0 0 20px 0 ! important;
+  width: 230px ! important;
+  line-height: 1.3em;
+}
+
+.mmenu #researchprofile img.portrait
+{
+  margin: 3px 15px 10px 0;
+  float: left;
+}
+
+/* ----------------------------------------------------------------- */
+/* -- COLOPHON HOWTOGETHERE                                          */
+/*    also see: startpage.css                                        */
+/* ----------------------------------------------------------------- */
+
+
+/*
+#colophon-howtogethere
+{
+  position: relative;
+  width: 780px;
+  float: none;
+  margin-right: 0;
+}
+*/
+
+#colophon-howtogethere
+{
+  line-height: 0.7;
+}
+
+#colophon-howtogethere h4
+{
+  margin-bottom: 10px;
+}
+
+#colophon-howtogethere h4+div
+{
+  float: left;
+  margin: 3px 1em 0 0;
+}
+
+#colophon-howtogethere #colophon-map-canvas
+{
+  width:  780px;
+  height: 530px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+/* ----------------------------------------------------------------- */
+/* COLOPHON SHORT ADDRESS                                            */
+/* ----------------------------------------------------------------- */
+
+#colophon-short-address
+{
+  position: relative;
+  width: 100%;
+  top:  0;
+  left: 0;
+  margin: 0 0 2ex 0;
+}
+
+#colophon-short-address address
+{
+  padding-top: 10px;
+}
+
+#colophon-short-address address+p
+{
+  margin: 0;
+} /*
+  margin: no blank line between address and cookie policy link
+  */
+
+/* ----------------------------------------------------------------- */
+/* COLOPHON LINKS                                                    */
+/* ----------------------------------------------------------------- */
+
+#colophon-links
+{
+  text-align: left;
+}
+
+#block-colophon #colophon-links
+{
+  position: relative;
+  width: auto;
+  float: left;
+}
+
+/* ----------------------------------------------------------------- */
+/* COLOPHON FOOTPRINT                                                */
+/* ----------------------------------------------------------------- */
+
+#colophon-footprint
+{
+  position: absolute;
+  clear: both;
+  width: 50px ! important;
+  top:   0.8em;
+  right: 0;
+  text-align: right;
+  font-size: x-small;
+  line-height: 1.1;
+} /*
+  width: otherwise address cannot be selected with mouse
+  */
+
+/* ---------------------------------------------------------------- */
+/* -- RESOURCES WIDGET                                           -- */
+/* ---------------------------------------------------------------- */
+
+#resources h3,
+#resources h4
+{
+  margin-top: 0;
+  margin-bottom: -0.3em;
+}
+
+#region-columnleft  #resources li,
+#region-columnright #resources li
+{
+  margin-left: -2.6em;
+  list-style: none;
+}
+
+.resources dd
+{
+  margin-left: 0;
+}
+
+#region-columnleft  #resources li:before,
+#region-columnright #resources li:before,
+.resources dd:before
+{
+  content: "\2794\00A0\00A0";
+  color: #999;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- OPENPOSITIONS WIDGET                                       -- */
+/* ---------------------------------------------------------------- */
+
+/* common for all splash/alert boxes */
+#openpositions h3,
+#openpositions h4
+{
+  margin-top: 0;
+  margin-bottom: -0.3em;
+}
+
+#openpositions h3+div,
+#openpositions h4+div
+{
+  margin-top: 1.0em;
+} /*
+  margin-top: compensate for <div> for accordion effect
+  */
+
+/* common for all splash/alert boxes */
+#openpositions dd
+{
+  margin: 0.3em 0 0.3em 1.5em;
+  line-height: 1.1;
+}
+#openpositions .splash dd
+{
+  margin-left: 0;
+}
+
+#openpositions .title
+{
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: none;
+} /*
+  text-transform: uppercase;
+  */
+#openpositions .splash .title
+{
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: none;
+  line-height:1.1;
+}
+#announcements #openpositions .title
+{
+  font-size: 1em;
+}
+#openpositions .pdf,
+#openpositions .apply
+{
+  font-weight: bold;
+}
+
+#openpositions .current dl
+{
+  position: relative;
+  left: 2em;
+}
+#openpositions .current blockquote
+{
+  position: relative;
+  margin-left: 4em;
+  padding-left: 1em;
+  border-left: 1px dotted #999;
+}
+#openpositions .current dd
+{
+  left: 0;
+}
+#openpositions .current dl .ui-icon
+{
+  top: 2px ! important;
+  left: -2em;
+  background-color: #e5e8f5;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- REGISTRATIONOPEN WIDGET                                    -- */
+/* ---------------------------------------------------------------- */
+
+/* common for all splash/alert boxes */
+#registrationopen h3,
+#registrationopen h4
+{
+  margin-top: 0;
+  margin-bottom: -0.3em;
+}
+
+#registrationopen h3+div,
+#registrationopen h4+div
+{
+  margin-top: 1.0em;
+} /*
+  margin-top: compensate for <div> for accordion effect
+  */
+
+/* common for all splash/alert boxes */
+#registrationopen dd
+{
+  margin: 0.3em 0 0.3em 0;
+  line-height: 1.1;
+}
+
+#registrationopen .title
+{
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#registrationopen .splash
+{
+  background-image: url("./img/backdrop_pentaflakes_fff.png");
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PROPOSE PROGRAMS WIDGET                                    -- */
+/* ---------------------------------------------------------------- */
+
+/* common for all splash/alert boxes */
+#proposeprograms h3,
+#proposeprograms h4
+{
+  margin-top: 0;
+  margin-bottom: -0.3em;
+}
+
+/* common for all splash/alert boxes */
+#proposeprograms dd
+{
+  margin: 0.3em 0 0.3em 0;
+  line-height: 1.1;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- ANNOUNCEMENTS WIDGET                                       -- */
+/* ---------------------------------------------------------------- */
+
+#announcements div.box
+{
+  padding-top:    0.2em;
+  padding-bottom: 0.3em;
+}
+
+#announcements h2
+{
+  margin: 0 0 10px 0 ! important;
+  padding-bottom: 0;
+  font-size: 1.4em;
+  font-weight: normal;
+  color: #338;
+}
+
+#announcements h2.ui-state-active
+{
+  border-bottom: 1px dotted #999;
+}
+
+#announcements h3,
+#announcements h4
+{
+  margin-top: 0;
+  margin-bottom: -0.7em ! important;
+}
+
+#announcements .ui-icon
+{
+  margin-top: 0;
+  margin-left: 0;
+}
+#announcements .ui-icon+span
+{
+  display: block;
+  margin-left: 25px;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- SITEMAP WIDGET                                             -- */
+/* ---------------------------------------------------------------- */
+
+.sitemap li
+{
+  margin-left: -2ex;
+  list-style-type: square;
+  font-weight: normal;
+}
+.sitemap li,
+.sitemap li li
+{
+  font-size: 1.0em ! important;
+}
+
+.sitemap>li
+{
+  margin-top: 1em;
+  margin-left: -4ex;
+  font-weight: bold;
+  font-size: large;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- PROGRAMSINTRO WIDGET                                       -- */
+/* ---------------------------------------------------------------- */
+
+#programsintro p
+{
+  margin-bottom: 0.5em;
+}
+
+#programsintro td p
+{
+  padding-top: 0.2em;
+  margin: 0 0 -0.4em 0 ! important;
+}
+
+#programsintro h3+div>p:first-child
+{
+  margin-top:    0.3em;
+  margin-bottom: 0;
+}
+
+#programsintro p+p
+{
+  text-indent: 1.5em;
+  margin-top: -0.5em;
+}
+
+#programsintro .clear+p
+{
+  margin-top: -3em;
+}
+
+#programsintro .ultable
+{
+  display: block;
+  float: left;
+  width: 32%;
+  margin-top:     0.5em ! important;
+  margin-bottom: -0.3em;
+}
+
+#programsintro .ultable li
+{
+  margin-left: -2.0em;
+  line-height: 1.2;
+  list-style-type: none;
+}
+#programsintro .ultable .listlink
+{
+  /* margin-top: 2px; */
+  margin-bottom: 0.5em;
+  /* margin-left: -2.0em; */
+  list-style-type: none;
+}
+
+.listlink>a
+{
+  font-style: italic;
+  font-weight: normal;
+}
+.listlink:before
+{
+  content: "\25B9\00A0\00A0";
+}
+
+/* ---------------------------------------------------------------- */
+/* -- RESEARCH WIDGET                                            -- */
+/* ---------------------------------------------------------------- */
+
+#research .imageno
+{
+  margin-top: 1.7em;
+  margin-bottom: 2em;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- RESEARCH+PREPRINTS WIDGET                                  -- */
+/* ---------------------------------------------------------------- */
+
+#researchpreprints table
+{
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0;
+  border-spacing: 0;
+}
+
+#researchpreprints th
+{
+  white-space: nowrap;
+}
+
+#researchpreprints td
+{
+  padding: 0;
+  line-height: 1.3;
+}
+
+#researchpreprints tr.line td
+{
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
+}
+
+#researchpreprints tr.line td:first-child
+{
+  padding-right: 1em;
+  height: 50px ! important;
+  white-space: nowrap;
+}
+
+#researchpreprints td+td
+{
+  padding: 0 10px 0 0;
+}
+
+#researchpreprints p
+{
+  margin-bottom: 1em;
+}
+#researchpreprints th>p
+{
+  font-size: 120%;
+  padding: 0 10px 5px 0;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- CURRENT NEWS ISSUE WIDGET                                  -- */
+/* ---------------------------------------------------------------- */
+
+/* common for all splash/alert boxes */
+#currentnewsissue h3,
+#currentnewsissue h4
+{
+  margin-top: 0;
+  margin-bottom: -0.3em;
+}
+
+#currentnewsissue div.box
+{
+  padding-top:    0;
+  padding-bottom: 0;
+}
+
+#currentnewsissue.acc-item p
+{
+  margin:  0 ! important;
+  padding: 0 ! important;
+}
+
+#currentnewsissue .seealso
+{
+  position: relative;
+  top: 0;
+  margin: -1em 0 0 0 ! important;
+  padding: 0;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* -- CURRENT FROM AGENDA WIDGET                                 -- */
+/* ---------------------------------------------------------------- */
+
+#currentfromagenda
+{
+  display: block;
+  position: relative;
+  clear: both;
+  width:   auto;
+  margin:  0;
+  padding: 0;
+  line-height: 1.1;
+}
+
+#currentfromagenda+#currentfromagenda
+{
+  margin-top: 1.5em;
+}
+
+#currentfromagenda h3
+{
+  display: block;
+}
+#currentfromagenda h3+p>.agenda-date
+{
+  margin-top: -0.5em ! important;
+}
+#currentfromagenda h3+p>.agenda-date,
+#currentfromagenda dl+p>.agenda-date
+{
+  margin-bottom: -0.5em ! important;
+}
+
+#currentfromagenda dl
+{
+  display: block;
+  width:   auto;
+  margin:  0 0 0.5em 0;
+  padding: 5px 10px 5px 10px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+-moz-box-shadow:    0 10px 10px -10px #333, inset 0 10px 10px -5px #fff;
+-webkit-box-shadow: 0 10px 10px -10px #333, inset 0 10px 10px -5px #fff;
+  box-shadow:       0 10px 10px -10px #333, inset 0 10px 10px -5px #fff;
+  background-color: #ffe;
+  line-height: 1.1;
+}
+
+#currentfromagenda p+dl
+{
+  border-top: 1px solid #eee;
+}
+#currentfromagenda dt
+{
+  margin-bottom: 3px;
+}
+#currentfromagenda dd
+{
+  margin-left: 0;
+  margin-bottom: 3px;
+}
+
+#currentfromagenda .seealso
+{
+  display: block;
+  position: relative;
+  float: right;
+  width: 80%;
+  text-indent: 0;
+  text-align: right;
+  white-space: normal;
+  margin: 5px 0 0 0 ! important;
+  padding: 0;
+}
+
+#currentfromagenda .programtalk
+{
+  font-size: x-large;
+  font-weight: normal;
+  color: black;
+}
+#currentfromagenda .programtalk span
+{
+  display: inline-block;
+  width: 4em;
+  text-align: center;
+  font-size: xx-small;
+  line-height: 1.0;
+  border: 1px solid #666;
+  vertical-align: bottom;
+}
+
+#currentfromagenda .agenda-date
+{
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+  font-style:  italic;
+  font-size:   1.1em ! important;
+}
+#currentfromagenda .agenda-category,
+#currentfromagenda .agenda-eventtype,
+#currentfromagenda .agenda-title
+{
+  font-weight: bold;
+  font-style:  normal;
+}
+#currentfromagenda .agenda-room
+{
+  font-size: 0.84em;
+  font-weight: normal;
+  font-style:  italic;
+}
+#currentfromagenda .agenda-period,
+#currentfromagenda .agenda-affiliation
+{
+  font-weight: normal;
+  font-style:  italic;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- SAMPLEBOX CLASS
+/*    (place late in stylesheet file)
+/* ---------------------------------------------------------------- */
+
+.samplebox>div
+{
+  width: 45%;
+  float: left;
+  margin-bottom: 1em ! important;
+}
+.samplebox>div+div
+{
+  float: right;
+  padding-left: 20px;
+  border-left: 2px dotted #eee;
+}
+.samplebox .seealso
+{
+  position: relative;
+  width: 100% ! important;
+}
+
+.samplebox h3
+{
+  margin-bottom: 0.5em ! important;
+  font-weight: bold ! important;
+}
+.samplebox h3+p
+{
+  float: none ! important;
+  margin-top: 0.5em ! important;
+}
+
+.samplebox .img
+{
+  margin: 0.7em auto 0.5em 1em ! important;
+}
+.samplebox .img+p
+{
+  text-indent: 0 ! important;
+}
+
+/* ---------------------------------------------------------------- */
+/* -- YOUTUBE CLIP CLASS                                         -- */
+/* ---------------------------------------------------------------- */
+
+#ytplayer
+{
+  width:  780px;
+  height: 476px;
+  border: 1px solid black;
+} /*
+  width:  640px;
+  height: 390px;
+  */
+
+.col-content-left #ytplayer,
+.col-content-right #ytplayer
+{
+  width:  345px;
+  height: 207px;
+} /*
+  width:  640px;
+  height: 390px;
+  */
+
+h3+#ytplayer
+{
+  margin-top: 1em;
+}
+
+
+
+

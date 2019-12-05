@@ -1,0 +1,163 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/2011/ROOMS.CSS                                                */
+/*                                                                   */
+/* Hans Mühlen / 2012-09-20 -- 2012-09-21                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+/* ---------------------------------------------------------------- */
+/* --                                                            -- */
+/* ---------------------------------------------------------------- */
+
+#map
+{
+  margin-bottom: 2em ! important;
+}
+
+.roomname
+{
+  font-size: 1.2em ! important;
+  font-weight: bold;
+  margin-bottom: -1em ! important;
+}
+
+hr.sep
+{
+  margin-top: 2em;
+}
+
+/* ---------------------------------------------------------------- */
+/* --                                                            -- */
+/* ---------------------------------------------------------------- */
+
+h3+.calgrid
+{
+  margin-top: 1em;
+}
+
+.calgrid
+{
+  xwidth: 100%;
+  border-width: 2px 2px 1px 2px;
+  border-style: solid;
+  border-color: black;
+  border-spacing: 0px;
+}
+.calgrid th
+{
+  border-width: 0px 3px 1px 0px;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  font-size: x-small;
+  padding: 0 1em 0 1em;
+}
+.calgrid td
+{
+  width: 3em;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  font-size: x-small;
+  padding: 0px;
+}
+.calgrid .blank
+{
+  background-color: white;
+}
+.calgrid .weekend
+{
+  color: red;
+  font-weight: bold;
+}
+
+
+
+.calgrid .start
+{
+  border-left: 1px solid black;
+}
+.calgrid .end
+{
+  border-right: 1px solid black;
+}
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* --                                                            -- */
+/* ---------------------------------------------------------------- */
+
+#rooms-form .inputLabel
+{
+  font-style: normal;
+  font-weight: bold;
+  background-color: transparent;
+  color: #403b3b;
+}
+
+#rooms-form input[type="text"],
+#rooms-form input[type="password"],
+#rooms-form input[type=search],
+#rooms-form input[type=date],
+#rooms-form input[type=email],
+#rooms-form input[type=url],
+#rooms-form input[type=number],
+#rooms-form input[type=range],
+#rooms-form textarea,
+#rooms-form select
+{
+  background-color: #fff;
+  box-shadow: 0 4px 5px -2px transparent, 0 10px 10px -10px transparent inset;
+} /* border: 0px solid transparent; */
+
+#rooms-form td
+{
+  padding-right: 1em;
+  line-height: 1.2;
+}
+
+#rooms-form input[type="submit"].fakelink
+{
+  margin-top: 0 ! important;
+  margin-left: -3px ! important;
+  font-size: 1em ! important;
+  color: #17f ! important;
+}
+#rooms-form input[type="submit"]
+{
+  margin-top: 1em ! important;
+}
+
+
+#rooms-form fieldset
+{
+  border: 1px solid #666;
+  background-color: #eee;
+}
+#rooms-form fieldset+fieldset
+{
+  margin-top: 1em;
+}
+
+#rooms-form .error
+{
+  background-color: #fff0ef ! important;
+  border: 1px solid #f00 ! important;
+}
+#rooms-form span.error
+{
+  padding-left: -1px;
+  margin-right: 0.5em;
+}
+

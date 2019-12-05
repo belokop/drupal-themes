@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Toolbar module overrides for Nordita.
+ */
+
+.toolbar a {
+  border-bottom: none;
+}
+
+.toolbar .toolbar-bar {
+    background-color: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.333);
+    color: #000;
+    height: 6px;
+}
+
+.toolbar .toolbar-toggle-orientation > .toolbar-lining {
+  float: right; /* LTR */
+}
+
+.toolbar .toolbar-bar .toolbar-tab,
+.toolbar .toolbar-tray-horizontal li {
+  float: right; /* LTR */
+}
+
+.toolbar-oriented .toolbar-bar .toolbar-tab,
+.toolbar-oriented .toolbar-tray-horizontal li {
+  float: right; /* LTR */
+}
