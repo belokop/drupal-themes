@@ -1,0 +1,4 @@
+*.inc linguist-language=PHP
+*.php linguist-language=PHP
+# *.css linguist-language=PHP
+# *.js linguist-language=PHP
