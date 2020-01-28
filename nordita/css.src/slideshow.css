@@ -1,0 +1,156 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/SPECIAL/SLIDESHOW.CSS                                         */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2012-03-02                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+/* ---------------------------------------------------------------- */
+/* -- PHOTOS SCREEN CLASSES                                      -- */
+/*    Set in 'PATH_CLASSES/navigationMain' as
+/*     $pagepath[][]["bodyid"] = ["display"|"slideshow"]
+/*    Stored as $documentClass->config_bodyid
+/*    Then entered as <body id=''>
+/* ---------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------- */
+/* -- DIV BLOCK 'SLIDESHOW'                                      -- */
+/* ---------------------------------------------------------------- */
+
+#slideshow
+{
+  display: block;
+  position: relative;
+  visibility: visible; /* 'visible' important for Safari */
+  top:    auto;
+  bottom: auto;
+  left:   auto;
+  right:  auto;
+  width:  auto;
+  height: auto;
+  float: none;
+  clear: both;
+  overflow: visible;
+  clip:     inherit ! important; /* important for safari */
+}
+
+#slideshow h3
+{
+  margin-top: 1em;
+}
+
+#slideshow p+p,
+#slideshow p+table
+{
+  margin-top: -0.75em ! important;
+}
+#slideshow .caption p+p
+{
+  margin-top: -1.5em ! important;
+}
+
+#slideshow table .caption p
+{
+  margin-top: -0.25em;
+}
+
+#slideshow .caption p
+{
+  font-weight: bold;
+}
+
+#slideshow table
+{
+  padding: 0;
+  border-spacing: 5px;
+  border-width: 0;
+}
+
+#slideshow table.single
+{
+  margin: 0 auto 2em 0;
+} /*
+  margin-left: auto; for centering
+  */
+
+#slideshow table td
+{
+  xtext-align: center;
+}
+
+#slideshow table .img
+{
+  text-align: center ! important;
+}
+
+#slideshow table .caption
+{
+  padding-left: 2em;
+  text-align: left;
+}
+
+#slideshow table.thumb td
+{
+  font-size: 0;
+}
+
+#slideshow table .navigation
+{
+  display: block;
+  position: relative ! important;
+  text-align: center;
+  xwidth: 100%;
+  height: 20px ! important;
+  margin: 0;
+  padding: 0;
+}
+
+#slideshow table .navigation .prev
+{
+  display: block;
+  position: absolute;
+  left: 10px;
+  z-index: 999;
+}
+
+#slideshow table .navigation .mid
+{
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  font-size: 1.4em;
+}
+#slideshow table .navigation .mid a
+{
+  font-weight: bold;
+}
+
+#slideshow table .navigation .next
+{
+  display: block;
+  position: absolute;
+  right: 10px;
+  z-index: 999;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* -- ADAPTATION OF OTHER STYLES TO BLACK BACKGROUND
+/* ---------------------------------------------------------------- */
+
+#slideshow.th-black  table
+{
+  border-color: white;
+}
+
+

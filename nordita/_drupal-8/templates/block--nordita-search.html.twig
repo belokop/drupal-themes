@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Nordita's theme implementation for a search form block. 
+ *
+ * Available variables:
+ * - content: The content of this block.
+ * - content_attributes: A list of HTML attributes applied to the main content
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ * @see search_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{% block content %}
+<div id='block-searchfield'>
+  <form method='post' action='#' id='os_search' name='os_search' class='simplesearch' enctype='application/x-www-form-urlencoded'>
+    <input type='search' id='sqry' name='qry' class='input-default-value' placeholder='&nbsp;Search site &amp; staff' \>&nbsp;
+    <input type='submit' value='Search'>
+    <input type='hidden' name='ctg' value='Main'>
+  </form>
+  <div id='sprite-img'>
+    <img src='/{{ directory }}/images/sprite-{{ random(3) }}.png' alt=''>
+  </div>
+</div> 
+{% endblock %}

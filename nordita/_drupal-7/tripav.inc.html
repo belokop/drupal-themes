@@ -1,0 +1,128 @@
+<div id='region-tripav' style='display:block;position:absolute;width:180px;height:auto;top:375px;'>
+    <div id="tripav-button" style='width:180px;'></div>
+     <div id='tripav-pane' style='display:none;'>
+     <script charset='utf-8' type='text/javascript'>
+     window.TP_FORM_SETTINGS = window.TP_FORM_SETTINGS || {};
+     window.TP_FORM_SETTINGS['de7b9b4dbe26b3345a178a577cb5a18e'] = {
+	 'handle': 'de7b9b4dbe26b3345a178a577cb5a18e',
+	 'widget_name': 'Search form #5',
+	 'border_radius': '2',
+	 'additional_marker': null,
+	 'width': 180,
+	 'show_logo': false,
+	 'show_hotels': false,
+	 'form_type': 'avia_hotel',
+	 'locale': 'en',
+	 'currency': 'eur',
+	 'sizes': 'default',
+	 'search_target': '_blank',
+	 'active_tab': 'hotel',
+	 'search_host': 'flights.tripav.com/flights',
+	 'hotels_host': 'hotels.tripav.com/hotels',
+	 'hotel': '',
+	 'hotel_alt': '',
+	 'avia_alt': '',
+	 'retargeting': true,
+	 'trip_class': 'economy',
+	 'depart_date': null,
+	 'return_date': null,
+	 'check_in_date': null,
+	 'check_out_date': null,
+	 'id': 105258,
+	 'marker': 130596,
+	 'origin': {
+	     'name': ''
+	 },
+	 'destination': {
+	     'name': ''
+	 },
+	 'color_scheme': {
+	     'name': 'white_orange',
+	     'icons': 'icons_orange',
+	     'background': '#f1f2f3',
+	     'color': '#000000',
+	     'border_color': '#cccccc',
+	     'button': '#feb20e',
+	     'button_text_color': '#ffffff',
+	     'input_border': '#cccccc'
+	 },
+	 'hotels_type': 'hotellook_host',
+	 'best_offer': {
+	     'locale': 'en',
+	     'currency': 'eur',
+	     'marker': 130596,
+	     'search_host': 'flights.tripav.com/flights',
+	     'offers_switch': false,
+	     'api_url': '//minprices-jetradar.aviasales.ru/minimal_prices/offers.json',
+	     'routes': []
+	 },
+	 'hotel_logo_host': '',
+	 'search_logo_host': '',
+	 'hotel_marker_format': 'marker=',
+	 'hotelscombined_marker': null,
+	 'responsive': false,
+	 'height': 446
+     };
+      </script>
+      <script charset='utf-8' src='//www.travelpayouts.com/widgets/de7b9b4dbe26b3345a178a577cb5a18e.js?v=997' async></script>
+    </div>
+  <script>
+     var button_beg = '<button id="button" onclick="showhide()" style="width:100%;background:#f1f2f3">', button_end = '</button>';
+     var show_button = 'Show booking pane', hide_button = 'Hide booking pane';
+     function showhide() {
+	 var div = document.getElementById( "tripav-pane" );
+	 var showhide = document.getElementById( "tripav-button" );
+	 if ( div.style.display !== "none" ) { // block
+	     status = "hide";
+	     div.style.display = "none";
+	     button = show_button;
+	 } else { // none
+	     status = "show";
+	     div.style.display = "block";
+	     button = hide_button;
+	 }
+	 setCookie("status", status, 30);
+	 showhide.innerHTML = button_beg + button + button_end;
+     }
+     function setCookie(cname,cvalue,exdays) {
+	 var d = new Date();
+	 d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	 var expires = "expires=" + d.toGMTString();
+	 document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+     }
+     function getCookie(cname) {
+	 var name = cname + "=";
+	 var decodedCookie = decodeURIComponent(document.cookie);
+	 var ca = decodedCookie.split(';');
+	 for(var i = 0; i < ca.length; i++) {
+	     var c = ca[i];
+	     while (c.charAt(0) == ' ') {
+		 c = c.substring(1);
+	     }
+	     if (c.indexOf(name) == 0) {
+		 return c.substring(name.length, c.length);
+	     }
+	 }
+	 return "";
+     }
+     window.onload = function () {
+	 var status=getCookie("status");
+	 if (status == ""){
+	     status = "show";
+	     setCookie("status", status, 30);
+	 }
+
+	 // Show/Hide the booking pane
+	 var d = document.getElementById( "tripav-pane" );
+	 var display = (status == "show" ? "block" : "none");
+	 if (d.style.display != display) d.style.display = display;
+
+	 // Set the button text
+	 button = (status == 'show' ? hide_button : show_button);
+	 var showhide = document.getElementById( "tripav-button" );
+	 showhide.innerHTML = button_beg + button + button_end;
+	 // alert(status + ' ' + display);
+     }
+  </script>
+</div>
+<!-- end tripav -->

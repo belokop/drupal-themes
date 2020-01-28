@@ -1,0 +1,98 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/SPECIAL/STAD.CSS                                             */
+/*                                                                   */
+/* Hans Mühlen / 2011-02-08 -- 2011-03-14                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+@import url("special_plain.css");
+
+/* ---------------------------------------------------------------- */
+/* -- CLEANING SCHEDULE CLASSES                                  -- */
+/* ---------------------------------------------------------------- */
+
+.stadschema,
+.stadtabell
+{
+  border: 1px solid black;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-top: 2em;
+  margin-left: 2px;
+  width: 98%;
+}
+
+.stadschema td,
+.stadschema th
+{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.stadtabell th
+{
+  border: 1px solid black;
+  background-color: #fff;
+  border-collapse: collapse;
+  padding: 0;
+  text-align: center;
+}
+
+.stadtabell td
+{
+  border: 1px solid black;
+  xbackground-color: #999;
+  border-collapse: collapse;
+  padding: 0;
+  text-align: center;
+}
+
+.stadtabell .dayMon,
+.stadtabell .dayWed,
+.stadtabell .dayFri
+{
+  background-color: #eee;
+}
+.stadtabell .dayTue,
+.stadtabell .dayThu
+{
+  background-color: #ddd;
+}
+.stadtabell .daySat
+{
+  background-color: #fee;
+}
+.stadtabell .daySun
+{
+  background-color: #fdd;
+}
+
+.stadtabell .dayMon.dayZebra,
+.stadtabell .dayWed.dayZebra,
+.stadtabell .dayFri.dayZebra
+{
+  background-color: #ccd;
+}
+.stadtabell .dayTue.dayZebra,
+.stadtabell .dayThu.dayZebra
+{
+  background-color: #bbc;
+}
+.stadtabell .daySat.dayZebra
+{
+  background-color: #fcd;
+}
+.stadtabell .daySun.dayZebra
+{
+  background-color: #fbc;
+}
+

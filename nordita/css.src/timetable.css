@@ -1,0 +1,158 @@
+/* ================================================================= */
+/*                                                                   */
+/* CSS/TIMETABLE.CSS                                                */
+/*                                                                   */
+/* Hans Mühlen / 2007-08-07 -- 2011-07-01                            */
+/*                                                                   */
+/* ================================================================= */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+/*                                                                   */
+/*  *** WORK IN PROGRESS! ***   Do not copy or comment!              */
+/*                                                                   */
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+  body
+  {
+    margin  : 0 ! important;
+    padding : 0 ! important;
+  }
+
+  @media print {
+	#container-fixed,
+	#container-head, /* legacy */
+	#block-banner, /* legacy */
+	#region-headbanner
+	{
+	  width: 98% ! important;
+    }
+	#block-banner, /* legacy */
+	#region-headbanner
+	{
+	  border: 1px solid #333; /* mysko buggfix */
+	}
+	.timetable .cont
+	{
+	  page-break-inside: avoid;
+	}
+  }
+
+  /* -- Positioning -- */
+
+  .timetable .eventheading,
+  .timetable .title,
+  .timetable .speaker,
+  .timetable .room
+  {
+    position: relative;
+    left: 140px;
+    margin-right: 140px;
+  }
+
+  .timetable .time
+  {
+    position: absolute;
+  }
+
+  .timetable .abstract
+  {
+    position: relative;
+    left: 140px;
+    margin-right: 140px;
+  }
+
+  .timetable .break,
+  .timetable .cont
+  {
+    position: relative;
+  }
+
+  .timetable .eventheading img
+  {
+    position: absolute;
+    top: 5px;
+    left: -140px;
+  }
+
+  /* -- Heading -- */
+
+  .timetable .eventheading h2
+  {
+    font-size: xx-large;
+    margin: 0;
+  }
+
+  .timetable .eventheading p
+  {
+    font-size: large;
+    margin: 0 0 2em 0;
+  }
+
+  /* -- Content -- */
+
+  .timetable .cont
+  {
+    width: 98%;
+    border-top: 0 solid #999;
+    padding: 3px 2px 0 10px;
+    margin-top: 5px;
+  }
+
+  .timetable h1
+  {
+    width: 98%;
+    margin-top: 30px ! important;
+    padding: 5px 2px 5px 10px;
+    font-size: x-large ! important;
+    border: 2px solid #666 ! important;
+    background: #ffffdd ! important;
+  }
+
+  .timetable h3
+  {
+    font-size: xx-large;
+    margin: 0 0 1em 0;
+  }
+
+  .timetable .time
+  {
+    font-size: medium;
+  }
+
+  .timetable .title
+  {
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  .timetable .speaker
+  {
+    font-size: medium;
+    font-style: italic;
+  }
+
+  .timetable .room
+  {
+    font-style: normal;
+    font-size: small;
+  }
+  .timetable .room:before { content: "("; }
+  .timetable .room:after  { content: ")"; }
+
+  .timetable .abstract
+  {
+    padding-top: 4px;
+    font-style: italic;
+    font-size: 0.32cm;
+  }
+
+  .timetable .break
+  {
+    width: 98%;
+    border: 1px solid #999;
+    background: #eee;
+    padding: 3px 2px 5px 10px;
+    margin-top: 15px;
+  }
+
