@@ -1,1 +1,0 @@
-../../fysikum/css/convertor.sh

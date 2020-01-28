@@ -1,5 +1,0 @@
-# Schema for the configuration files of the Nordita theme.
-
-nordita.settings:
-  type: theme_settings
-  label: 'Nordita settings'

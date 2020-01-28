@@ -1,1 +1,0 @@
-../../template-6.php
